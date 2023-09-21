@@ -125,5 +125,18 @@ Route::get('/contacts', function () {
 });
 
 Route::get('/feedback', function () {
-    return view('pages.client.feedback');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'Request form',
+        ],
+    ];
+
+    return view('pages.client.feedback', [
+        'navigations' => $navigations
+    ]);
 });

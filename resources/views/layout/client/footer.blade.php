@@ -18,11 +18,11 @@
                     </div>
                 </div>
                 <div class="footer__nav">
-                    <a href="">About us</a>
-                    <a href="">Portfolio</a>
-                    <a href="">Services and prices</a>
-                    <a href="">FAQ</a>
-                    <a href="">Panorams</a>
+                    <a href="/about">About us</a>
+                    <a href="/portfolio">Portfolio</a>
+                    <a href="/services">Services and prices</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/panorams">Panorams</a>
                 </div>
                 <div class="footer__works">
                     <a class="footer__works_item" href="">

@@ -15,14 +15,14 @@
             </div>
             <div class="header-short__bottom">
                 <nav class="header-short__nav">
-                    <a class="header-short__nav_item" href="">About us</a>
-                    <a class="header-short__nav_item" href="">Portfolio</a>
-                    <a class="header-short__nav_item" href="">Services and prices</a>
-                    <a class="header-short__nav_item" href="">Faq</a>
-                    <a class="header-short__nav_item" href="">Panorams</a>
-                    <a class="header-short__nav_item" href="">Contacts</a>
+                    <a class="header-short__nav_item" href="/about">About us</a>
+                    <a class="header-short__nav_item" href="/portfolio">Portfolio</a>
+                    <a class="header-short__nav_item" href="/services">Services and prices</a>
+                    <a class="header-short__nav_item" href="/faq">Faq</a>
+                    <a class="header-short__nav_item" href="/panorams">Panorams</a>
+                    <a class="header-short__nav_item" href="/contacts">Contacts</a>
                 </nav>
-                <a class="btn header-short__contact">Contact us</a>
+                <a class="btn header-short__contact" href="/feedback">Contact us</a>
             </div>
         </div>
     </div>

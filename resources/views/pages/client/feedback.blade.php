@@ -1,10 +1,10 @@
 @extends('layout.client.layout')
 
 @section('content')
-    {{-- <x-banner-nav> --}}
+    <x-banner-nav title="Request form" :navigations="$navigations" />
     <div class="feedback">
         <div class="container">
-            <form class="contacts__form form-contact" enctype="multipart/form-data" action="{{ url()->current() }}"
+            <form class="feedback__form form-contact" enctype="multipart/form-data" action="{{ url()->current() }}"
                 method="POST">
                 <div class="form-contact__flex">
                     <label class="label">
