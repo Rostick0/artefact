@@ -6,7 +6,7 @@
         <div class="container">
             <div class="portfolio__container">
                 <div class="portfolio__filter">
-                    <div class="portfolio__filter_item">All</div>
+                    <div class="portfolio__filter_item _active">All</div>
                     <div class="portfolio__filter_item">Animation</div>
                     <div class="portfolio__filter_item">Interior</div>
                     <div class="portfolio__filter_item">Items</div>

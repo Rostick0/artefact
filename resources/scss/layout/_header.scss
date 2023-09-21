@@ -28,6 +28,8 @@
         &_item {
             color: #b8b8b8;
             font-weight: 600;
+            display: flex;
+            justify-content: center;
             padding: 15px;
             position: relative;
             transition: 300ms;
@@ -39,7 +41,7 @@
                 display: inline-block;
                 transition: 300ms;
                 position: absolute;
-                left: 0;
+                bottom: 10px;
                 opacity: 0;
                 width: calc(100% - 30px);
                 height: 2px;
@@ -48,7 +50,7 @@
             &:hover {
                 color: #ecc311;
 
-                .header__nav_item::after {
+                &.header__nav_item::after {
                     opacity: 1;
                 }
             }

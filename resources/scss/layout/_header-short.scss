@@ -1,9 +1,79 @@
 .header-short {
-    &__bottom {
+    &__top {
+        padding-top: 5px;
+
+        &_container {
+            display: flex;
+
+        }
+    }
+
+    &__logo {
+        width: 125px;
+        height: 70px;
+    }
+
+    &__info {
         display: flex;
+        align-items: flex-start;
+        column-gap: 15px;
+
+        &_icon {
+            background: #f6f6f6;
+            color: #ecc311;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            width: 52px;
+            height: 52px;
+        }
+
+
+        &_text {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                color: #868686;
+                font-size: 14px;
+                margin-bottom: 6px;
+            }
+        }
+
+        &_mailto {
+            font-size: 15px;
+        }
+    }
+
+    &__bottom {
+        position: sticky;
+        top: 0;
+
+        &_container {
+            display: flex;
+
+        }
     }
 
     &__nav {
+        background-color: #151515;
         display: flex;
+        align-items: center;
+        column-gap: 30px;
+        flex-grow: 1;
+        padding: 0 30px;
+
+        &_item {
+            color: #b8b8b8;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    &__contact {
+        font-size: 14px;
+        padding: 18px 30px;
     }
 }
