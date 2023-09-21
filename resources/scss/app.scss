@@ -1,5 +1,11 @@
 @import './reset';
 @import './ui/';
+@import './layout/';
+@import './section/';
+
+body {
+    line-height: 34px;
+}
 
 .wrapper {
     display: flex;

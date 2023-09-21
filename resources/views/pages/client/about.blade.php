@@ -11,18 +11,21 @@
             </div>
             <div class="about__right">
                 <div class="about__description">
-                    <p>Welcome to the realm of 3D visualization! We are an art, technology, and creativity-driven team
+                    <p class="about__description_p">Welcome to the realm of 3D visualization! We are an art, technology, and
+                        creativity-driven team
                         offering
                         you a captivating perspective on your projects. While our main office is located in the beautiful
                         city
                         of Prague, our experts hail from around the globe, allowing us to infuse diversity and innovation
                         into
                         every endeavor.</p>
-                    <p>We take immense pride in the exceptional quality of our work, leaving a lasting impression with every
+                    <p class="about__description_p">We take immense pride in the exceptional quality of our work, leaving a
+                        lasting impression with every
                         visualization. Our renderings are not just visually striking, but also precise representations of
                         your
                         ideas.</p>
-                    <p>We continually refine our skills, mastering the latest technologies and engaging in advanced courses
+                    <p class="about__description_p">We continually refine our skills, mastering the latest technologies and
+                        engaging in advanced courses
                         to
                         stay ahead. If you are seeking a reliable partner to bring your projects to life, you've found us!
                         We
@@ -47,24 +50,31 @@
                         quality of visualization and graphics.</li>
                 </ul>
             </div>
-            <div class="visualization__slider">
-                @foreach ($visualization_slides as $item)
-                    @php
-                        $item = (object) $item;
-                    @endphp
-                    <a class="visualization__slide visualization-slide" href="{{ $item?->link }}">
-                        <div class="visualization-slide__title">{{ $item?->title }}</div>
-                        <div class="visualization-slide__content">{{ $item?->content }}</div>
-                    </a>
-                @endforeach
+            <div class="visualization__slider swiper">
+                <div class="swiper-wrapper">
+                    @foreach ($visualization_slides as $item)
+                        @php
+                            $item = (object) $item;
+                        @endphp
+                        <a class="visualization__slide visualization-slide swiper-slide" href="{{ $item?->link }}">
+                            <div class="visualization-slide__inner">
+                                <div class="visualization-slide__title">{{ $item?->title }}</div>
+                                <div class="visualization-slide__content">{{ $item?->content }}</div>
+                            </div>
+                        </a>
+                    @endforeach
+                </div>
             </div>
+            <div class="visualization__slider_pagination swiper-pagination"></div>
         </section>
     </div>
     <section class="need-visualization">
         <div class="container">
-            <h2 class="titlle visualization__title">Do you need 3D visualisation?</h2>
-            <div class="visualization__motivation"></div>
-            <a class="btn visualization__btn" href="/feedback">Contact us</a>
+            <div class="need-visualization__container">
+                <h2 class="title need-visualization__title">Do you need 3D visualisation?</h2>
+                <div class="need-visualization__motivation">Make order right now!</div>
+                <a class="btn need-visualization__btn" href="/feedback">Contact us</a>
+            </div>
         </div>
     </section>
     <div class="container">
@@ -72,8 +82,10 @@
             <h2 class="title stat__title">Stats</h2>
             <ul class="stat__list">
                 <li class="stat__item stat-item">
-                    <div class="stat-item__icomn">
-                        <span class="icon gv-icon-925"></span>
+                    <div class="stat-item__icon">
+                        <div class="stat-item__icon_inner">
+                            <span class="icon mn-icon-925"></span>
+                        </div>
                     </div>
                     <div class="stat-item__text">
                         <div class="stat-item__count">300</div>
@@ -81,8 +93,10 @@
                     </div>
                 </li>
                 <li class="stat__item stat-item">
-                    <div class="stat-item__icomn">
-                        <span class="icon gv-icon-392"></span>
+                    <div class="stat-item__icon">
+                        <div class="stat-item__icon_inner">
+                            <span class="icon gv-icon-392"></span>
+                        </div>
                     </div>
                     <div class="stat-item__text">
                         <div class="stat-item__count">400</div>
@@ -90,8 +104,10 @@
                     </div>
                 </li>
                 <li class="stat__item stat-item">
-                    <div class="stat-item__icomn">
-                        <span class="icon gv-icon-880"></span>
+                    <div class="stat-item__icon">
+                        <div class="stat-item__icon_inner">
+                            <span class="icon gv-icon-880"></span>
+                        </div>
                     </div>
                     <div class="stat-item__text">
                         <div class="stat-item__count">500</div>
@@ -99,8 +115,10 @@
                     </div>
                 </li>
                 <li class="stat__item stat-item">
-                    <div class="stat-item__icomn">
-                        <span class="icon gv-icon-1110"></span>
+                    <div class="stat-item__icon">
+                        <div class="stat-item__icon_inner">
+                            <span class="icon gv-icon-1110"></span>
+                        </div>
                     </div>
                     <div class="stat-item__text">
                         <div class="stat-item__count">5</div>

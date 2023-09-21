@@ -2,7 +2,9 @@
 <header class="header">
     <div class="container">
         <div class="header__container">
-            <img class="logo" src="/assets/img/logo.jpg" alt="ARTEFACT">
+            <div class="header__image">
+                <img class="header__logo" src="/assets/img/logo.jpg" width="100" height="57" alt="ARTEFACT">
+            </div>
             <nav class="header__nav">
                 <a class="header__nav_item" href="">About us</a>
                 <a class="header__nav_item" href="">Portfolio</a>

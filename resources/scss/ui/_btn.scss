@@ -1,0 +1,16 @@
+.btn {
+    background-color: #ecc311;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    display: inline-flex;
+    padding: 15px 30px;
+    transition: 300ms;
+    text-transform: uppercase;
+
+    &:hover {
+        background-color: #a5880c;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, .2);
+    }
+}

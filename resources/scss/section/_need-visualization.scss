@@ -1,0 +1,22 @@
+.need-visualization {
+    background-image: url('/public/assets/img/need-motivation.jpg');
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+    overflow: hidden;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+    }
+
+    &__motivation {
+        font-style: italic;
+        margin-bottom: 45px;
+    }
+}
