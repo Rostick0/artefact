@@ -1,0 +1,11 @@
+.input {
+    background-color: #f6f6f6;
+    font-size: 14px;
+    padding: 24px 15px;
+    transition: 200ms;
+    width: 100%;
+
+    &:focus {
+        box-shadow: 0 0 4px 4px rgba(0, 0, 0, .02);
+    }
+}

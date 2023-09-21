@@ -46,7 +46,7 @@
                     <span class="label__title">Select file</span>
                     <input class="input" type="file" name="file">
                 </label>
-                <button class="btn">Submit</button>
+                <button class="btn form-contact__btn">Submit</button>
             </form>
         </div>
     </div>

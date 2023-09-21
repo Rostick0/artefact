@@ -1,0 +1,26 @@
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    row-gap: 30px;
+
+    &__flex {
+        display: flex;
+        grid-gap: 30px;
+
+        &>.label {
+            flex-grow: 1;
+            flex-basis: 50%;
+        }
+    }
+
+    &__btn {
+        align-self: flex-start;
+    }
+
+    @media (max-width: 576px) {
+        &__flex {
+            flex-direction: column;
+        }
+    }
+}
