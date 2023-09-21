@@ -83,7 +83,20 @@ Route::get('/about', function () {
 });
 
 Route::get('/portfolio', function () {
-    return view('pages.client.portfolios');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'My works',
+        ],
+    ];
+
+    return view('pages.client.portfolios', [
+        'navigations' => $navigations
+    ]);
 });
 
 Route::get('/portfolio/{id}', function () {

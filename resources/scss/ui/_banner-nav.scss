@@ -1,0 +1,42 @@
+.banner-nav {
+    background-image: url('/public/assets/img/breadcrumb.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    padding: 70px 0 60px;
+
+    a {
+        color: #fff;
+    }
+
+    &__nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 24px;
+
+        &_item {
+            font-size: 18px;
+
+            &._active {
+                color: #ecc311;
+            }
+
+            &::after {
+                content: "/";
+                display: inline-block;
+                margin: 0 5px;
+            }
+
+            &:last-child {
+                &::after {
+                    content: none;
+                }
+            }
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+    }
+}
