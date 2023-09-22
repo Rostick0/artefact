@@ -1,10 +1,10 @@
 @extends('layout.client.layout')
 
 @section('content')
-    {{-- <x-banner-nav> --}}
+    <x-banner-nav title="FAQ" :navigations="$navigations" />
     <section class="faq">
         <div class="container">
-            <h2 class="title-section">FAQ</h2>
+            <h2 class="title-section faq__title">FAQ</h2>
             <div class="faq__item">
                 <div class="faq__item_title">What is 3D visualization?</div>
                 <div class="faq__item_text">

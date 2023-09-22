@@ -112,7 +112,20 @@ Route::get('/service/{id}', function () {
 });
 
 Route::get('/faq', function () {
-    return view('pages.client.faq');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'FAQ',
+        ],
+    ];
+
+    return view('pages.client.faq', [
+        'navigations' => $navigations
+    ]);
 });
 
 
