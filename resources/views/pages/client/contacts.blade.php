@@ -19,17 +19,24 @@
                         <a class="contacts__info_link" href="">Prague, Korunni 2569/108</a>
                     </div>
                 </div>
-                <form class="contacts__form form-contact" enctype="multipart/form-data" action="{{ url()->current() }}"
-                    method="POST">
+                <form class="contacts__form form-contact" enctype="multipart/form-data"
+                    action="{{ route('feedback.send') }}" method="POST">
+                    @csrf
                     <div class="form-contact__flex">
                         <label class="label">
                             <span class="label__title">Name</span>
-                            <input class="input" name="name" type="text">
+                            <input class="input" name="name" type="text" required>
                         </label>
+                        @error('name')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                         <label class="label">
                             <span class="label__title">Email</span>
-                            <input class="input" name="email" type="text">
+                            <input class="input" name="email" type="email" required>
                         </label>
+                        @error('email')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="form-contact__flex">
                         <label class="label">
@@ -54,7 +61,10 @@
                     </div>
                     <label class="label">
                         <span class="label__title">Message</span>
-                        <textarea class="input" name="message" rows="5"></textarea>
+                        <textarea class="input" name="message" rows="5" required></textarea>
+                        @error('message')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                     </label>
                     <br>
                     <label class="label">
@@ -65,6 +75,9 @@
                 </form>
             </div>
         </div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2560.3015790335253!2d14.42655947645609!3d50.08064027152398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1695025304344!5m2!1sru!2sru" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2560.3015790335253!2d14.42655947645609!3d50.08064027152398!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1695025304344!5m2!1sru!2sru"
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 @endsection

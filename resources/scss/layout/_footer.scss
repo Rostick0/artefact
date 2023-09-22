@@ -1,5 +1,5 @@
 .footer {
-    
+
 
     a {
         color: #9b9b9b;
@@ -53,10 +53,10 @@
     &__works {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 20px 15px;
 
         &_item {
             display: flex;
-            grid-gap: 20px 15px;
         }
     }
 
@@ -66,12 +66,13 @@
 
     @media (max-width: 1024px) {
         &__content {
+
             &_top,
             &_bottom {
                 grid-template-columns: 1fr;
             }
         }
-        
+
         &__contacts {
             row-gap: 20px;
         }

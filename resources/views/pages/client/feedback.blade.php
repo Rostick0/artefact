@@ -4,16 +4,23 @@
     <x-banner-nav title="Request form" :navigations="$navigations" />
     <div class="feedback">
         <div class="container">
-            <form class="feedback__form form-contact" enctype="multipart/form-data" action="{{ url()->current() }}"
+            <form class="feedback__form form-contact" enctype="multipart/form-data" action="{{ route('feedback.send') }}"
                 method="POST">
+                @csrf
                 <div class="form-contact__flex">
                     <label class="label">
                         <span class="label__title">Name</span>
-                        <input class="input" name="name" type="text">
+                        <input class="input" name="name" type="text" required>
+                        @error('name')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                     </label>
                     <label class="label">
                         <span class="label__title">Email</span>
-                        <input class="input" name="email" type="text">
+                        <input class="input" name="email" type="email" required>
+                        @error('email')
+                            <span class="error">{{ $message }}</span>
+                        @enderror
                     </label>
                 </div>
                 <div class="form-contact__flex">
@@ -39,7 +46,10 @@
                 </div>
                 <label class="label">
                     <span class="label__title">Message</span>
-                    <textarea class="input" name="message" rows="5"></textarea>
+                    <textarea class="input" name="message" rows="5" required></textarea>
+                    @error('message')
+                        <span class="error">{{ $message }}</span>
+                    @enderror
                 </label>
                 <br>
                 <label class="label">

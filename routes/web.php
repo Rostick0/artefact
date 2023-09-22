@@ -182,4 +182,4 @@ Route::get('/contacts', function () {
 });
 
 Route::get('/feedback', [FeedbackController::class, 'create']);
-Route::post('/feedback', [FeedbackController::class, 'send']);
+Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send');

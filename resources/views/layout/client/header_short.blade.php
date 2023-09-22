@@ -2,7 +2,9 @@
 
 <div class="header-short__top">
     <div class="container header-short__top_container">
-        <img class="header-short__logo" src="/assets/img/logo.jpg" alt="ARTEFACT">
+        <a class="header-short__img" href="/">
+            <img class="header-short__logo" src="/assets/img/logo.jpg" alt="ARTEFACT">
+        </a>
         <div class="header-short__info">
             <div class="header-short__info_icon">
                 <span class="fas fa-envelope"></span>

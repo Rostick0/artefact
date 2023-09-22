@@ -1,0 +1,16 @@
+.main-service-prices {
+    background-image: url('/public/assets/img/breadcrumb.jpg');
+    background-position: center;
+    background-size: cover;
+    color: #fff;
+    padding: 100px 0;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .services-list__item {
+        color: #fff;
+    }
+}
