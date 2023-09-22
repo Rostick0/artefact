@@ -28,5 +28,6 @@ class FeedbackController extends Controller
 
     public function send(SendFeedbackRequest $request)
     {
+        dd($request->all());
     }
 }

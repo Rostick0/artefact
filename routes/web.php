@@ -4,6 +4,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Client\FeedbackController;
+use App\Http\Controllers\Client\PortfolioController as ClientPortfolioController;
+use App\Http\Controllers\Client\ServiceController as ClientServiceController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +24,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('login', function () {
             return view('pages.admin.login');
         });
-        Route::post('login', [AuthController::class, 'login']);
+        Route::post('login', [AuthController::class, 'login'])->middleware('throttle:3,3');
 
         Route::get('main', function () {
             return view('pages.admin.index');
@@ -83,64 +85,11 @@ Route::get('/about', function () {
     ]);
 });
 
-Route::get('/portfolio', function () {
-    $navigations = [
-        [
-            'link' => '/',
-            'name' => 'Home',
-        ],
-        [
-            'is_active' => true,
-            'name' => 'My works',
-        ],
-    ];
+Route::get('/portfolio', [ClientPortfolioController::class, 'index']);
+Route::get('/portfolio/{id}', [ClientPortfolioController::class, 'show']);
 
-    return view('pages.client.portfolios', [
-        'navigations' => $navigations
-    ]);
-});
-
-Route::get('/portfolio/{id}', function () {
-    return view('pages.client.portfolio');
-});
-
-Route::get('/services', function () {
-    $navigations = [
-        [
-            'link' => '/',
-            'name' => 'Home',
-        ],
-        [
-            'is_active' => true,
-            'name' => 'Services and prices',
-        ],
-    ];
-
-    return view('pages.client.services', [
-        'navigations' => $navigations
-    ]);
-});
-
-Route::get('/service/{id}', function () {
-    $navigations = [
-        [
-            'link' => '/',
-            'name' => 'Home',
-        ],
-        [
-            'link' => '/services',
-            'name' => 'Services and prices',
-        ],
-        [
-            'is_active' => true,
-            'name' => 'Service',
-        ],
-    ];
-
-    return view('pages.client.service', [
-        'navigations' => $navigations
-    ]);
-});
+Route::get('/services', [ClientServiceController::class, 'index']);
+Route::get('/service/{id}', [ClientServiceController::class, 'show']);
 
 Route::get('/faq', function () {
     $navigations = [
@@ -158,7 +107,6 @@ Route::get('/faq', function () {
         'navigations' => $navigations
     ]);
 });
-
 
 Route::get('/panorams', function () {
     $navigations = [
@@ -182,4 +130,4 @@ Route::get('/contacts', function () {
 });
 
 Route::get('/feedback', [FeedbackController::class, 'create']);
-Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send');
+Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send')->middleware('throttle:3,10');
