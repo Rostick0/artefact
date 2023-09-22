@@ -77,3 +77,29 @@ function modal(imageUrl) {
         };
     })
 })();
+
+// 
+
+(function () {
+    const mainSliderTop = document.querySelector('.main-slider-top');
+
+    if (!mainSliderTop) return;
+
+    new Swiper(mainSliderTop, {
+        autoplay: {
+            delay: 1250
+        },
+        autoplay: true,
+        loop: true,
+        parallax: true,
+        speed: 1250,
+        effect: "fade",
+        paginationClickable: true,
+        slidesPerView: 1,
+        // pagination: {
+        //     el: '.swiper-pagination',
+        //     type: 'bullets',
+        //     clickable: true
+        // },
+    });
+})();

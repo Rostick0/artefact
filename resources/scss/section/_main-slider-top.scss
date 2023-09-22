@@ -1,0 +1,37 @@
+.main-slider-top {
+    &__slide {
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        color: #fff;
+        font-weight: 600;
+        width: 100%;
+        height: min(600px, 60vw);
+        
+
+        &_inner {
+            background-color: rgba(11, 11, 11, .3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__big-text {
+        font-size: 30px;
+    }
+
+    &__middle-text {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    &__btn {
+        margin-top: 60px;
+        padding: 20px 40px;
+    }
+}

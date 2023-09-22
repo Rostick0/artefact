@@ -2,7 +2,32 @@
 
 @section('content')
     <div class="main-banner">
-        <div class="main-banner__slider main-slider-top"></div>
+        <div class="main-banner__slider main-slider-top">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide main-slider-top__slide"
+                    style="background-image: url('/assets/img/3d-visualisation-slide.jpg')">
+                    <div class="main-slider-top__slide_inner">
+                        <div class="main-slider-top__big-text">
+                            3D <span class="text-ui">VISUALISATION</span>
+                        </div>
+                        <a class="btn main-slider-top__btn" href="/contacts">Get to know us</a>
+                    </div>
+                </div>
+                <div class="swiper-slide main-slider-top__slide"
+                    style="background-image: url('/assets/img/visualization-interior-slide.jpg')">
+                    <div class="main-slider-top__slide_inner">
+                        <div class="main-slider-top__middle-text">
+                            VISUALIZATION OF
+                            <br>
+                            EXTERIOR
+                            <br>
+                            AND <span class="text-ui">INTERIOR</span>
+                        </div>
+                        <a class="btn main-slider-top__btn" href="/contacts">CONTACT US</a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="main-banner__slider main-slider-bottom"></div>
     </div>
     <section class="main-info">
