@@ -29,7 +29,7 @@
                     us
                     now, and let's embark on a journey of creating stunning 3D visualizations for your success!</p>
             </div>
-            <img class="main-info__img" src="/assets/img/autumn.jpg" alt="">
+            <img class="main-info__img" decoding="async" loading="lazy" src="/assets/img/autumn.jpg" alt="">
             <div class="main-info__bottom">
                 <div class="main-info__bottom_left">
                     <div class="main-info__need">Do you need 3D visualization?</div>

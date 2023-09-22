@@ -16,7 +16,7 @@
                 </div>
                 <div class="portfolio__list">
                     <div class="portfolio__list_item portfolio-item">
-                        <img class="portfolio-item__img"
+                        <img class="portfolio-item__img" decoding="async" loading="lazy"
                             src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg"
                             alt="">
                         <button class="portfolio-item__plus">+</button>

@@ -3,7 +3,7 @@
 <div class="header-short__top">
     <div class="container header-short__top_container">
         <a class="header-short__img" href="/">
-            <img class="header-short__logo" src="/assets/img/logo.jpg" alt="ARTEFACT">
+            <img class="header-short__logo" decoding="async" loading="lazy" src="/assets/img/logo.jpg" alt="ARTEFACT">
         </a>
         <div class="header-short__info">
             <div class="header-short__info_icon">

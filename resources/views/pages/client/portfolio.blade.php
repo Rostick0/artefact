@@ -4,7 +4,7 @@
     {{-- <x-banner-nav> --}}
     <div class="portfolio-one">
         <div class="container">
-            <img class="portfolio-one__img"
+            <img class="portfolio-one__img" decoding="async" loading="lazy"
                 src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg" />
             <div class="portfolio-one__info">
                 <div class="portfolio-one__category">Exterior</div>

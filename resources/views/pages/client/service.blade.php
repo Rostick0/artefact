@@ -12,8 +12,9 @@
                 <div class="service__item service-item">
                     <div class="service-item__image">
                         <div class="service-item__image_inner">
-                            <img class="service-item__img"
-                                src="https://premiumwebsite.ru/portfolio/sites/default/files/Screenshot_154.jpg" alt="">
+                            <img class="service-item__img" decoding="async" loading="lazy"
+                                src="https://premiumwebsite.ru/portfolio/sites/default/files/Screenshot_154.jpg"
+                                alt="">
                         </div>
                     </div>
                     <div class="service-item__text">
@@ -41,7 +42,7 @@
                 happy
                 to provide you with a quote for your project.
             </div>
-            <img class="service__image"
+            <img class="service__image" decoding="async" loading="lazy"
                 src="https://premiumwebsite.ru/portfolio/sites/default/files/2023-07/Thanos-Infinity-Gauntlet-3D-model-for-3D-Printing-1.png"
                 alt="" />
         </div>

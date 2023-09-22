@@ -3,7 +3,8 @@
     <div class="container">
         <div class="header__container">
             <a class="header__image" href="/">
-                <img class="header__logo" src="/assets/img/logo.jpg" width="100" height="57" alt="ARTEFACT">
+                <img class="header__logo" src="/assets/img/logo.jpg" decoding="async" loading="lazy" width="100"
+                    height="57" alt="ARTEFACT">
             </a>
             <nav class="header__nav">
                 <a class="header__nav_item" href="/about">About us</a>

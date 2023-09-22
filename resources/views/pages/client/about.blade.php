@@ -7,7 +7,7 @@
                 <div class="about__figure">
                     Work from 2019 year
                 </div>
-                <img class="about__img" src="/assets/img/abot_first.jpg" alt="">
+                <img class="about__img" src="/assets/img/abot_first.jpg" decoding="async" loading="lazy" alt="">
             </div>
             <div class="about__right">
                 <div class="about__description">
