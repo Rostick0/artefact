@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\ServiceItem;
-use App\Http\Requests\StoreServiceItemRequest;
-use App\Http\Requests\UpdateServiceItemRequest;
+use App\Http\Controllers\Controller;
+use App\Models\ServicePrice;
+use App\Http\Requests\StoreServicePriceRequest;
+use App\Http\Requests\UpdateServicePriceRequest;
 
-class ServiceItemController extends Controller
+class ServicePriceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class ServiceItemController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreServiceItemRequest $request)
+    public function store(StoreServicePriceRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class ServiceItemController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(ServiceItem $serviceItem)
+    public function show(ServicePrice $servicePrice)
     {
         //
     }
@@ -43,7 +44,7 @@ class ServiceItemController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(ServiceItem $serviceItem)
+    public function edit(ServicePrice $servicePrice)
     {
         //
     }
@@ -51,7 +52,7 @@ class ServiceItemController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateServiceItemRequest $request, ServiceItem $serviceItem)
+    public function update(UpdateServicePriceRequest $request, ServicePrice $servicePrice)
     {
         //
     }
@@ -59,7 +60,7 @@ class ServiceItemController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(ServiceItem $serviceItem)
+    public function destroy(ServicePrice $servicePrice)
     {
         //
     }

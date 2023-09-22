@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PortfolioController;
-use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\Admin\PortfolioController;
+use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Client\FeedbackController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -180,19 +181,5 @@ Route::get('/contacts', function () {
     return view('pages.client.contacts');
 });
 
-Route::get('/feedback', function () {
-    $navigations = [
-        [
-            'link' => '/',
-            'name' => 'Home',
-        ],
-        [
-            'is_active' => true,
-            'name' => 'Request form',
-        ],
-    ];
-
-    return view('pages.client.feedback', [
-        'navigations' => $navigations
-    ]);
-});
+Route::get('/feedback', [FeedbackController::class, 'create']);
+Route::post('/feedback', [FeedbackController::class, 'send']);
