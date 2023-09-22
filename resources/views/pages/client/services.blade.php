@@ -5,7 +5,7 @@
     <div class="services">
         <div class="container">
             <div class="services__list">
-                <a class="services__item services-item" href="/services/1">
+                <a class="services__item services-item" href="/service/1">
                     <div class="services-item__title">INTERIOR VISUALIZATION</div>
                     <div class="services-item__image">
                         <img class="services-item__img"
