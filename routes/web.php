@@ -130,7 +130,20 @@ Route::get('/faq', function () {
 
 
 Route::get('/panorams', function () {
-    return view('pages.client.panorams');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'Panorams',
+        ],
+    ];
+
+    return view('pages.client.panorams', [
+        'navigations' => $navigations
+    ]);
 });
 
 Route::get('/contacts', function () {
