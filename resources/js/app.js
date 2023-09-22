@@ -29,3 +29,51 @@ import './bootstrap';
         }
     });
 })();
+
+function modal(imageUrl) {
+    const modal = document.querySelector('.modal');
+
+    if (!modal) return;
+
+    const modalImage = modal.querySelector('.modal__img');
+    modalImage.src = imageUrl;
+
+    function activeModal() {
+        if (modal.classList.contains('_active')) return;
+
+        modal.classList.add('_active');
+    }
+
+    function disactiveModal() {
+        if (!modal.classList.contains('_active')) return;
+
+        modal.classList.remove('_active');
+    }
+
+    const modalClose = modal.querySelector('.modal__close');
+
+    modal.onclick = function (e) {
+        if (e.target === this) disactiveModal();
+    };
+
+    modalClose.onclick = () => disactiveModal();
+
+    return {
+        activeModal
+    };
+}
+
+
+(function () {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    portfolioItems.forEach(item => {
+        const img = item?.querySelector('.portfolio-item__img');
+        const button = item?.querySelector('.portfolio-item__plus');
+
+        const { activeModal } = modal(img.src);
+        button.onclick = () => {
+            activeModal();
+        };
+    })
+})();

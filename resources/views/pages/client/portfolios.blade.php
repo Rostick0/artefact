@@ -19,11 +19,12 @@
                         <img class="portfolio-item__img"
                             src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg"
                             alt="">
-                        <div class="portfolio-item__plus">+</div>
+                        <button class="portfolio-item__plus">+</button>
                         <div class="portfolio-item__title">Коттедж</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <x-modal />
 @endsection
