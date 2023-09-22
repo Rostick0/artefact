@@ -104,11 +104,41 @@ Route::get('/portfolio/{id}', function () {
 });
 
 Route::get('/services', function () {
-    return view('pages.client.services');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'Services and prices',
+        ],
+    ];
+
+    return view('pages.client.services', [
+        'navigations' => $navigations
+    ]);
 });
 
 Route::get('/service/{id}', function () {
-    return view('pages.client.service');
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'link' => '/services',
+            'name' => 'Services and prices',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'Service',
+        ],
+    ];
+
+    return view('pages.client.service', [
+        'navigations' => $navigations
+    ]);
 });
 
 Route::get('/faq', function () {
