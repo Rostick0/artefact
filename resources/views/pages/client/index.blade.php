@@ -26,6 +26,7 @@
                         <a class="btn main-slider-top__btn" href="/contacts">CONTACT US</a>
                     </div>
                 </div>
+                <div class="swiper-pagination main-slider-top__pagination"></div>
             </div>
         </div>
         <div class="main-banner__slider main-slider-bottom"></div>

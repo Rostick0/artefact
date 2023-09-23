@@ -96,10 +96,10 @@ function modal(imageUrl) {
         effect: "fade",
         paginationClickable: true,
         slidesPerView: 1,
-        // pagination: {
-        //     el: '.swiper-pagination',
-        //     type: 'bullets',
-        //     clickable: true
-        // },
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
     });
 })();

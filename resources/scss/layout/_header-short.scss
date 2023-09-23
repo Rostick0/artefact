@@ -4,7 +4,8 @@
 
         &_container {
             display: flex;
-
+            column-gap: 140px;
+            margin-bottom: 20px;
         }
     }
 
@@ -52,8 +53,10 @@
     }
 
     &__bottom {
+        margin-bottom: -36px;
         position: sticky;
         top: 0;
+        z-index: 100;
 
         &_container {
             display: flex;
