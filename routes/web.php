@@ -19,16 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['middleware' => 'auth'], function () {
-    Route::group(['prefix' => 'admin'], function () {
-        Route::get('login', function () {
-            return view('pages.admin.login');
-        });
-        Route::post('login', [AuthController::class, 'login'])->middleware('throttle:3,3');
+Route::group(['prefix' => 'admin'], function () {
+    Route::get('login', function () {
+        return view('pages.admin.login');
+    })->name('login');
+    Route::post('login', [AuthController::class, 'login']);
 
+    // ->middleware('throttle:3,3')
+    Route::group(['middleware' => 'auth'], function () {
         Route::get('main', function () {
             return view('pages.admin.index');
-        })->name('admin.name');
+        })->name('admin.main');
         Route::group(['prefix' => 'service'], function () {
             Route::get('list', [ServiceController::class, 'index']);
             Route::get('create', [ServiceController::class, 'create']);
@@ -46,6 +47,8 @@ Route::group(['middleware' => 'auth'], function () {
         });
     });
 });
+
+
 
 Route::get('/', function () {
     return view('pages.client.index');

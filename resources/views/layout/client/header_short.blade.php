@@ -1,4 +1,4 @@
-@include('layout.client.head')
+@include('layout.head')
 
 <div class="header-short__top">
     <div class="container header-short__top_container">

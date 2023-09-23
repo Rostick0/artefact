@@ -38,9 +38,4 @@
         <div class="footer__copyright">© Copyright Artefact 2023. Все права защищены.</div>
     </div>
 </footer>
-<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-@vite(['resources/js/app.js'])
-</div>
-</body>
-
-</html>
+@include('layout.foot')

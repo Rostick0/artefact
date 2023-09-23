@@ -9,7 +9,7 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     public function login(LoginAuthRequest $request)
-    {
+    {   
         $credentials = $request->only(['email', 'password']);
 
         if (!Auth::attempt($credentials, true)) {
@@ -18,6 +18,7 @@ class AuthController extends Controller
             ]);
         }
 
-        return redirect()->route('admin.name');
+
+        return redirect()->route('admin.main');
     }
 }
