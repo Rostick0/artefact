@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->integer('type_id');
-            $table->string('type'); // portfolio | service
+            $table->string('type'); // portfolio | service | service_items
             $table->string('name');
             $table->string('path');
             $table->integer('width')->nullable();

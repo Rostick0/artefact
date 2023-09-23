@@ -1,0 +1,27 @@
+.admin-aside {
+    background-color: rgb(11, 11, 11);
+    color: #fff;
+    padding: 40px;
+    width: 100%;
+    max-width: 250px;
+
+    &__nav {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+
+        &_link {
+            color: #b8b8b8;
+            font-size: 15px;
+            transition: .3s;
+
+            &:hover {
+                color: #fff;
+            }
+
+            &._active {
+                color: #ecc311;
+            }
+        }
+    }
+}

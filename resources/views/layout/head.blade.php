@@ -13,7 +13,8 @@
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     @vite(['resources/scss/app.scss'])
-    <title>Laravel</title>
+    <title>@yield('seo_title', 'Title')</title>
+    <meta name="description" content="@yield('seo_description', 'Description')">
 </head>
 
 <body>

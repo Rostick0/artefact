@@ -36,14 +36,14 @@
             justify-content: center;
             padding: 15px;
             position: relative;
-            transition: 300ms;
+            transition: .3s;
             text-transform: uppercase;
 
             &::after {
                 background-color: #ecc311;
                 content: "";
                 display: inline-block;
-                transition: 300ms;
+                transition: .3s;
                 position: absolute;
                 bottom: 10px;
                 opacity: 0;
@@ -51,7 +51,8 @@
                 height: 2px;
             }
 
-            &:hover {
+            &:hover,
+            &._active {
                 color: #ecc311;
 
                 &.header__nav_item::after {

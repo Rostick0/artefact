@@ -23,11 +23,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('login', function () {
         return view('pages.admin.login');
     })->name('login');
-    Route::post('login', [AuthController::class, 'login']);
+    Route::post('login', [AuthController::class, 'login'])->middleware('throttle:3,3');
 
-    // ->middleware('throttle:3,3')
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('main', function () {
+    // 'middleware' => 'auth'
+    Route::group([], function () {
+        Route::get('', function () {
             return view('pages.admin.index');
         })->name('admin.main');
         Route::group(['prefix' => 'service'], function () {

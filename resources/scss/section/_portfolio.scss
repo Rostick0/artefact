@@ -13,13 +13,13 @@
             font-size: 18px;
             font-weight: 500;
             position: relative;
-            transition: 300ms;
+            transition: .3s;
 
             &::after {
                 background-color: #ecc311;
                 content: "";
                 display: inline-block;
-                transition: 300ms;
+                transition: .3s;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -101,7 +101,7 @@
             position: absolute;
             top: 50px;
             transform: translateY(-250%);
-            transition: 300ms;
+            transition: .3s;
             right: 50px;
             width: 72px;
             height: 72px;
@@ -116,7 +116,7 @@
             left: 50px;
             bottom: 50px;
             transform: translateY(250%);
-            transition: 300ms;
+            transition: .3s;
             z-index: 1;
         }
     }
