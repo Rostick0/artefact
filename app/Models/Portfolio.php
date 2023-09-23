@@ -18,10 +18,16 @@ class Portfolio extends Model
     protected $fillable = [
         'title',
         'description',
+        'category_id'
     ];
 
     public function image(): BelongsTo
     {
         return $this->belongsTo(Image::class, 'id', 'type_id')->where('type', 'portfolio');
+    }
+
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(Category::class, 'category_id', 'id');
     }
 }

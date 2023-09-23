@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Portfolio;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SendFeedbackRequest extends FormRequest
+class UpdatePortfolioRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return auth()->check() && auth()->user()->role === 'amdin';
     }
 
     /**
@@ -22,12 +22,8 @@ class SendFeedbackRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required',
-            'email' => 'required|email',
-            'question' => 'nullable|in:Order project,Get answer',
-            'service' => 'nullable|in:Interior,Exterior,Product rendering,Modelling,Animation',
-            'message' => 'required',
-            'file' => ''
+            'title' => 'required|string|max:255',
+            'description' => 'string|max:65536',
         ];
     }
 }

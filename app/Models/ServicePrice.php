@@ -16,7 +16,6 @@ class ServicePrice extends Model
      */
     protected $fillable = [
         'description',
-        'service_id',
         'price',
         'service_item_id',
     ];

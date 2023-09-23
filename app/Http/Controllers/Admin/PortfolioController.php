@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
-use App\Http\Requests\StorePortfolioRequest;
-use App\Http\Requests\UpdatePortfolioRequest;
+use App\Http\Requests\Portfolio\StorePortfolioRequest;
+use App\Http\Requests\Portfolio\UpdatePortfolioRequest;
 
 class PortfolioController extends Controller
 {
@@ -29,14 +29,6 @@ class PortfolioController extends Controller
     public function store(StorePortfolioRequest $request)
     {
         // return redirect()->route();
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(int $id)
-    {
-        //
     }
 
     /**

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\SendFeedbackRequest;
+use App\Http\Requests\Feedback\SendFeedbackRequest;
 use Illuminate\Http\Request;
 
 class FeedbackController extends Controller

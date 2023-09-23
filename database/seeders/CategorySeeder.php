@@ -14,7 +14,6 @@ class CategorySeeder extends Seeder
     public function run(): void
     {
         $categories = [
-            ['name' => 'All'],
             ['name' => 'Animation'],
             ['name' => 'Interior'],
             ['name' => 'Items'],
