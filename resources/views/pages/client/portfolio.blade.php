@@ -4,8 +4,7 @@
     <x-banner-nav :title="$portfolio->title" :navigations="$navigations" />
     <section class="portfolio-one">
         <div class="container">
-            <img class="portfolio-one__img" decoding="async" loading="lazy"
-                src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg" />
+            <img class="portfolio-one__img" decoding="async" loading="lazy" src="{{ Storage::url($portfolio->image->path) }}" alt="{{$portfolio->title}}" />
             <div class="portfolio-one__info">
                 <div class="portfolio-one__category">{{ $portfolio->category->name }}</div>
                 <div class="portfolio-one__date">{{ \Carbon\Carbon::parse($portfolio->created_at)->format('F d, Y') }}</div>

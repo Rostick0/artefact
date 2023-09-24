@@ -18,6 +18,12 @@ class ServiceSeeder extends Seeder
                 'service' => [
                     'title' => 'INTERIOR VISUALIZATION',
                 ],
+                'image' => [
+                    'name' => '3d-vizyalizacia-interyera-gostinoy_0.jpg',
+                    'path' => 'upload/image/3d-vizyalizacia-interyera-gostinoy_0.jpg',
+                    'width' => 1080,
+                    'height' => 810,
+                ],
                 'items' => [
                     [
                         'item' => [
@@ -169,6 +175,12 @@ class ServiceSeeder extends Seeder
                 'service' => [
                     'title' => 'EXTERIOR VISUALIZATION'
                 ],
+                'image' => [
+                    'name' => 'exterior_rendering_3dsmax_render_academy.jpg',
+                    'path' => 'upload/image/exterior_rendering_3dsmax_render_academy.jpg',
+                    'width' => 1500,
+                    'height' => 1000,
+                ],
                 'items' => [
                     [
                         'item' => [
@@ -269,6 +281,12 @@ class ServiceSeeder extends Seeder
                     'title' => 'PRODUCT RENDERING',
                     'description' => "Our product rendering service takes your product modelling to the next level by adding lighting, materials, and textures to create a stunning visualization that truly showcases your product"
                 ],
+                'image' => [
+                    'name' => 'Product-Renders-service-12.jpg',
+                    'path' => 'upload/image/Product-Renders-service-12.jpg',
+                    'width' => 1920,
+                    'height' => 1080,
+                ],
                 'items' => [
                     [
                         'item' => [
@@ -326,6 +344,12 @@ class ServiceSeeder extends Seeder
                     'title' => 'MODELLING',
                     'description' => "Our product modelling service is perfect for showcasing your product in a 3D environment. We'll create a realistic and engaging visualization that highlights the key features and benefits of your product."
                 ],
+                'image' => [
+                    'name' => 'Thanos-Infinity-Gauntlet-3D-model-for-3D-Printing-1.png',
+                    'path' => 'upload/image/Thanos-Infinity-Gauntlet-3D-model-for-3D-Printing-1.png',
+                    'width' => 784,
+                    'height' => 494,
+                ],
                 'items' => [
                     [
                         'item' => [
@@ -355,6 +379,12 @@ class ServiceSeeder extends Seeder
             [
                 'service' => [
                     'title' => 'ANIMATION'
+                ],
+                'image' => [
+                    'name' => '25c4bdd6-4e09-4b43-8736-9813c9d0e479.jpg',
+                    'path' => 'upload/image/25c4bdd6-4e09-4b43-8736-9813c9d0e479.jpg',
+                    'width' => 800,
+                    'height' => 450,
                 ],
                 'items' => [
                     [
@@ -397,11 +427,18 @@ class ServiceSeeder extends Seeder
 
         foreach ($data as $elem) {
             $service = Service::create($elem['service']);
+            $service->image()->create($elem['image']);
 
             if (empty($elem['items'])) continue;
 
             foreach ($elem['items'] as $item) {
                 $service_item = $service->items()->create($item['item']);
+                $service_item->image()->create([
+                    'name' => 'Screenshot_154.jpg',
+                    'path' => 'upload/image/Screenshot_154.jpg',
+                    'width' => 329,
+                    'height' => 349,
+                ]);
 
                 if (empty($item['prices'])) continue;
 

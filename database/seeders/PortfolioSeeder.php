@@ -20,7 +20,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 3,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_153.jpg',
                     'path' => 'upload/image/Screenshot_153.jpg',
                     'width' => 1080,
@@ -33,7 +32,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 6,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_4.jpg',
                     'path' => 'upload/image/Screenshot_4.jpg',
                     'width' => 1164,
@@ -46,7 +44,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 2,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_6.jpg',
                     'path' => 'upload/image/Screenshot_6.jpg',
                     'width' => 1165,
@@ -59,7 +56,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 3,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_3.jpg',
                     'path' => 'upload/image/Screenshot_3.jpg',
                     'width' => 873,
@@ -72,7 +68,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 3,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_7.jpg',
                     'path' => 'upload/image/Screenshot_7.jpg',
                     'width' => 1156,
@@ -85,7 +80,6 @@ class PortfolioSeeder extends Seeder
                     'category_id' => 2,
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_8.jpg',
                     'path' => 'upload/image/Screenshot_8.jpg',
                     'width' => 867,
@@ -99,7 +93,6 @@ class PortfolioSeeder extends Seeder
                     'description' => '<iframe class="panorams-item__iframe" allowfullscreen="" width="976" height="549" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://anastasiyaust.github.io/Bedroom-/" />'
                 ],
                 'image' => [
-                    
                     'name' => 'Screenshot_458.jpg',
                     'path' => 'upload/image/Screenshot_458.jpg',
                     'width' => 1209,
@@ -111,10 +104,7 @@ class PortfolioSeeder extends Seeder
         foreach ($data as $item) {
             $portfolio = Portfolio::create($item['portfolio']);
 
-            $portfolio->image()->create([
-                ...$item['image'],
-                // 'type_id' => $portfolio->id
-            ]);
+            $portfolio->image()->create($item['image']);
         }
     }
 }

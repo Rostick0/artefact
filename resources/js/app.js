@@ -30,17 +30,17 @@ import './bootstrap';
     });
 })();
 
-function modal(imageUrl) {
+function modal() {
     const modal = document.querySelector('.modal');
 
     if (!modal) return;
 
     const modalImage = modal.querySelector('.modal__img');
-    modalImage.src = imageUrl;
+    
 
-    function activeModal() {
+    function activeModal(imageUrl) {
         if (modal.classList.contains('_active')) return;
-
+        modalImage.src = imageUrl;
         modal.classList.add('_active');
     }
 
@@ -71,9 +71,9 @@ function modal(imageUrl) {
         const img = item?.querySelector('.portfolio-item__img');
         const button = item?.querySelector('.portfolio-item__plus');
 
-        const { activeModal } = modal(img.src);
+        const { activeModal } = modal();
         button.onclick = () => {
-            activeModal();
+            activeModal(img.src);
         };
     })
 })();

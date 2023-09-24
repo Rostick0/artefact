@@ -15,8 +15,7 @@
                     @foreach ($portfolios as $item)
                         <div class="portfolio__list_item portfolio-item" data-type="{{ $item->category_id }}">
                             <img class="portfolio-item__img" decoding="async" loading="lazy"
-                                src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg"
-                                alt="">
+                                src="{{ Storage::url($item->image->path) }}" alt="{{ $item?->title }}">
                             <button class="portfolio-item__plus">+</button>
                             <a class="portfolio-item__title" href="/portfolio/{{ $item->id }}">{{ $item->title }}</a>
                         </div>

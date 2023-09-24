@@ -25,11 +25,13 @@
                     <a href="/panorams">Panorams</a>
                 </div>
                 <div class="footer__works">
-                    <a class="footer__works_item" href="">
-                        <img class="footer__works_img" width="70" height="70" decoding="async" loading="lazy"
-                            src="https://premiumwebsite.ru/portfolio/sites/default/files/styles/70/public/portfolio-images/Screenshot_458.jpg?itok=9TcfBOPS"
-                            alt="" />
-                    </a>
+                    @foreach (\App\Models\Portfolio::orderByDesc('id')->limit(6)->get() as $item)
+                        <a class="footer__works_item" href="/portfolio/{{ $item->id }}">
+                            <img class="footer__works_img" width="70" height="70" decoding="async" loading="lazy"
+                                src="{{ Storage::url($item->image->path) }}"
+                                alt="{{ $item->title }}" />
+                        </a>
+                    @endforeach
                 </div>
             </div>
         </div>

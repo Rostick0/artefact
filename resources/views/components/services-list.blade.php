@@ -6,8 +6,7 @@
             <div class="services-list-item__title">{{ $item->title }}</div>
             <div class="services-list-item__image">
                 <img class="services-list-item__img" decoding="async" loading="lazy"
-                    src="https://premiumwebsite.ru/portfolio/sites/default/files/styles/small/public/2023-07/Product-Renders-service-12.jpg?itok=4OgDc5IJ"
-                    alt="">
+                    src="{{ Storage::url($item->image->path) }}" alt="{{ $item->title }}">
             </div>
         </a>
     @endforeach

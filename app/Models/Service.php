@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
 
 class Service extends Model
 {
@@ -26,8 +27,8 @@ class Service extends Model
         return $this->hasMany(ServiceItem::class, 'service_id', 'id');
     }
 
-    public function image(): BelongsTo
+    public function image(): MorphOne
     {
-        return $this->belongsTo(Image::class, 'id', 'type_id')->where('type', 'service');
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

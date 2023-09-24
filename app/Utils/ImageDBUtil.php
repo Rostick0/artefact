@@ -3,45 +3,41 @@
 namespace App\Utils;
 
 use App\Models\Image;
+use Illuminate\Database\Eloquent\Model;
 
 class ImageDBUtil
 {
-    public static function create($image, int $type_id, string $type)
+    public static function create($image, Model $model)
     {
         $path = ImageUtil::upload($image);
 
         [$width, $height] = getimagesize($image);
 
-        $insert = Image::create([
+        $image = $model->image()->create([
             'name' => $image->getClientOriginalName(),
             'path' => $path,
-            'type' => $type,
-            'type_id' => $type_id,
             'width' => $width,
             'height' => $height,
         ]);
 
-        return $insert->id;
+        return $image;
     }
 
-    public static function uploadImage($images, int $type_id, string $type)
+    public static function createImages($images, Model $model)
     {
         foreach ($images as $image) {
-            ImageDBUtil::create($image, $type_id, $type);
+            ImageDBUtil::create($image, $model);
         }
     }
 
-    public static function deleteImage(array $images_delete_ids, int $id, string $type)
+    public static function deleteImage(array $images_delete_ids, Model $model)
     {
-        $images = collect(Image::whereIn('id', $images_delete_ids)->where([
-            ['type_id', '=', $id],
-            ['type', '=', $type]
-        ])->get());
+        $images = $model->image()->whereIn('id', $images_delete_ids)->get();
 
         $images->each(function ($item) {
             ImageUtil::delete($item->path);
 
-            Image::destroy($item->id);
+            // Image::destroy($item->id);
         });
     }
 }
