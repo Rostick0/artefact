@@ -46,9 +46,14 @@
     }
 
     &-item {
+        display: none;
         padding-top: 120%;
         position: relative;
         overflow: hidden;
+
+        &._active {
+            display: block;
+        }
 
         &::after {
             background-color: #ecc311;

@@ -1,4 +1,5 @@
 import './bootstrap';
+import { classAdd, classRemove } from './util';
 
 (function () {
     const visualizationSlider = document.querySelector('.visualization__slider');
@@ -36,7 +37,7 @@ function modal() {
     if (!modal) return;
 
     const modalImage = modal.querySelector('.modal__img');
-    
+
 
     function activeModal(imageUrl) {
         if (modal.classList.contains('_active')) return;
@@ -101,5 +102,30 @@ function modal() {
             type: 'bullets',
             clickable: true
         },
+    });
+})();
+
+(function () {
+    const portfolioFilterItems = document.querySelectorAll('.portfolio__filter_item');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+    portfolioFilterItems.forEach(item => {
+        item.onclick = () => {
+            console.log(item.getAttribute('data-id'));
+            document.querySelectorAll('.portfolio__filter_item._active').forEach(item => classRemove(item, '_active'));
+            document.querySelectorAll('.portfolio-item._active').forEach(item => classRemove(item, '_active'));
+
+            classAdd(item, '_active');
+            portfolioItems.forEach(elem => {
+                if (item.getAttribute('data-id') == '0') {
+                    classAdd(elem, '_active');
+                    return;
+                }
+
+                if (item.getAttribute('data-id') != elem.getAttribute('data-id')) return;
+
+                classAdd(elem, '_active')
+            });
+        }
     });
 })();

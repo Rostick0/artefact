@@ -6,14 +6,14 @@
         <div class="container">
             <div class="portfolio__container">
                 <div class="portfolio__filter">
-                    <div class="portfolio__filter_item _active">All</div>
+                    <div class="portfolio__filter_item _active" data-id="0">All</div>
                     @foreach ($categories as $item)
-                        <div class="portfolio__filter_item">{{ $item->name }}</div>
+                        <div class="portfolio__filter_item" data-id="{{ $item->id }}">{{ $item->name }}</div>
                     @endforeach
                 </div>
                 <div class="portfolio__list">
                     @foreach ($portfolios as $item)
-                        <div class="portfolio__list_item portfolio-item" data-type="{{ $item->category_id }}">
+                        <div class="portfolio__list_item portfolio-item _active" data-id="{{ $item->category_id }}">
                             <img class="portfolio-item__img" decoding="async" loading="lazy"
                                 src="{{ Storage::url($item->image->path) }}" alt="{{ $item?->title }}">
                             <button class="portfolio-item__plus">+</button>

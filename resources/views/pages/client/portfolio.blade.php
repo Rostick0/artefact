@@ -11,7 +11,7 @@
             </div>
             <h1 class="portfolio-one__title">{{ $portfolio->title }}</h1>
             @if ($portfolio->description)
-                <div class="portfolio-one__description">{{ $portfolio->description }}</div>
+                <div class="portfolio-one__description">{!! $portfolio->description !!}</div>
             @endif
         </div>
     </section>
