@@ -11,7 +11,7 @@ class IndexController extends Controller
 {
     public function index(): View
     {
-        $services = Service::limit(6);
+        $services = Service::limit(6)->get();
 
         return view('pages.client.index', [
             'services' => $services

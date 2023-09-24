@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphOne;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Portfolio extends Model
 {
@@ -21,9 +23,9 @@ class Portfolio extends Model
         'category_id'
     ];
 
-    public function image(): BelongsTo
+    public function image(): MorphOne
     {
-        return $this->belongsTo(Image::class, 'id', 'type_id')->where('type', 'portfolio');
+        return $this->morphOne(Image::class, 'imageable');
     }
 
     public function category(): BelongsTo

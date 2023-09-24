@@ -7,21 +7,20 @@
             <div class="portfolio__container">
                 <div class="portfolio__filter">
                     <div class="portfolio__filter_item _active">All</div>
-                    <div class="portfolio__filter_item">Animation</div>
-                    <div class="portfolio__filter_item">Interior</div>
-                    <div class="portfolio__filter_item">Items</div>
-                    <div class="portfolio__filter_item">Modelling</div>
-                    <div class="portfolio__filter_item">Panorams</div>
-                    <div class="portfolio__filter_item">Exterior</div>
+                    @foreach ($categories as $item)
+                        <div class="portfolio__filter_item">{{ $item->name }}</div>
+                    @endforeach
                 </div>
                 <div class="portfolio__list">
-                    <div class="portfolio__list_item portfolio-item">
-                        <img class="portfolio-item__img" decoding="async" loading="lazy"
-                            src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg"
-                            alt="">
-                        <button class="portfolio-item__plus">+</button>
-                        <div class="portfolio-item__title">Коттедж</div>
-                    </div>
+                    @foreach ($portfolios as $item)
+                        <div class="portfolio__list_item portfolio-item" data-type="{{ $item->category_id }}">
+                            <img class="portfolio-item__img" decoding="async" loading="lazy"
+                                src="https://premiumwebsite.ru/portfolio/sites/default/files/portfolio-images/Screenshot_4.jpg"
+                                alt="">
+                            <button class="portfolio-item__plus">+</button>
+                            <a class="portfolio-item__title" href="/portfolio/{{ $item->id }}">{{ $item->title }}</a>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

@@ -71,7 +71,7 @@
     <section class="main-service-prices">
         <div class="container">
             <h2 class="title main-service-prices__title">Services and prices</h2>
-            <x-services-list />
+            <x-services-list :services="[...$services]" />
         </div>
     </section>
 @endsection

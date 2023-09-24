@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
-            $table->integer('type_id');
-            $table->string('type'); // portfolio | service | service_item
+            $table->morphs('imageable'); // portfolio | service | service_item
             $table->string('name');
             $table->string('path');
             $table->integer('width')->nullable();

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 
 class Image extends Model
 {
@@ -15,11 +16,16 @@ class Image extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'type_id',
-        'type',
+        'imageable_id',
+        'imageable_type',
         'name',
         'path',
         'width',
         'height',
     ];
+
+    public function imageable(): MorphTo
+    {
+        return $this->morphTo();
+    }
 }

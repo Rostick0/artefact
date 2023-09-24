@@ -266,7 +266,8 @@ class ServiceSeeder extends Seeder
             ],
             [
                 'service' => [
-                    'title' => 'PRODUCT RENDERING'
+                    'title' => 'PRODUCT RENDERING',
+                    'description' => "Our product rendering service takes your product modelling to the next level by adding lighting, materials, and textures to create a stunning visualization that truly showcases your product"
                 ],
                 'items' => [
                     [
@@ -323,6 +324,7 @@ class ServiceSeeder extends Seeder
             [
                 'service' => [
                     'title' => 'MODELLING',
+                    'description' => "Our product modelling service is perfect for showcasing your product in a 3D environment. We'll create a realistic and engaging visualization that highlights the key features and benefits of your product."
                 ],
                 'items' => [
                     [

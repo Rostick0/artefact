@@ -5,11 +5,17 @@
         margin-bottom: 40px;
     }
 
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 60px;
+    }
+
     &__description {
         margin-bottom: 16px;
 
         &_bottom {
-            margin: 52px 0;
+            margin: 64px 0;
         }
     }
 
