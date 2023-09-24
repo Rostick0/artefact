@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Client\FeedbackController;
+use App\Http\Controllers\Client\IndexController as ClientIndexController;
 use App\Http\Controllers\Client\PortfolioController as ClientPortfolioController;
 use App\Http\Controllers\Client\ServiceController as ClientServiceController;
 use Illuminate\Support\Facades\Route;
@@ -48,11 +49,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
 });
 
-
-
-Route::get('/', function () {
-    return view('pages.client.index');
-});
+Route::get('/', [ClientIndexController::class, 'index']);
 
 Route::get('/about', function () {
     $visualization_slides = [

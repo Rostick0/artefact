@@ -11,7 +11,7 @@ class PortfolioController extends Controller
 {
     public function index(): View
     {
-        // $portfolios = Portfolio::all();
+        $portfolios = Portfolio::all();
 
         $navigations = [
             [
@@ -25,7 +25,7 @@ class PortfolioController extends Controller
         ];
 
         return view('pages.client.portfolios', [
-            // 'portfolios' => $portfolios,
+            'portfolios' => $portfolios,
             'navigations' => $navigations
         ]);
     }

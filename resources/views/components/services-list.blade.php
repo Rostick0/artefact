@@ -1,3 +1,5 @@
+@props(['services'])
+
 <div class="services-list">
     <a class="services-list__item services-list-item" href="/service/1">
         <div class="services-list-item__title">INTERIOR VISUALIZATION</div>

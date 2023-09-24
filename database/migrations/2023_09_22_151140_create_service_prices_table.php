@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('description');
             $table->float('price');
+            $table->boolean('is_from')->default(0);
             $table->foreignId('service_item_id')->references('id')->on('service_items')->onDelete('cascade');
             $table->timestamps();
         });
