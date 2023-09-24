@@ -24,6 +24,7 @@ class StorePortfolioRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'string|max:65536',
+            'image' => 'image|mimes:png,jpg,jpeg,gif,svg',
         ];
     }
 }

@@ -24,6 +24,7 @@ class UpdatePortfolioRequest extends FormRequest
         return [
             'title' => 'required|string|max:255',
             'description' => 'string|max:65536',
+            'image' => 'nullable|image|mimes:png,jpg,jpeg,gif,svg',
         ];
     }
 }

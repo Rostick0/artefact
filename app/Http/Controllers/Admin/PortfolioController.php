@@ -6,13 +6,15 @@ use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
 use App\Http\Requests\Portfolio\StorePortfolioRequest;
 use App\Http\Requests\Portfolio\UpdatePortfolioRequest;
+use App\Utils\ImageDBUtil;
+use Illuminate\Contracts\View\View;
 
 class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
         return view('pages.admin.portfolios');
     }
@@ -20,7 +22,7 @@ class PortfolioController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('pages.admin.portfolio_create');
     }
@@ -28,15 +30,21 @@ class PortfolioController extends Controller
 
     public function store(StorePortfolioRequest $request)
     {
-        // return redirect()->route();
+        $values = $request->only(['title', 'description']);
+
+        $portfolio = Portfolio::create($values);
+
+        ImageDBUtil::create($request->file('image'), $portfolio);
+
+        return redirect('/admin/portfolio/edit/' . $portfolio->id);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(int $id)
+    public function edit(int $id): View
     {
-        $portfolio= Portfolio::findOrFail($id);
+        $portfolio = Portfolio::findOrFail($id);
 
         return view('pages.admin.portfolio', [
             'portfolio' => $portfolio
@@ -48,7 +56,15 @@ class PortfolioController extends Controller
      */
     public function update(UpdatePortfolioRequest $request, int $id)
     {
-        //
+        $portfolio = Portfolio::findOrFail($id);
+
+        $values = $request->only(['title', 'description']);
+
+        $portfolio->update($values);
+
+        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $portfolio);
+
+        return back();
     }
 
     /**
@@ -58,6 +74,6 @@ class PortfolioController extends Controller
     {
         Portfolio::destroy($id);
 
-        return back();
+        return redirect('/admin/portfolio/list');;
     }
 }
