@@ -1,5 +1,5 @@
 import './bootstrap';
-import { classAdd, classRemove } from './util';
+import { classAdd, classRemove, observerOnce } from './util';
 
 (function () {
     const visualizationSlider = document.querySelector('.visualization__slider');
@@ -129,3 +129,49 @@ function modal() {
         }
     });
 })();
+
+function animateCounter(elem, {
+    duration = 3000,
+    startValue = 0,
+    endValue = 500,
+    startTime = null,
+}) {
+    function animate(currentTime) {
+        if (!startTime) startTime = currentTime;
+
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
+        const value = Math.round(startValue + (endValue - startValue) * progress);
+
+        elem.textContent = value;
+
+        if (progress < 1) requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+};
+
+(function () {
+    function statItemsStartAnim() {
+        const statItems = document.querySelectorAll('.stat-item__count');
+
+        statItems.forEach(item => {
+            animateCounter(item, {
+                endValue: +(item.textContent.trim())
+            })
+        });
+    }
+
+    observerOnce(document.querySelector('.stat__list'), statItemsStartAnim);
+})();
+
+(function () {
+    const needVisualizationContainer = document.querySelector('.need-visualization__container');
+    observerOnce(document.querySelector('.need-visualization'), () => classAdd(needVisualizationContainer, '_visible'));
+})();
+
+(function () {
+    const aboutBtn = document.querySelector('.about__btn');
+    observerOnce(document.querySelector('.about__description'), () => classAdd(aboutBtn, '_visible'));
+})();
+

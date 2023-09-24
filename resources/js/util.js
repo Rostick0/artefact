@@ -9,3 +9,15 @@ export function classAdd(elem, className) {
 
     elem.classList.add(className);
 }
+
+export function observerOnce(elem, func) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            func();
+            observer.unobserve(elem);
+        });
+    });
+    observer.observe(elem);
+}
