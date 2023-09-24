@@ -74,6 +74,6 @@ class PortfolioController extends Controller
     {
         Portfolio::destroy($id);
 
-        return redirect('/admin/portfolio/list');;
+        return redirect('/admin/portfolio/list');
     }
 }

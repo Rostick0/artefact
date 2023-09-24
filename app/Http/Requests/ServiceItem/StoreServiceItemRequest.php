@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\ServiceItem;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateServiceItemRequest extends FormRequest
+class StoreServiceItemRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check() && auth()->user()->role === 'amdin';
     }
 
     /**
