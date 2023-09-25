@@ -152,6 +152,9 @@ function animateCounter(elem, {
 };
 
 (function () {
+    const statList = document.querySelector('.stat__list');
+    if (!statList) return;
+
     function statItemsStartAnim() {
         const statItems = document.querySelectorAll('.stat-item__count');
 
@@ -162,16 +165,20 @@ function animateCounter(elem, {
         });
     }
 
-    observerOnce(document.querySelector('.stat__list'), statItemsStartAnim);
+    observerOnce(statList, statItemsStartAnim);
 })();
 
 (function () {
     const needVisualizationContainer = document.querySelector('.need-visualization__container');
+    if (!needVisualizationContainer) return;
+
     observerOnce(document.querySelector('.need-visualization'), () => classAdd(needVisualizationContainer, '_visible'));
 })();
 
 (function () {
     const aboutBtn = document.querySelector('.about__btn');
+    if (!aboutBtn) return;
+
     observerOnce(document.querySelector('.about__description'), () => classAdd(aboutBtn, '_visible'));
 })();
 

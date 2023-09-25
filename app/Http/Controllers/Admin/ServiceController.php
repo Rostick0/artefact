@@ -8,15 +8,24 @@ use App\Http\Requests\Service\StoreServiceRequest;
 use App\Http\Requests\Service\UpdateServiceRequest;
 use App\Utils\ImageDBUtil;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        return view('pages.admin.services');
+        $services = Service::with([]);
+
+        if ($request->title) $services->where('title', 'LIKE', '%' . $request->title . '%');
+
+        $services = $services->paginate(18);
+
+        return view('pages.admin.services', [
+            'services' => $services
+        ]);
     }
 
     /**

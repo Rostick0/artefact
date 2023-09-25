@@ -9,15 +9,21 @@ use App\Http\Requests\Portfolio\UpdatePortfolioRequest;
 use App\Models\Category;
 use App\Utils\ImageDBUtil;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index(Request $request): View
     {
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::with([]);
+
+        if ($request->title) $portfolios->where('title', 'LIKE', '%' . $request->title . '%');
+        if ($request->category_id) $portfolios->where('category_id', '=', $request->category_id);
+
+        $portfolios = $portfolios->paginate(18);
         $categories = Category::all();
 
         return view('pages.admin.portfolios', [
