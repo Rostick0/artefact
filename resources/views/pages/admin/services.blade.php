@@ -10,7 +10,7 @@
         </div>
         <button class="btn admin-filter__btn">Поиск</button>
     </form>
-    <a class="btn" href="/admin/portfolio/create">+ Создать</a>
+    <a class="btn" href="/admin/service/create">+ Создать</a>
     <div class="admin-items">
         @foreach ($services as $service)
             <a class="admin-item" href="/admin/service/edit/{{ $service->id }}">
