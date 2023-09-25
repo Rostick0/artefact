@@ -19,6 +19,6 @@ class AuthController extends Controller
         }
 
 
-        return redirect()->route('admin.main');
+        return redirect('/admin/service/list');
     }
 }

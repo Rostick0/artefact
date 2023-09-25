@@ -29,7 +29,23 @@
                 <div class="swiper-pagination main-slider-top__pagination"></div>
             </div>
         </div>
-        <div class="main-banner__slider main-slider-bottom"></div>
+        <div class="container">
+            <div class="main-banner__slider main-slider-bottom">
+                <div class="swiper-wrapper">
+                    @foreach ($portfolios as $portfolio)
+                        <div class="swiper-slide">
+                            <div class="portfolio__list_item portfolio-item _active">
+                                <img class="portfolio-item__img" decoding="async" loading="lazy"
+                                    src="{{ Storage::url($portfolio->image->path) }}" alt="{{ $portfolio?->title }}">
+                                <button class="portfolio-item__plus">+</button>
+                                <a class="portfolio-item__title"
+                                    href="/portfolio/{{ $portfolio->id }}">{{ $portfolio->title }}</a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div> 
+        </div>
     </div>
     <section class="main-info">
         <div class="container">
@@ -74,4 +90,5 @@
             <x-services-list :services="[...$services]" />
         </div>
     </section>
+    <x-modal />
 @endsection

@@ -1,36 +1,6 @@
 import './bootstrap';
 import { classAdd, classRemove, observerOnce } from './util';
 
-(function () {
-    const visualizationSlider = document.querySelector('.visualization__slider');
-
-    if (!visualizationSlider) return;
-
-    new Swiper(visualizationSlider, {
-        autoplay: {
-            delay: 1250
-        },
-        speed: 1250,
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 3,
-            },
-            1200: {
-                slidesPerView: 4,
-            }
-        }
-    });
-})();
-
 function modal() {
     const modal = document.querySelector('.modal');
 
@@ -64,7 +34,6 @@ function modal() {
     };
 }
 
-
 (function () {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -79,7 +48,61 @@ function modal() {
     })
 })();
 
-// 
+(function () {
+    const visualizationSlider = document.querySelector('.visualization__slider');
+
+    if (!visualizationSlider) return;
+
+    new Swiper(visualizationSlider, {
+        autoplay: {
+            delay: 1250
+        },
+        speed: 1250,
+        slidesPerView: 1,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4,
+            }
+        }
+    });
+})();
+
+(function () {
+    const mainSliderBottom = document.querySelector('.main-slider-bottom');
+
+    if (!mainSliderBottom) return;
+
+    new Swiper(mainSliderBottom, {
+        speed: 1250,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            },
+            1200: {
+                slidesPerView: 4,
+            },
+            1201: {
+                slidesPerView: 5,
+            }
+        }
+    });
+})();
 
 (function () {
     const mainSliderTop = document.querySelector('.main-slider-top');
@@ -111,7 +134,6 @@ function modal() {
 
     portfolioFilterItems.forEach(item => {
         item.onclick = () => {
-            console.log(item.getAttribute('data-id'));
             document.querySelectorAll('.portfolio__filter_item._active').forEach(item => classRemove(item, '_active'));
             document.querySelectorAll('.portfolio-item._active').forEach(item => classRemove(item, '_active'));
 
