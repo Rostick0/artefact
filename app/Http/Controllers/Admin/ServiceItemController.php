@@ -39,6 +39,8 @@ class ServiceItemController extends Controller
             'service_id' => $service_id
         ]);
 
+        if ($request->prices) ServicePriceController::create($request->prices, $service_item);
+
         ImageDBUtil::create($request->file('image'), $service_item);
 
         return redirect('/admin/service-item/edit/' . $service_item->id);
@@ -74,6 +76,9 @@ class ServiceItemController extends Controller
         $values = $request->only(['title', 'description']);
 
         $service_item->update($values);
+
+        if ($request->prices) ServicePriceController::create($request->prices, $service_item);
+        if ($request->prices_delete) ServicePriceController::destroy($request->prices_delete, $service_item);
 
         if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
 
