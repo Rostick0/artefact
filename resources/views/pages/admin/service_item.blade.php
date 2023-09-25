@@ -7,7 +7,8 @@
             @csrf
             <label class="label">
                 <span class="label__title">Название</span>
-                <input class="input" type="text" name="title" value="{{ $service_item->title ?? old('title') }}" required />
+                <input class="input" type="text" name="title" value="{{ $service_item->title ?? old('title') }}"
+                    required />
                 @error('title')
                     <span class="error">{{ $message }}</span>
                 @enderror
@@ -35,17 +36,20 @@
     <br>
     <div class="admin-items">
         <div class="admin-items__top">
-            <h2>Виды данной услуги</h2>
-            <a class="btn" href="/admin/service-item/create/{{ $service_item->id }}">+ Создать</a>
+            <h2>Цены и описание</h2>
+            <a class="btn" href="/admin/service-price/create/{{ $service_item->id }}">+ Создать</a>
         </div>
-        <div class="admin-items__list">
-            @dd($service_item->prices)
+        <div class="admin-items-prices__list">
+            <div class="admin-items-prices__titles">
+                <div class="admin-items-prices__title">Описание</div>
+                <div class="admin-items-prices__title">Цена</div>
+                <div class="admin-items-prices__title">Цена от?</div>
+            </div>
             @foreach ($service_item->prices as $service)
-                <a class="admin-item" href="/admin/service-item/edit/{{ $service->id }}">
-                    <div class="admin-item__title">{{ $service->title }}</div>
-                    <div class="admin-item__image">
-                        <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
-                    </div>
+                <a class="admin-items-prices__item" href="/admin/service-price/edit/{{ $service->id }}">
+                    <div class="admin-items-prices__value">{{ $service->description }}</div>
+                    <div class="admin-items-prices__value">{{ $service->price }}</div>
+                    <div class="admin-items-prices__value">{{ $service->is_from ? 'да' : 'нет' }}</div>
                 </a>
             @endforeach
         </div>

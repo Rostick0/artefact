@@ -22,8 +22,8 @@ class UpdateServicePriceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'description' => 'requred|string',
-            'price' => 'requred',
+            'description' => 'required|string',
+            'price' => 'required',
             'is_from' => '',
         ];
     }

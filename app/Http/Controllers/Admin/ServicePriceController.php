@@ -21,6 +21,7 @@ class ServicePriceController extends Controller
     {
         $service_price = ServicePrice::create([
             ...$request->validated(),
+            'is_from' => $request->has('is_from') ? 1 : 0,
             'service_item_id' => $service_item_id
         ]);
 
@@ -40,7 +41,10 @@ class ServicePriceController extends Controller
     {
         $service_price = ServicePrice::findOrFail($id);
 
-        $service_price->update($request);
+        $service_price->update([
+            ...$request->validated(),
+            'is_from' => $request->has('is_from') ? 1 : 0
+        ]);
 
         return back();
     }

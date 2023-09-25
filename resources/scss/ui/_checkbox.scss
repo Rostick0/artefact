@@ -1,0 +1,20 @@
+.checkbox {
+    display: flex;
+    column-gap: 10px;
+
+    &__input:checked + &__icon {
+        background-color: #ecc311;
+        color: #fff;
+    }
+
+    &__icon {
+        border: 1px solid #ecc311;
+        color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        width: 20px;
+        height: 20px;
+    }
+}

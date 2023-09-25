@@ -22,7 +22,9 @@ class StoreServiceItemRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string|max:65536',
+            'image' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
         ];
     }
 }
