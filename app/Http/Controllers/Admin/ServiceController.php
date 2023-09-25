@@ -36,7 +36,7 @@ class ServiceController extends Controller
 
         $service = Service::create($values);
 
-        ImageDBUtil::create($request->file('image'), $service);
+        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service);
 
         return redirect('/admin/service/edit/' . $service->id);
     }

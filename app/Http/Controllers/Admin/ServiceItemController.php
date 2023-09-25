@@ -41,7 +41,7 @@ class ServiceItemController extends Controller
 
         if ($request->prices) ServicePriceController::store($request->prices, $service_item);
 
-        ImageDBUtil::create($request->file('image'), $service_item);
+        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
 
         return redirect('/admin/service-item/edit/' . $service_item->id);
     }

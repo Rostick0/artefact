@@ -23,7 +23,7 @@ class StoreServiceRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'description' => 'string|max:65536',
+            'description' => 'nullable|string|max:65536',
         ];
     }
 }

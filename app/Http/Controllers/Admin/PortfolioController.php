@@ -45,7 +45,7 @@ class PortfolioController extends Controller
 
         $portfolio = Portfolio::create($values);
 
-        ImageDBUtil::create($request->file('image'), $portfolio);
+        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $portfolio);
 
         return redirect('/admin/portfolio/edit/' . $portfolio->id);
     }
@@ -56,9 +56,11 @@ class PortfolioController extends Controller
     public function edit(int $id): View
     {
         $portfolio = Portfolio::findOrFail($id);
+        $categories = Category::all();
 
         return view('pages.admin.portfolio', [
-            'portfolio' => $portfolio
+            'portfolio' => $portfolio,
+            'categories' => $categories,
         ]);
     }
 
