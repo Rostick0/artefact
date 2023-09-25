@@ -66,4 +66,23 @@
     &__contact {
         font-size: 12px;
     }
+
+    @media (max-width: 992px) {
+        &__container {
+            justify-content: initial;
+        }
+
+        &__image {
+            margin-right: 0;
+        }
+
+        .header-burger {
+            margin-left: auto;
+            margin-right: 20px;
+        }
+
+        &__nav {
+            display: none;
+        }
+    }
 }

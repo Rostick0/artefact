@@ -59,4 +59,16 @@
             }
         }
     }
+
+    @media (max-width: 992px) {
+        padding: 20px;
+
+        &__title {
+            margin-bottom: 30px;
+        }
+
+        &__slider_pagination {
+            margin-top: 10px;
+        }
+    }
 }

@@ -12,7 +12,7 @@
                     @endif
                 @endforeach
             </nav>
-            <div class="title banner-nav__title">{{ $title }}</div>
+            <div class="title-banner banner-nav__title">{{ $title }}</div>
         </div>
     </div>
 </div>

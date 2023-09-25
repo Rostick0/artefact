@@ -3,6 +3,7 @@
 
     &__filter {
         display: flex;
+        flex-wrap: wrap;
         grid-gap: 20px;
         justify-content: center;
         margin-bottom: 30px;
@@ -124,6 +125,36 @@
             transform: translateY(250%);
             transition: .3s;
             z-index: 1;
+        }
+    }
+
+    @media (max-width: 992px) {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 578px) {
+        &__list {
+            grid-template-columns: 1fr;
+
+            &_item {
+                padding-top: 80%;
+            }
+        }
+
+        &-item {
+            &__plus {
+                top: 30px;
+                right: 30px;
+                width: 64px;
+                height: 64px;
+            }
+
+            &__title {
+                left: 30px;
+                bottom: 30px;
+            }
         }
     }
 }

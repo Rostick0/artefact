@@ -88,7 +88,7 @@ function modal() {
         slidesPerView: 1,
         spaceBetween: 30,
         breakpoints: {
-            320: {
+            480: {
                 slidesPerView: 2,
             },
             992: {
@@ -150,6 +150,27 @@ function modal() {
             });
         }
     });
+})();
+
+(function () {
+    const headerMobile = document.querySelector('.header-mobile');
+    const headerBurger = document.querySelector('.header-burger');
+    const headerMobileClose = document.querySelector('.header-mobile__close');
+
+    headerBurger.onclick = () => {
+        headerMobile.classList.toggle('_active');
+        headerBurger.classList.toggle('_active');
+    }
+
+    function disactive(e) {
+        if (e.target != this) return;
+
+        classRemove(headerMobile, '_active');
+        classRemove(headerBurger, '_active');
+    }
+
+    headerMobileClose.onclick = disactive;
+    headerMobile.onclick = disactive;
 })();
 
 function animateCounter(elem, {

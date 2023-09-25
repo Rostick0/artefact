@@ -48,4 +48,30 @@
             font-weight: 700;
         } 
     }
+
+    @media (max-width: 992px) {
+        padding: 60px 0;
+
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__right {
+            padding-top: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        padding: 40px 0;
+
+        &__list {
+            grid-gap: 10px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+    }
 }
