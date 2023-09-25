@@ -1,1 +1,9 @@
 @import './layout/';
+@import './ui/';
+
+.admin-main {
+    &__content {
+        flex-grow: 1;
+        padding: 40px;
+    }
+}

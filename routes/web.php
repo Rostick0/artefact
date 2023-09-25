@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'service'], function () {
             Route::get('list', [ServiceController::class, 'index']);
             Route::get('create', [ServiceController::class, 'create']);
+            Route::post('create', [ServiceController::class, 'store']);
             Route::get('edit/{id}', [ServiceController::class, 'edit']);
             Route::post('edit/{id}', [ServiceController::class, 'update']);
             Route::delete('delete/{id}', [ServiceController::class, 'destroy']);
@@ -42,6 +43,7 @@ Route::group(['prefix' => 'admin'], function () {
 
         Route::group(['prefix' => 'service-item'], function () {
             Route::get('create/{service_id}', [ServiceItemController::class, 'create']);
+            Route::post('create/{service_id}', [ServiceItemController::class, 'store']);
             Route::get('edit/{id}', [ServiceItemController::class, 'edit']);
             Route::post('edit/{id}', [ServiceItemController::class, 'update']);
             Route::delete('delete/{id}', [ServiceItemController::class, 'destroy']);
@@ -50,6 +52,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::group(['prefix' => 'portfolio'], function () {
             Route::get('list', [PortfolioController::class, 'index']);
             Route::get('create', [PortfolioController::class, 'create']);
+            Route::post('create', [PortfolioController::class, 'store']);
             Route::get('edit/{id}', [PortfolioController::class, 'edit']);
             Route::post('edit/{id}', [PortfolioController::class, 'update']);
             Route::delete('delete/{id}', [PortfolioController::class, 'destroy']);

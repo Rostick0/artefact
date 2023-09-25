@@ -1,0 +1,25 @@
+.admin-form-editor {
+    &__title {
+        margin-bottom: 40px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 12px;
+    }
+
+    &__flex {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 12px;
+
+        &>* {
+            flex-grow: 1;
+        }
+    }
+
+    &__btn {
+        justify-content: center;
+    }
+}

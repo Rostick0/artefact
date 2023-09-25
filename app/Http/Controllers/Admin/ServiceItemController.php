@@ -22,7 +22,7 @@ class ServiceItemController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create(int $service_id): View
     {
         return view('pages.admin.service_item_create');
     }
@@ -39,7 +39,7 @@ class ServiceItemController extends Controller
             'service_id' => $service_id
         ]);
 
-        if ($request->prices) ServicePriceController::create($request->prices, $service_item);
+        if ($request->prices) ServicePriceController::store($request->prices, $service_item);
 
         ImageDBUtil::create($request->file('image'), $service_item);
 

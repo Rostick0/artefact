@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Portfolio;
 use App\Http\Requests\Portfolio\StorePortfolioRequest;
 use App\Http\Requests\Portfolio\UpdatePortfolioRequest;
+use App\Models\Category;
 use App\Utils\ImageDBUtil;
 use Illuminate\Contracts\View\View;
 
@@ -16,7 +17,13 @@ class PortfolioController extends Controller
      */
     public function index(): View
     {
-        return view('pages.admin.portfolios');
+        $portfolios = Portfolio::all();
+        $categories = Category::all();
+
+        return view('pages.admin.portfolios', [
+            'portfolios' => $portfolios,
+            'categories' => $categories,
+        ]);
     }
 
     /**
@@ -24,13 +31,17 @@ class PortfolioController extends Controller
      */
     public function create(): View
     {
-        return view('pages.admin.portfolio_create');
+        $categories = Category::all();
+
+        return view('pages.admin.portfolio_create', [
+            'categories' => $categories,
+        ]);
     }
 
 
     public function store(StorePortfolioRequest $request)
     {
-        $values = $request->only(['title', 'description']);
+        $values = $request->only(['title', 'description', 'category_id']);
 
         $portfolio = Portfolio::create($values);
 
@@ -58,7 +69,7 @@ class PortfolioController extends Controller
     {
         $portfolio = Portfolio::findOrFail($id);
 
-        $values = $request->only(['title', 'description']);
+        $values = $request->only(['title', 'description', 'category_id']);
 
         $portfolio->update($values);
 

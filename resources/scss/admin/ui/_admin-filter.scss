@@ -1,0 +1,17 @@
+.admin-filter {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 24px;
+
+    &__inputs {
+        display: flex;
+        flex-wrap: wrap;
+        grid-gap: 16px;
+        width: 100%;
+    }
+
+    &__label {
+        flex-basis: 30%;
+        flex-grow: 1;
+    }
+}
