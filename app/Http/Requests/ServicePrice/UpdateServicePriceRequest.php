@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\ServicePrice;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreServicePriceRequest extends FormRequest
+class UpdateServicePriceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return false;
+        return auth()->check() && auth()->user()->role === 'amdin';
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreServicePriceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'description' => 'requred|string',
+            'price' => 'requred',
+            'is_from' => '',
         ];
     }
 }

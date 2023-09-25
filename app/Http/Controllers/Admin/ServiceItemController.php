@@ -77,7 +77,7 @@ class ServiceItemController extends Controller
 
         $service_item->update($values);
 
-        if ($request->prices) ServicePriceController::create($request->prices, $service_item);
+        if ($request->prices) ServicePriceController::store($request->prices, $service_item);
         if ($request->prices_delete) ServicePriceController::destroy($request->prices_delete, $service_item);
 
         if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
