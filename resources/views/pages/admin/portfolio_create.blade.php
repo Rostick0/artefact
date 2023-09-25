@@ -8,14 +8,14 @@
             <div class="admin-form-editor__flex">
                 <label class="label">
                     <span class="label__title">Название</span>
-                    <input class="input" type="text" name="title" />
+                    <input class="input" type="text" name="title" required/>
                     @error('title')
                         <span class="error">{{ $message }}</span>
                     @enderror
                 </label>
                 <label class="label">
                     <span class="label__title">Категория</span>
-                    <select class="input" name="category_id">
+                    <select class="input" name="category_id" required>
                         @foreach ($categories as $item)
                             <option value="{{ $item->id }}">{{ $item->name }}</option>
                         @endforeach
