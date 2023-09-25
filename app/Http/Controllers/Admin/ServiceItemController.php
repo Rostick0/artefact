@@ -12,14 +12,6 @@ use Illuminate\Contracts\View\View;
 class ServiceItemController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
      * Show the form for creating a new resource.
      */
     public function create(int $service_id): View
@@ -39,20 +31,11 @@ class ServiceItemController extends Controller
             'service_id' => $service_id
         ]);
 
-        if ($request->prices) ServicePriceController::store($request->prices, $service_item);
-
         if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
 
         return redirect('/admin/service-item/edit/' . $service_item->id);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(ServiceItem $serviceItem)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
@@ -76,9 +59,6 @@ class ServiceItemController extends Controller
         $values = $request->only(['title', 'description']);
 
         $service_item->update($values);
-
-        if ($request->prices) ServicePriceController::store($request->prices, $service_item);
-        if ($request->prices_delete) ServicePriceController::destroy($request->prices_delete, $service_item);
 
         if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
 

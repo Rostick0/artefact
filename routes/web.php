@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
+use App\Http\Controllers\Admin\ServicePriceController;
 use App\Http\Controllers\Client\FeedbackController;
 use App\Http\Controllers\Client\IndexController as ClientIndexController;
 use App\Http\Controllers\Client\PortfolioController as ClientPortfolioController;
@@ -47,6 +48,14 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('edit/{id}', [ServiceItemController::class, 'edit']);
             Route::post('edit/{id}', [ServiceItemController::class, 'update']);
             Route::delete('delete/{id}', [ServiceItemController::class, 'destroy']);
+        });
+
+        Route::group(['prefix' => 'service-price'], function () {
+            Route::get('create/{service_item_id}', [ServicePriceController::class, 'create']);
+            Route::post('create/{service_item_id}', [ServicePriceController::class, 'store']);
+            Route::get('edit/{id}', [ServicePriceController::class, 'edit']);
+            Route::post('edit/{id}', [ServicePriceController::class, 'update']);
+            Route::delete('delete/{id}', [ServicePriceController::class, 'destroy']);
         });
 
         Route::group(['prefix' => 'portfolio'], function () {

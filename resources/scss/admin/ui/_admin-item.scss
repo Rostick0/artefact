@@ -7,13 +7,6 @@
         }
     }
 
-    &s {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 30px;
-        margin-top: 30px;
-    }
-
     &__title {
         transition: .3s;
         margin-bottom: 8px;

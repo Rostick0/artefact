@@ -22,14 +22,16 @@
     </form>
     <a class="btn" href="/admin/portfolio/create">+ Создать</a>
     <div class="admin-items">
-        @foreach ($portfolios as $portfolio)
-            <a class="admin-item" href="/admin/portfolio/edit/{{ $portfolio->id }}">
-                <div class="admin-item__title">{{ $portfolio->title }}</div>
-                <div class="admin-item__image">
-                    <img class="admin-item__img" src="{{ Storage::url($portfolio->image->path) }}" alt="">
-                </div>
-            </a>
-        @endforeach
+        <div class="admin-items__list">
+            @foreach ($portfolios as $portfolio)
+                <a class="admin-item" href="/admin/portfolio/edit/{{ $portfolio->id }}">
+                    <div class="admin-item__title">{{ $portfolio->title }}</div>
+                    <div class="admin-item__image">
+                        <img class="admin-item__img" src="{{ Storage::url($portfolio->image->path) }}" alt="">
+                    </div>
+                </a>
+            @endforeach
+        </div>
     </div>
     {{ $portfolios->appends(Request::all())->links('vendor.pagination') }}
 @endsection

@@ -32,4 +32,21 @@
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
     </div>
+    <br>
+    <div class="admin-items">
+        <div class="admin-items__top">
+            <h2>Виды данной услуги</h2>
+            <a class="btn" href="/admin/service-item/create/{{ $service->id }}">+ Создать</a>
+        </div>
+        <div class="admin-items__list">
+            @foreach ($service->items as $service)
+                <a class="admin-item" href="/admin/service-item/edit/{{ $service->id }}">
+                    <div class="admin-item__title">{{ $service->title }}</div>
+                    <div class="admin-item__image">
+                        <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </div>
 @endsection

@@ -12,14 +12,16 @@
     </form>
     <a class="btn" href="/admin/service/create">+ Создать</a>
     <div class="admin-items">
-        @foreach ($services as $service)
-            <a class="admin-item" href="/admin/service/edit/{{ $service->id }}">
-                <div class="admin-item__title">{{ $service->title }}</div>
-                <div class="admin-item__image">
-                    <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
-                </div>
-            </a>
-        @endforeach
+        <div class="admin-items__list">
+            @foreach ($services as $service)
+                <a class="admin-item" href="/admin/service/edit/{{ $service->id }}">
+                    <div class="admin-item__title">{{ $service->title }}</div>
+                    <div class="admin-item__image">
+                        <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
+                    </div>
+                </a>
+            @endforeach
+        </div>
     </div>
     {{ $services->appends(Request::all())->links('vendor.pagination') }}
 @endsection

@@ -1,0 +1,15 @@
+.admin-items {
+    margin-top: 30px;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 30px;
+    }
+}
