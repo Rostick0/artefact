@@ -21,4 +21,5 @@
             </a>
         @endforeach
     </div>
+    {{ $services->appends(Request::all())->links('vendor.pagination') }}
 @endsection

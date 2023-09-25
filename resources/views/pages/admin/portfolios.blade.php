@@ -31,4 +31,5 @@
             </a>
         @endforeach
     </div>
+    {{ $portfolios->appends(Request::all())->links('vendor.pagination') }}
 @endsection
