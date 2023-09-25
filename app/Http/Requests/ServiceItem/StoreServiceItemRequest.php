@@ -11,7 +11,7 @@ class StoreServiceItemRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check() && auth()->user()->role === 'amdin';
+        return auth()->check() && auth()->user()->role === 'admin';
     }
 
     /**
