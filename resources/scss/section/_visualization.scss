@@ -30,6 +30,12 @@
             .visualization-slide__inner {
                 background-color: #ecc311;
                 color: white;
+
+                svg {
+                    g {
+                        fill: #fff;
+                    }
+                }
             }
         }
 
@@ -44,6 +50,12 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 35px;
+        }
+
+        svg {
+            g {
+                transition: .3s;
+            }
         }
     }
 

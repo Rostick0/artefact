@@ -59,7 +59,7 @@
                         <a class="visualization__slide visualization-slide swiper-slide" href="{{ $item?->link }}">
                             <div class="visualization-slide__inner">
                                 <div class="visualization-slide__title">{{ $item?->title }}</div>
-                                <div class="visualization-slide__content">{{ $item?->content }}</div>
+                                {!! $item?->icon !!}
                             </div>
                         </a>
                     @endforeach
@@ -84,7 +84,7 @@
                 <li class="stat__item stat-item">
                     <div class="stat-item__icon">
                         <div class="stat-item__icon_inner">
-                            <span class="icon mn-icon-925"></span>
+                            <i class="fa fa-cart-plus"></i>
                         </div>
                     </div>
                     <div class="stat-item__text">
@@ -95,7 +95,7 @@
                 <li class="stat__item stat-item">
                     <div class="stat-item__icon">
                         <div class="stat-item__icon_inner">
-                            <span class="icon gv-icon-392"></span>
+                            <i class="fa fa-users"></i>
                         </div>
                     </div>
                     <div class="stat-item__text">
@@ -106,7 +106,7 @@
                 <li class="stat__item stat-item">
                     <div class="stat-item__icon">
                         <div class="stat-item__icon_inner">
-                            <span class="icon gv-icon-880"></span>
+                            <i class="fa fa-cubes"></i>
                         </div>
                     </div>
                     <div class="stat-item__text">
@@ -117,7 +117,7 @@
                 <li class="stat__item stat-item">
                     <div class="stat-item__icon">
                         <div class="stat-item__icon_inner">
-                            <span class="icon gv-icon-1110"></span>
+                            <i class="fa fa-cogs"></i>
                         </div>
                     </div>
                     <div class="stat-item__text">
