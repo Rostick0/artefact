@@ -10,7 +10,7 @@
                 <div class="panorams-item__view">
                     <iframe class="panorams-item__iframe" allowfullscreen="" width="976" height="549" style="border:0;"
                         loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        src="https://anastasiyaust.github.io/Bedroom-/" />
+                        src="https://anastasiyaust.github.io/Bedroom-/"></iframe>
                 </div>
             </div>
         </div>
