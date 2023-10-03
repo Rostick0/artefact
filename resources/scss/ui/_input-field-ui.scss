@@ -1,0 +1,13 @@
+.input-field-ui {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+
+    &__input {
+        border: 1px solid #ecc311;
+        text-align: center;
+        padding: 10px;
+        width: 100%;
+        max-width: 80px;
+    }
+}

@@ -1,0 +1,32 @@
+.radio {
+    display: flex;
+    column-gap: 10px;
+
+    &__input:checked+&__icon {
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &__icon {
+        border: 1px solid #ecc311;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .3s;
+        width: 20px;
+        height: 20px;
+
+        &::before {
+            background-color: #ecc311;
+            border-radius: 50%;
+            content: "";
+            display: flex;
+            transition: .3s;
+            opacity: 0;
+            width: 10px;
+            height: 10px;
+        }
+    }
+}

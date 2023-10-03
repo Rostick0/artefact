@@ -7,7 +7,7 @@
                 <div class="swiper-slide main-slider-top__slide"
                     style="background-image: url('/assets/img/3d-visualisation-slide.jpg')">
                     <div class="main-slider-top__slide_inner">
-                        <div class="main-slider-top__big-text">
+                        <div class="main-slider-top__middle-text">
                             3D <span class="text-ui">VISUALISATION</span>
                         </div>
                         <a class="btn main-slider-top__btn" href="/contacts">Get to know us</a>
@@ -44,7 +44,7 @@
                         </div>
                     @endforeach
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
     <section class="main-info">
@@ -81,6 +81,94 @@
                     <a class="btn" href="/contacts">Contact us</a>
                     <a class="btn" href="/portfolio">Portfolio</a>
                 </div>
+            </div>
+        </div>
+    </section>
+    <section class="calculator">
+        <div class="container">
+            <div class="calculator__container">
+                <div class="calculator__switch">
+                    <label class="calculator__switch_item">
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" checked value="EXTERIOR_VISUALIZATION" hidden>
+                        <span class="calculator__switch_name">Exterior visualization</span>
+                    </label>
+                    <label class="calculator__switch_item">
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="INTERIOR_VISUALIZATION" hidden>
+                        <span class="calculator__switch_name">Interior visualization</span>
+                    </label>
+                    <label class="calculator__switch_item">
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="PRODUCT_RENDERING" hidden>
+                        <span class="calculator__switch_name">Product rendering</span>
+                    </label>
+                    <label class="calculator__switch_item">
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="ANIMATION" hidden>
+                        <span class="calculator__switch_name">Animation</span>
+                    </label>
+                </div>
+                <div class="calculator__grid">
+                    <div class="calculator__grid_item calculator-grid-item">
+                        <div class="calculator-grid-item__count">1</div>
+                        <div class="calculator-grid-item__question">What to count?</div>
+                        <div class="calculator-grid-item__radios">
+                            <label class="radio calculator__radio">
+                                <input class="radio__input" type="radio" name="key" value="1" checked hidden>
+                                <div class="radio__icon"></div>
+                                <span class="radio__title">Residential rendering</span>
+                            </label>
+                            <label class="radio calculator__radio">
+                                <input class="radio__input" type="radio" name="key" value="2" hidden>
+                                <div class="radio__icon"></div>
+                                <span class="radio__title">Medium-large exterior rendering</span>
+                            </label>
+                            <label class="radio calculator__radio">
+                                <input class="radio__input" type="radio" name="key" value="3" hidden>
+                                <div class="radio__icon"></div>
+                                <span class="radio__title">Aerial rendering</span>
+                            </label>
+                            <label class="radio calculator__radio">
+                                <input class="radio__input" type="radio" name="key" value="0" hidden>
+                                <div class="radio__icon"></div>
+                                <span class="radio__title">3D plan</span>
+                            </label>
+                            <label class="radio calculator__radio">
+                                <input class="radio__input" type="radio" name="key" value="0" hidden>
+                                <div class="radio__icon"></div>
+                                <span class="radio__title">3D 360" rotation</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculator__grid_item calculator-grid-item">
+                        <div class="calculator-grid-item__count">2</div>
+                        <div class="calculator-grid-item__question">What do you have?</div>
+                        <div class="calculator-grid-item__checkboxs">
+                            <label class="checkbox calculator__checkbox">
+                                <input class="checkbox__input" type="checkbox" name="" hidden>
+                                <span class="checkbox__icon">✓</span>
+                                <span class="checkbox__title">completely finished 3d scene</span>
+                            </label>
+                            <label class="checkbox calculator__checkbox">
+                                <input class="checkbox__input" type="checkbox" name="" hidden>
+                                <span class="checkbox__icon">✓</span>
+                                <span class="checkbox__title">3d model of building</span>
+                            </label>
+                            <label class="checkbox calculator__checkbox">
+                                <input class="checkbox__input" type="checkbox" name="" hidden>
+                                <span class="checkbox__icon">✓</span>
+                                <span class="checkbox__title">CAD - files or draw</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="calculator__grid_item calculator-grid-item">
+                        <div class="calculator-grid-item__count">3</div>
+                        <div class="calculator-grid-item__question">Specify the parameters</div>
+                        <label class="input-field-ui">
+                            <span class="input-field-ui__title">Total area (m<sup>2</sup>)</span>
+                            <input class="calculator-grid-item__input input-field-ui__input" type="number">
+                        </label>
+                    </div>
+                </div>
+                <div class="calculator__total">Total: <strong class="calculator__amount">1</strong></div>
+                <div class="calculator__bottom text-ui">*The cost calculation is approximate, the final cost depends on the initial data of the project.</div>
             </div>
         </div>
     </section>
