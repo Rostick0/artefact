@@ -64,4 +64,51 @@
     &__amount {
         font-size: 24px;
     }
+
+    @media (max-width: 992px) {
+        &__switch {
+            &_name {
+                font-size: 18px;
+            }
+        }
+
+        &__total {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        &__amount {
+            font-size: 18px;
+        }
+
+        &__bottom {
+            font-size: 14px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__switch {
+            grid-gap: 4px;
+
+            &_name {
+                font-size: 16px;
+                padding: 3px;
+            }
+        }
+
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    @media (max-width: 600px) {
+        &__switch {
+            flex-wrap: wrap;
+        }
+    }
+
+    @media (max-width: 480px) {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+    }
 }
