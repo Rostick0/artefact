@@ -3,38 +3,42 @@
 @section('content')
     <div class="container">
         <section class="about">
-            <div class="about__left">
-                <div class="about__figure">
-                    Work from 2019 year
-                </div>
-                <img class="about__img" src="/assets/img/abot_first.jpg" decoding="async" loading="lazy" alt="">
+            <div class="about__description">
+                <p class="about__description_p">Welcome to the realm of 3D visualization! We are an art, technology, and
+                    creativity-driven team
+                    offering
+                    you a captivating perspective on your projects. While our main office is located in the beautiful
+                    city
+                    of Prague, our experts hail from around the globe, allowing us to infuse diversity and innovation
+                    into
+                    every endeavor.</p>
+                <p class="about__description_p">We take immense pride in the exceptional quality of our work, leaving a
+                    lasting impression with every
+                    visualization. Our renderings are not just visually striking, but also precise representations of
+                    your
+                    ideas.</p>
+                <p class="about__description_p">We continually refine our skills, mastering the latest technologies and
+                    engaging in advanced courses
+                    to
+                    stay ahead. If you are seeking a reliable partner to bring your projects to life, you've found us!
+                    We
+                    are always open to new opportunities and collaborations. Let's transform your ideas into reality
+                    together. Get in touch with us now, and let's embark on a journey of creating stunning 3D
+                    visualizations
+                    for your success!</p>
             </div>
-            <div class="about__right">
-                <div class="about__description">
-                    <p class="about__description_p">Welcome to the realm of 3D visualization! We are an art, technology, and
-                        creativity-driven team
-                        offering
-                        you a captivating perspective on your projects. While our main office is located in the beautiful
-                        city
-                        of Prague, our experts hail from around the globe, allowing us to infuse diversity and innovation
-                        into
-                        every endeavor.</p>
-                    <p class="about__description_p">We take immense pride in the exceptional quality of our work, leaving a
-                        lasting impression with every
-                        visualization. Our renderings are not just visually striking, but also precise representations of
-                        your
-                        ideas.</p>
-                    <p class="about__description_p">We continually refine our skills, mastering the latest technologies and
-                        engaging in advanced courses
-                        to
-                        stay ahead. If you are seeking a reliable partner to bring your projects to life, you've found us!
-                        We
-                        are always open to new opportunities and collaborations. Let's transform your ideas into reality
-                        together. Get in touch with us now, and let's embark on a journey of creating stunning 3D
-                        visualizations
-                        for your success!</p>
+            <a class="btn about__btn" href="">Order a 3D project </a>
+            <div class="about__images">
+                <div class="about__image _figure">
+                    <div class="about__figure">Work from 2019 year</div>
+                    <img class="about__img" src="/assets/img/abot_first.jpg" decoding="async" loading="lazy" alt="">
                 </div>
-                <a class="btn about__btn" href="">Order a 3D project </a>
+                <div class="about__image">
+                    <img class="about__img" src="/assets/img/Screenshot_7.jpg" decoding="async" loading="lazy" alt="">
+                </div>
+                <div class="about__image">
+                    <img class="about__img" src="/assets/img/Screenshot_8.jpg" decoding="async" loading="lazy" alt="">
+                </div>
             </div>
         </section>
         <section class="visualization">
