@@ -163,11 +163,11 @@
                         <div class="calculator-grid-item__question">Specify the parameters</div>
                         <label class="input-field-ui">
                             <span class="input-field-ui__title">Total area (m<sup>2</sup>)</span>
-                            <input class="calculator-grid-item__input input-field-ui__input" type="number">
+                            <input class="calculator-grid-item__input input-field-ui__input" type="number" value="1">
                         </label>
                     </div>
                 </div>
-                <div class="calculator__total">Total: <strong class="calculator__amount">1</strong></div>
+                <div class="calculator__total">Total: <strong class="calculator__amount">...</strong></div>
                 <div class="calculator__bottom text-ui">*The cost calculation is approximate, the final cost depends on the initial data of the project.</div>
             </div>
         </div>

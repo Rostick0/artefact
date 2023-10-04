@@ -63,29 +63,33 @@ function modal() {
 
     if (!visualizationSlider) return;
 
-    new Swiper(visualizationSlider, {
-        autoplay: {
-            delay: 1250
-        },
-        speed: 1250,
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        },
-        breakpoints: {
-            768: {
-                slidesPerView: 2,
+    try {
+        new Swiper(visualizationSlider, {
+            autoplay: {
+                delay: 1250
             },
-            992: {
-                slidesPerView: 3,
+            speed: 1250,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
             },
-            1200: {
-                slidesPerView: 4,
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                }
             }
-        }
-    });
+        });
+    } catch {
+
+    }
 })();
 
 (function () {
@@ -93,25 +97,29 @@ function modal() {
 
     if (!mainSliderBottom) return;
 
-    new Swiper(mainSliderBottom, {
-        speed: 1250,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        breakpoints: {
-            480: {
-                slidesPerView: 2,
-            },
-            992: {
-                slidesPerView: 3,
-            },
-            1200: {
-                slidesPerView: 4,
-            },
-            1201: {
-                slidesPerView: 5,
+    try {
+        new Swiper(mainSliderBottom, {
+            speed: 1250,
+            slidesPerView: 1,
+            spaceBetween: 30,
+            breakpoints: {
+                480: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                },
+                1200: {
+                    slidesPerView: 4,
+                },
+                1201: {
+                    slidesPerView: 5,
+                }
             }
-        }
-    });
+        });
+    } catch {
+
+    }
 })();
 
 (function () {
@@ -119,23 +127,27 @@ function modal() {
 
     if (!mainSliderTop) return;
 
-    new Swiper(mainSliderTop, {
-        autoplay: {
-            delay: 1250
-        },
-        autoplay: true,
-        loop: true,
-        parallax: true,
-        speed: 1250,
-        effect: "fade",
-        paginationClickable: true,
-        slidesPerView: 1,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true
-        },
-    });
+    try {
+        new Swiper(mainSliderTop, {
+            autoplay: {
+                delay: 1250
+            },
+            autoplay: true,
+            loop: true,
+            parallax: true,
+            speed: 1250,
+            effect: "fade",
+            paginationClickable: true,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true
+            },
+        });
+    } catch {
+
+    }
 })();
 
 (function () {
@@ -236,12 +248,13 @@ function animateCounter(elem, {
 })();
 
 (function () {
-    const calculatorRadio = document.querySelectorAll('.calculator__radio');
-    const calculatorCheckbox = document.querySelectorAll('.calculator__checkbox');
+    const calculatorSwitchItems = document.querySelectorAll('.calculator__switch_item');
+    const calculatorAmount = document.querySelector('.calculator__amount');
+
+    if (!calculatorSwitchItems || !calculatorAmount) return;
 
     function calculator(name, key, power, x) {
         if (x < 1) x = 1;
-        console.log(name, key, power);
 
         const formuls = [
             {
@@ -523,7 +536,7 @@ function animateCounter(elem, {
             {
                 name: 'ANIMATION',
                 key: 12,
-                power: 3,
+                power: 1,
                 calc: (x) => 300 + (150 * x)
             },
             {
@@ -538,7 +551,7 @@ function animateCounter(elem, {
             return elem.name == name && elem.key == key && elem.power == power
         });
 
-        if (!find) return;
+        if (!find) return 'Calculated individually';
 
         return find.calc(x);
     }
@@ -547,8 +560,12 @@ function animateCounter(elem, {
     const [key, setKey] = useState(1);
     const [count, setCount] = useState(0);
 
-    const calculatorSwitchItems = document.querySelectorAll('.calculator__switch_item');
-    const calculatorAmount = document.querySelector('.calculator__amount');
+    const updateCalculatorAmount = (value = null) => {
+        let amountText = value ?? +(document.querySelector('.calculator-grid-item__input')?.value);
+        if (isNaN(amountText)) return calculatorAmount.textContent = '...';
+
+        calculatorAmount.textContent = calculator(calculatorSwitch(), key(), count(), amountText);
+    };
 
     calculatorSwitchItems.forEach(elem => {
         elem.onclick = e => setCalculatorSwitch(e.target.value);
@@ -557,31 +574,224 @@ function animateCounter(elem, {
     const calculatorGridItemInput = document.querySelector('.calculator-grid-item__input');
 
     calculatorGridItemInput.oninput = e => {
-        calculatorAmount.textContent = calculator(calculatorSwitch(), key(), count(), e.target.value);
+        const value = e.target.value > 1 ? e.target.value : 1;
+
+        e.target.value = value.toString().replaceAll(/[^0-9]/g, '');
+        updateCalculatorAmount(value);
     };
 
     const initInputs = () => {
-        const calculatorGridItemRadios = document.querySelectorAll('.calculator-grid-item__radios');
+        const calculatorGridItemRadios = document.querySelectorAll('.calculator__radio');
 
-        calculatorGridItemRadios.forEach(elem => {
+        setKey(
+            +(calculatorGridItemRadios[0].querySelector('.radio__input').value)
+        );
+
+        calculatorGridItemRadios?.forEach(elem => {
             elem.onclick = e => {
                 setKey(e.target.value);
+                updateCalculatorAmount();
             }
         });
 
-        const calculatorGridItemCheckboxs = document.querySelectorAll('.calculator-grid-item__checkboxs');
+        const calculatorGridItemCheckboxs = document.querySelectorAll('.calculator__checkbox');
 
-        calculatorGridItemCheckboxs.forEach(elem => {
-            elem.onclick = e => {
-                const count = [...document.querySelectorAll('.calculator__checkbox .checkbox__input:checked')]?.length;
-                setCount(count);
-
-                console.log(calculator(calculatorSwitch(), key(), count, 1));
+        calculatorGridItemCheckboxs?.forEach(elem => {
+            elem.onclick = () => {
+                setCount(
+                    [...document.querySelectorAll('.calculator__checkbox .checkbox__input:checked')]?.length
+                );
+                updateCalculatorAmount();
             }
         });
+
+        updateCalculatorAmount();
     };
 
+    const updateCalcForm = (value) => {
+        const edit = {
+            EXTERIOR_VISUALIZATION: {
+                radions: `<div class="calculator-grid-item__radios">
+                    <label class="radio calculator__radio">
+                        <input class="radio__input" type="radio" name="key" value="1" checked hidden>
+                        <div class="radio__icon"></div>
+                        <span class="radio__title">Residential rendering</span>
+                    </label>
+                    <label class="radio calculator__radio">
+                        <input class="radio__input" type="radio" name="key" value="2" hidden>
+                        <div class="radio__icon"></div>
+                        <span class="radio__title">Medium-large exterior rendering</span>
+                    </label>
+                    <label class="radio calculator__radio">
+                        <input class="radio__input" type="radio" name="key" value="3" hidden>
+                        <div class="radio__icon"></div>
+                        <span class="radio__title">Aerial rendering</span>
+                    </label>
+                    <label class="radio calculator__radio">
+                        <input class="radio__input" type="radio" name="key" value="0" hidden>
+                        <div class="radio__icon"></div>
+                        <span class="radio__title">3D plan</span>
+                    </label>
+                    <label class="radio calculator__radio">
+                        <input class="radio__input" type="radio" name="key" value="0" hidden>
+                        <div class="radio__icon"></div>
+                        <span class="radio__title">3D 360" rotation</span>
+                    </label>
+                </div>`,
+                checkboxs: `<div class="calculator-grid-item__checkboxs">
+                    <label class="checkbox calculator__checkbox">
+                        <input class="checkbox__input" type="checkbox" name="" hidden>
+                        <span class="checkbox__icon">✓</span>
+                        <span class="checkbox__title">completely finished 3d scene</span>
+                    </label>
+                    <label class="checkbox calculator__checkbox">
+                        <input class="checkbox__input" type="checkbox" name="" hidden>
+                        <span class="checkbox__icon">✓</span>
+                        <span class="checkbox__title">3d model of building</span>
+                    </label>
+                    <label class="checkbox calculator__checkbox">
+                        <input class="checkbox__input" type="checkbox" name="" hidden>
+                        <span class="checkbox__icon">✓</span>
+                        <span class="checkbox__title">CAD - files or draw</span>
+                    </label>
+                </div>`
+            },
+            INTERIOR_VISUALIZATION: {
+                radions: `<div class="calculator-grid-item__radios">
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="4" checked hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Rooms less than 10 square meters</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="5" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">10 to 20 square meter</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="6" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">More than 20 square meters</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="7" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Commercial space</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="8" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">3D floor plan</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="0" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">3D 360" rotation</span>
+                </label>
+            </div>`,
+                checkboxs: `<div class="calculator-grid-item__checkboxs">
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">completely finished 3d scene</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">desing - project</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+            </div>`
+            },
+            PRODUCT_RENDERING: {
+                radions: `<div class="calculator-grid-item__radios">
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="9" checked hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Product rendering - scene of interior</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="10" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Product rendering - white background</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="0" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">MODELLING</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="0" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">3D 360" rotation</span>
+                </label>
+            </div>`,
+                checkboxs: `<div class="calculator-grid-item__checkboxs">
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">completely finished 3d scene</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">3d models of product</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+            </div>`
+            },
+            ANIMATION: {
+                radions: `<div class="calculator-grid-item__radios">
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="11" checked hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Photorealistic</span>
+                </label>
+                <label class="radio calculator__radio">
+                    <input class="radio__input" type="radio" name="key" value="12" hidden>
+                    <div class="radio__icon"></div>
+                    <span class="radio__title">Non-realistic</span>
+                </label>
+            </div>`,
+                checkboxs: `<div class="calculator-grid-item__checkboxs">
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">completely finished 3d scene</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">3d models of ...</span>
+                </label>
+                <label class="checkbox calculator__checkbox">
+                    <input class="checkbox__input" type="checkbox" name="" hidden>
+                    <span class="checkbox__icon">✓</span>
+                    <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+            </div>`
+            }
+        }
+
+        document.querySelector('.calculator-grid-item__radios').innerHTML = edit?.[value]?.radions;
+        document.querySelector('.calculator-grid-item__checkboxs').innerHTML = edit?.[value]?.checkboxs;
+    }
+
+    const calculatorSwitchInput = document.querySelectorAll('.calculator__switch_input');
+    calculatorSwitchInput.forEach(elem => {
+        elem.onchange = e => {
+            updateCalcForm(e.target.value);
+            initInputs();
+        }
+    });
+
     initInputs();
-
-
 })();
