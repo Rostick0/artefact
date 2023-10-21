@@ -16,9 +16,9 @@
         }
     }
 
-    &__img {
+    &__video {
         display: block;
-        margin-bottom: 60px;
+        margin: 0 auto 60px;
         width: 100%;
         max-width: 617px;
     }
@@ -31,6 +31,7 @@
         grid-gap: 20px;
 
         &_left {
+            font-size: 18px;
             flex-grow: 1;
             font-weight: 600;
         }
@@ -43,12 +44,7 @@
 
     &__need {
         color: #ecc311;
-        font-size: 15px;
         margin-bottom: 4px;
-    }
-
-    &__service {
-        font-size: 18px;
     }
 
     @media (max-width: 992px) {
@@ -59,7 +55,7 @@
             margin-bottom: 32px;
         }
 
-        &__img {
+        &__video {
             margin-bottom: 40px;
         }
     }

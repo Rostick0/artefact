@@ -20,7 +20,7 @@ class ServiceController extends Controller
             ],
             [
                 'is_active' => true,
-                'name' => 'My works',
+                'name' => 'Services and prices',
             ],
         ];
 

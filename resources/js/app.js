@@ -261,169 +261,169 @@ function animateCounter(elem, {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 1,
                 power: 3,
-                calc: (x) => 200 + (140 * x - 1)
+                calc: (x) => 200 + (140 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 1,
                 power: 2,
-                calc: (x) => 350 + (140 * x - 1)
+                calc: (x) => 350 + (140 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 1,
                 power: 1,
-                calc: (x) => 490 + (140 * x - 1)
+                calc: (x) => 490 + (140 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 1,
                 power: 0,
-                calc: (x) => 600 + (140 * x - 1)
+                calc: (x) => 600 + (140 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 2,
                 power: 3,
-                calc: (x) => 300 + (200 * x - 1)
+                calc: (x) => 300 + (200 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 2,
                 power: 2,
-                calc: (x) => 450 + (200 * x - 1)
+                calc: (x) => 450 + (200 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 2,
                 power: 1,
-                calc: (x) => 620 + (200 * x - 1)
+                calc: (x) => 620 + (200 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 2,
                 power: 0,
-                calc: (x) => 800 + (200 * x - 1)
+                calc: (x) => 800 + (200 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 3,
                 power: 3,
-                calc: (x) => 400 + (290 * x - 1)
+                calc: (x) => 400 + (290 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 3,
                 power: 2,
-                calc: (x) => 620 + (290 * x - 1)
+                calc: (x) => 620 + (290 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 3,
                 power: 1,
-                calc: (x) => 850 + (290 * x - 1)
+                calc: (x) => 850 + (290 * (x - 1))
             },
             {
                 name: 'EXTERIOR_VISUALIZATION',
                 key: 3,
                 power: 0,
-                calc: (x) => 1000 + (290 * x - 1)
+                calc: (x) => 1000 + (290 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 4,
                 power: 3,
-                calc: (x) => 150 + (60 * x - 1)
+                calc: (x) => 150 + (60 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 4,
                 power: 2,
-                calc: (x) => 240 + (60 * x - 1)
+                calc: (x) => 240 + (60 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 4,
                 power: 1,
-                calc: (x) => 350 + (60 * x - 1)
+                calc: (x) => 350 + (60 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 4,
                 power: 0,
-                calc: (x) => 400 + (60 * x - 1)
+                calc: (x) => 400 + (60 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 5,
                 power: 3,
-                calc: (x) => 200 + (65 * x - 1)
+                calc: (x) => 200 + (65 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 5,
                 power: 2,
-                calc: (x) => 290 + (65 * x - 1)
+                calc: (x) => 290 + (65 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 5,
                 power: 1,
-                calc: (x) => 400 + (65 * x - 1)
+                calc: (x) => 400 + (65 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 5,
                 power: 0,
-                calc: (x) => 450 + (65 * x - 1)
+                calc: (x) => 450 + (65 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 6,
                 power: 3,
-                calc: (x) => 250 + (70 * x - 1)
+                calc: (x) => 250 + (70 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 6,
                 power: 2,
-                calc: (x) => 340 + (70 * x - 1)
+                calc: (x) => 340 + (70 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 6,
                 power: 1,
-                calc: (x) => 450 + (70 * x - 1)
+                calc: (x) => 450 + (70 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 6,
                 power: 0,
-                calc: (x) => 500 + (70 * x - 1)
+                calc: (x) => 500 + (70 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 7,
                 power: 3,
-                calc: (x) => 300 + (90 * x - 1)
+                calc: (x) => 300 + (90 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 7,
                 power: 2,
-                calc: (x) => 420 + (90 * x - 1)
+                calc: (x) => 420 + (90 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 7,
                 power: 1,
-                calc: (x) => 550 + (90 * x - 1)
+                calc: (x) => 550 + (90 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
                 key: 7,
                 power: 0,
-                calc: (x) => 650 + (90 * x - 1)
+                calc: (x) => 650 + (90 * (x - 1))
             },
             {
                 name: 'INTERIOR_VISUALIZATION',
@@ -453,49 +453,49 @@ function animateCounter(elem, {
                 name: 'PRODUCT_RENDERING',
                 key: 9,
                 power: 3,
-                calc: (x) => 100 + (70 * x - 1)
+                calc: (x) => 100 + (70 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 9,
                 power: 2,
-                calc: (x) => 150 + (70 * x - 1)
+                calc: (x) => 150 + (70 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 9,
                 power: 1,
-                calc: (x) => 250 + (70 * x - 1)
+                calc: (x) => 250 + (70 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 9,
                 power: 0,
-                calc: (x) => 300 + (70 * x - 1)
+                calc: (x) => 300 + (70 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 10,
                 power: 3,
-                calc: (x) => 30 + (50 * x - 1)
+                calc: (x) => 30 + (50 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 10,
                 power: 2,
-                calc: (x) => 30 + (50 * x - 1)
+                calc: (x) => 30 + (50 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 10,
                 power: 1,
-                calc: (x) => 100 + (50 * x - 1)
+                calc: (x) => 100 + (50 * (x - 1))
             },
             {
                 name: 'PRODUCT_RENDERING',
                 key: 10,
                 power: 0,
-                calc: (x) => 100 + (50 * x - 1)
+                calc: (x) => 100 + (50 * (x - 1))
             },
             {
                 name: 'ANIMATION',
@@ -553,7 +553,7 @@ function animateCounter(elem, {
 
         if (!find) return 'Calculated individually';
 
-        return find.calc(x);
+        return find.calc(x) + '€';
     }
 
     const [calculatorSwitch, setCalculatorSwitch] = useState('EXTERIOR_VISUALIZATION');

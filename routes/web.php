@@ -236,8 +236,21 @@ Route::get('/about', function () {
         ],
     ];
 
+    $navigations = [
+        [
+            'link' => '/',
+            'name' => 'Home',
+        ],
+        [
+            'is_active' => true,
+            'name' => 'About',
+        ],
+    ];
+
+    
     return view('pages.client.about', [
-        'visualization_slides' => $visualization_slides
+        'visualization_slides' => $visualization_slides,
+        'navigations' => $navigations,
     ]);
 });
 
@@ -260,23 +273,6 @@ Route::get('/faq', function () {
     ];
 
     return view('pages.client.faq', [
-        'navigations' => $navigations
-    ]);
-});
-
-Route::get('/panorams', function () {
-    $navigations = [
-        [
-            'link' => '/',
-            'name' => 'Home',
-        ],
-        [
-            'is_active' => true,
-            'name' => 'Panorams',
-        ],
-    ];
-
-    return view('pages.client.panorams', [
         'navigations' => $navigations
     ]);
 });

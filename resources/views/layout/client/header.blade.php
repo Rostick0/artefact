@@ -21,8 +21,6 @@
                             href="/services">Services and prices</a>
                         <a class="header-mobile__link{{ Request::path() === 'faq' ? ' _active' : '' }}"
                             href="/faq">Faq</a>
-                        <a class="header-mobile__link{{ Request::path() === 'panorams' ? ' _active' : '' }}"
-                            href="/panorams">Panorams</a>
                         <a class="header-mobile__link{{ Request::path() === 'contacts' ? ' _active' : '' }}"
                             href="/contacts">Contacts</a>
                     </div>
@@ -39,8 +37,6 @@
                 <a class="header__nav_item{{ Request::path() === 'services' ? ' _active' : '' }}"
                     href="/services">Services and prices</a>
                 <a class="header__nav_item{{ Request::path() === 'faq' ? ' _active' : '' }}" href="/faq">Faq</a>
-                <a class="header__nav_item{{ Request::path() === 'panorams' ? ' _active' : '' }}"
-                    href="/panorams">Panorams</a>
                 <a class="header__nav_item{{ Request::path() === 'contacts' ? ' _active' : '' }}"
                     href="/contacts">Contacts</a>
             </nav>

@@ -1,12 +1,13 @@
 @extends('layout.client.layout')
 
+@section('seo_title', $service->title)
+
 @section('content')
     <x-banner-nav :title="$service->title" :navigations="$navigations" />
     <div class="service">
         <div class="container">
-            <div class="service__date">Submitted by admin on July 25, 2023</div>
             @if ($service->description)
-                <div class="service__description">{{ $service->description }}</div>
+                <div class="service__description">{!! $service->description !!}</div>
             @endif
             <div class="service__list">
                 @foreach ($service->items as $item)
@@ -46,8 +47,8 @@
                 happy
                 to provide you with a quote for your project.
             </div>
-            <img class="service__image" decoding="async" loading="lazy" src="{{ Storage::url($service->image->path) }}"
-                alt="{{ $service?->title }}" />
+            {{-- <img class="service__image" decoding="async" loading="lazy" src="{{ Storage::url($service->image->path) }}"
+                alt="{{ $service?->title }}" /> --}}
         </div>
     </div>
 @endsection

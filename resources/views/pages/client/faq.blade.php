@@ -1,5 +1,7 @@
 @extends('layout.client.layout')
 
+@section('seo_title', 'FAQ')
+
 @section('content')
     <x-banner-nav title="FAQ" :navigations="$navigations" />
     <section class="faq">

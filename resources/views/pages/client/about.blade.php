@@ -1,6 +1,7 @@
 @extends('layout.client.layout')
 
 @section('content')
+    <x-banner-nav title="About" :navigations="$navigations" />
     <div class="container">
         <section class="about">
             <div class="about__description">
@@ -27,17 +28,19 @@
                     visualizations
                     for your success!</p>
             </div>
-            <a class="btn about__btn" href="">Order a 3D project </a>
+            <a class="btn about__btn" href="">Order the 3D project </a>
             <div class="about__images">
                 <div class="about__image _figure">
                     <div class="about__figure">Work from 2019 year</div>
                     <img class="about__img" src="/assets/img/abot_first.jpg" decoding="async" loading="lazy" alt="">
                 </div>
                 <div class="about__image">
-                    <img class="about__img" src="/assets/img/Screenshot_7.jpg" decoding="async" loading="lazy" alt="">
+                    <img class="about__img" src="/assets/img/Screenshot_7.jpg" decoding="async" loading="lazy"
+                        alt="">
                 </div>
                 <div class="about__image">
-                    <img class="about__img" src="/assets/img/Screenshot_8.jpg" decoding="async" loading="lazy" alt="">
+                    <img class="about__img" src="/assets/img/Screenshot_8.jpg" decoding="async" loading="lazy"
+                        alt="">
                 </div>
             </div>
         </section>
@@ -75,7 +78,7 @@
     <section class="need-visualization">
         <div class="container">
             <div class="need-visualization__container">
-                <h2 class="title need-visualization__title">Do you need 3D visualisation?</h2>
+                <h2 class="title need-visualization__title">Do you need 3D visualization?</h2>
                 <div class="need-visualization__motivation">Make order right now!</div>
                 <a class="btn need-visualization__btn" href="/feedback">Contact us</a>
             </div>

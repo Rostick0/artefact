@@ -22,7 +22,7 @@ class PortfolioController extends Controller
             ],
             [
                 'is_active' => true,
-                'name' => 'Services and prices',
+                'name' => 'Portfolio',
             ],
         ];
 
@@ -44,7 +44,7 @@ class PortfolioController extends Controller
             ],
             [
                 'link' => '/portfolio',
-                'name' => 'Services and prices',
+                'name' => 'Portfolio',
             ],
             [
                 'is_active' => true,

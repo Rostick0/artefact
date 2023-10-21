@@ -1,5 +1,7 @@
 @extends('layout.client.layout')
 
+@section('seo_title', 'Contacts')
+
 @section('content')
     <div class="contacts">
         <div class="container">

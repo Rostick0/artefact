@@ -1,5 +1,5 @@
 .need-visualization {
-    background-image: url('/public/assets/img/need-motivation.jpg');
+    background-image: url('/public/assets/img/breadcrumb.jpg');
     background-size: cover;
     color: #fff;
     padding: 100px 0;
@@ -23,7 +23,8 @@
     }
 
     &__motivation {
-        font-style: italic;
+        font-size: 18px;
+        font-weight: 700;
         margin-bottom: 45px;
     }
 }

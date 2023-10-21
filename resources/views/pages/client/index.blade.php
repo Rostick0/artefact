@@ -1,5 +1,7 @@
 @extends('layout.client.layout_short')
 
+@section('seo_title', 'Artefact')
+
 @section('content')
     <div class="main-banner">
         <div class="main-banner__slider main-slider-top">
@@ -19,7 +21,7 @@
                         <div class="main-slider-top__middle-text">
                             VISUALIZATION OF
                             <br>
-                            EXTERIOR
+                            <span class="text-ui">EXTERIOR</span>
                             <br>
                             AND <span class="text-ui">INTERIOR</span>
                         </div>
@@ -71,11 +73,11 @@
                     us
                     now, and let's embark on a journey of creating stunning 3D visualizations for your success!</p>
             </div>
-            <img class="main-info__img" decoding="async" loading="lazy" src="/assets/img/autumn.jpg" alt="">
+            <img class="main-info__video" decoding="async" loading="lazy" src="/assets/img/autumn.jpg" alt="">
             <div class="main-info__bottom">
                 <div class="main-info__bottom_left">
                     <div class="main-info__need">Do you need 3D visualization?</div>
-                    <div class="main-info__service">Then I am at your service!</div>
+                    <div class="main-info__service">Then we are at your service!</div>
                 </div>
                 <div class="main-info__bottom_right">
                     <a class="btn" href="/contacts">Contact us</a>
@@ -133,7 +135,7 @@
                             <label class="radio calculator__radio">
                                 <input class="radio__input" type="radio" name="key" value="0" hidden>
                                 <div class="radio__icon"></div>
-                                <span class="radio__title">3D 360" rotation</span>
+                                <span class="radio__title">3D 360° rotation</span>
                             </label>
                         </div>
                     </div>
@@ -162,7 +164,7 @@
                         <div class="calculator-grid-item__count">3</div>
                         <div class="calculator-grid-item__question">Specify the parameters</div>
                         <label class="input-field-ui">
-                            <span class="input-field-ui__title">Total area (m<sup>2</sup>)</span>
+                            <span class="input-field-ui__title">Picture or sec/min</span>
                             <input class="calculator-grid-item__input input-field-ui__input" type="number" value="1">
                         </label>
                     </div>

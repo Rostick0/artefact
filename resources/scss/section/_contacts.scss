@@ -16,7 +16,9 @@
     &__info {
         display: flex;
         flex-direction: column;
-        row-gap: 30px;
+        row-gap: 50px;
+        margin-top: -20px;
+
 
         &_item {
             display: flex;
@@ -54,6 +56,9 @@
         }
 
         &__info {
+            row-gap: 20px;
+            margin-top: 0;
+
             &_icon {
                 font-size: 24px;
                 width: 50px;

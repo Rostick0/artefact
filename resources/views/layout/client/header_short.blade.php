@@ -10,7 +10,7 @@
                 <span class="fas fa-envelope"></span>
             </div>
             <div class="header-short__info_text">
-                <span>Write me</span>
+                <span>Write to us</span>
                 <a class="header-short__info_mailto"
                     href="mailto:sofialopatina@artefact.guru">sofialopatina@artefact.guru</a>
             </div>
@@ -33,9 +33,7 @@
                     <a class="header-mobile__link{{ Request::path() === 'services' ? ' _active' : '' }}"
                         href="/services">Services and prices</a>
                     <a class="header-mobile__link{{ Request::path() === 'faq' ? ' _active' : '' }}"
-                        href="/faq">Faq</a>
-                    <a class="header-mobile__link{{ Request::path() === 'panorams' ? ' _active' : '' }}"
-                        href="/panorams">Panorams</a>
+                        href="/faq">FAQ</a>
                     <a class="header-mobile__link{{ Request::path() === 'contacts' ? ' _active' : '' }}"
                         href="/contacts">Contacts</a>
                 </div>
@@ -49,7 +47,6 @@
             <a class="header-short__nav_item" href="/portfolio">Portfolio</a>
             <a class="header-short__nav_item" href="/services">Services and prices</a>
             <a class="header-short__nav_item" href="/faq">Faq</a>
-            <a class="header-short__nav_item" href="/panorams">Panorams</a>
             <a class="header-short__nav_item" href="/contacts">Contacts</a>
         </nav>
         <a class="btn header-short__contact" href="/feedback">Contact us</a>

@@ -1,7 +1,9 @@
 @extends('layout.client.layout')
 
+@section('seo_title', 'Portfolio')
+
 @section('content')
-    <x-banner-nav title="My works" :navigations="$navigations" />
+    <x-banner-nav title="Portfolio" :navigations="$navigations" />
     <div class="portfolio">
         <div class="container">
             <div class="portfolio__container">

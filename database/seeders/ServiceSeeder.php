@@ -16,7 +16,7 @@ class ServiceSeeder extends Seeder
         $data = [
             [
                 'service' => [
-                    'title' => 'INTERIOR VISUALIZATION',
+                    'title' => 'Interior visualization',
                 ],
                 'image' => [
                     'name' => '3d-vizyalizacia-interyera-gostinoy_0.jpg',
@@ -173,7 +173,7 @@ class ServiceSeeder extends Seeder
             ],
             [
                 'service' => [
-                    'title' => 'EXTERIOR VISUALIZATION'
+                    'title' => 'Exterior visualization'
                 ],
                 'image' => [
                     'name' => 'exterior_rendering_3dsmax_render_academy.jpg',
@@ -278,7 +278,7 @@ class ServiceSeeder extends Seeder
             ],
             [
                 'service' => [
-                    'title' => 'PRODUCT RENDERING',
+                    'title' => 'Product rendering',
                     'description' => "Our product rendering service takes your product modelling to the next level by adding lighting, materials, and textures to create a stunning visualization that truly showcases your product"
                 ],
                 'image' => [
@@ -341,7 +341,7 @@ class ServiceSeeder extends Seeder
             ],
             [
                 'service' => [
-                    'title' => 'MODELLING',
+                    'title' => 'Modelling',
                     'description' => "Our product modelling service is perfect for showcasing your product in a 3D environment. We'll create a realistic and engaging visualization that highlights the key features and benefits of your product."
                 ],
                 'image' => [
@@ -378,7 +378,7 @@ class ServiceSeeder extends Seeder
             ],
             [
                 'service' => [
-                    'title' => 'ANIMATION'
+                    'title' => 'Animation'
                 ],
                 'image' => [
                     'name' => '25c4bdd6-4e09-4b43-8736-9813c9d0e479.jpg',
@@ -422,6 +422,18 @@ class ServiceSeeder extends Seeder
                         ]
                     ],
                 ]
+            ],
+            [
+                'service' => [
+                    'title' => 'Panorama',
+                    'description' => '<iframe class="panorams-item__iframe" allowfullscreen="" width="976" height="549" style="border:0;" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://anastasiyaust.github.io/Bedroom-/" />'
+                ],
+                'image' => [
+                    'name' => 'Screenshot_458.jpg',
+                    'path' => 'upload/image/Screenshot_458.jpg',
+                    'width' => 800,
+                    'height' => 450,
+                ],
             ],
         ];
 

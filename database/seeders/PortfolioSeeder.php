@@ -16,7 +16,7 @@ class PortfolioSeeder extends Seeder
         $data = [
             [
                 'portfolio' => [
-                    'title' => 'Осень',
+                    'title' => 'Autumn',
                     'category_id' => 3,
                 ],
                 'image' => [
@@ -28,7 +28,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'portfolio' => [
-                    'title' => 'Коттедж',
+                    'title' => 'Cottage',
                     'category_id' => 6,
                 ],
                 'image' => [
@@ -40,7 +40,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'portfolio' => [
-                    'title' => 'Спальня',
+                    'title' => 'Bedroom',
                     'category_id' => 2,
                 ],
                 'image' => [
@@ -52,7 +52,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'portfolio' => [
-                    'title' => 'Стол',
+                    'title' => 'Table',
                     'category_id' => 3,
                 ],
                 'image' => [
@@ -64,7 +64,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'portfolio' => [
-                    'title' => 'Жилой комплекс',
+                    'title' => 'Residential complex',
                     'category_id' => 3,
                 ],
                 'image' => [
@@ -76,7 +76,7 @@ class PortfolioSeeder extends Seeder
             ],
             [
                 'portfolio' => [
-                    'title' => 'Детская',
+                    'title' => 'Childish',
                     'category_id' => 2,
                 ],
                 'image' => [
