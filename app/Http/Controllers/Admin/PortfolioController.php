@@ -87,6 +87,10 @@ class PortfolioController extends Controller
             }
         }
 
+        if ($request->image_delete) {
+            ImageDBUtil::deleteImage([...$request->image_delete], $portfolio);
+        }
+
         return back();
     }
 

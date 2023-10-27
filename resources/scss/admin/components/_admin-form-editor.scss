@@ -25,6 +25,20 @@
         column-gap: 20px;
     }
 
+    &__image {
+        position: relative;
+
+        &_close {
+            cursor: pointer;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            position: absolute;
+            top: 10px;
+            right: 6px;
+        }
+    }
+
     &__img {
         display: block;
         margin: 10px 0;

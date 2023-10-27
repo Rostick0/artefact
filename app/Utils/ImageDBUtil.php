@@ -36,8 +36,8 @@ class ImageDBUtil
 
         $images->each(function ($item) {
             ImageUtil::delete($item->path);
-
-            // Image::destroy($item->id);
         });
+
+        $model->image()->whereIn('id', $images_delete_ids)->delete();
     }
 }

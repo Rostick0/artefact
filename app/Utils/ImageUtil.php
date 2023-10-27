@@ -18,13 +18,13 @@ class ImageUtil
         $extension = $image->getClientOriginalExtension();
         $random_name = $upload_path . random_int(1000, 9999) . time() . '.' . $extension;
 
-        $image->storeAs($random_name);
+        $image->storeAs('/public/' . $random_name);
 
         return $random_name;
     }
 
     public static function delete($image_path)
     {
-        Storage::delete($image_path);
+        Storage::disk('public')->delete($image_path);
     }
 }

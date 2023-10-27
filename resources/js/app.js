@@ -814,3 +814,13 @@ function animateCounter(elem, {
 
     initInputs();
 })();
+
+(function () {
+    const adminFormEditorImage = document.querySelectorAll('.admin-form-editor__image');
+
+    adminFormEditorImage.forEach(elem => {
+        const adminFormEditorImageClose = elem.querySelector('.admin-form-editor__image_close');
+
+        adminFormEditorImageClose.onclick = () => elem.setAttribute('hidden', true);
+    })
+})();

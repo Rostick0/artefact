@@ -44,9 +44,16 @@
             </label>
             @if ($portfolio->image->count())
                 <div class="admin-form-editor__images">
-                    @foreach ($portfolio->image as $image)
+                    @foreach ($portfolio->image as $index => $image)
                         @if ($image->path)
-                            <img class="admin-form-editor__img" src="{{ Storage::url($image->path) }}" alt="">
+                            <div class="admin-form-editor__image">
+                                <label class="admin-form-editor__image_close">
+                                    <span>×</span>
+                                    <input type="checkbox" name="image_delete[{{ $index }}]"
+                                        value="{{ $image->id }}" hidden>
+                                </label>
+                                <img class="admin-form-editor__img" src="{{ Storage::url($image->path) }}" alt="">
+                            </div>
                         @endif
                     @endforeach
                 </div>
