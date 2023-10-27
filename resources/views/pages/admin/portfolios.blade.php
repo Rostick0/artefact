@@ -27,7 +27,7 @@
                 <a class="admin-item" href="/admin/portfolio/edit/{{ $portfolio->id }}">
                     <div class="admin-item__title">{{ $portfolio->title }}</div>
                     <div class="admin-item__image">
-                        <img class="admin-item__img" src="{{ Storage::url($portfolio->image->path) }}" alt="">
+                        <img class="admin-item__img" src="{{ Storage::url($portfolio->image[0]->path) }}" alt="{{ $portfolio->title }}">
                     </div>
                 </a>
             @endforeach

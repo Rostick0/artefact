@@ -22,7 +22,7 @@
         top: 0;
         right: 0;
         transition: .3s;
-        transform: translateY(calc(-100% - 8px));
+        transform: translateY(calc(100% - 8px));
         opacity: .7;
 
         &:hover {
@@ -32,8 +32,22 @@
     }
 
     &__inner {
+        padding-top: 40px;
         position: relative;
         max-width: 820px;
+        height: 100%;
+    }
+
+    &__content {
+        overflow: auto;
+        height: 100%;
+
+        &_inner {
+            background-color: #fff;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
     }
 
     &__img {

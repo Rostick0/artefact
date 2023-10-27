@@ -36,13 +36,20 @@
             </label>
             <label class="label">
                 <span class="label__title">Фото</span>
-                <input class="input" type="file" name="image" value="{{ old('image') }}" />
+                <input class="input" type="file" name="image[]" value="{{ old('image') }}"
+                    accept=".png, .jpeg, .jpg, .webm" multiple />
                 @error('image')
                     <span class="error">{{ $message }}</span>
                 @enderror
             </label>
-            @if ($portfolio->image?->path)
-                <img class="admin-form-editor__img" src="{{ Storage::url($portfolio->image->path) }}" alt="">
+            @if ($portfolio->image->count())
+                <div class="admin-form-editor__images">
+                    @foreach ($portfolio->image as $image)
+                        @if ($image->path)
+                            <img class="admin-form-editor__img" src="{{ Storage::url($image->path) }}" alt="">
+                        @endif
+                    @endforeach
+                </div>
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>

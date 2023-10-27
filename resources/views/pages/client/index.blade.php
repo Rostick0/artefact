@@ -38,7 +38,7 @@
                         <div class="swiper-slide">
                             <div class="portfolio__list_item portfolio-item _active">
                                 <img class="portfolio-item__img" decoding="async" loading="lazy"
-                                    src="{{ Storage::url($portfolio->image->path) }}" alt="{{ $portfolio?->title }}">
+                                    src="{{ Storage::url($portfolio->image[0]->path) }}" alt="{{ $portfolio?->title }}">
                                 <button class="portfolio-item__plus">+</button>
                                 <a class="portfolio-item__title"
                                     href="/portfolio/{{ $portfolio->id }}">{{ $portfolio->title }}</a>

@@ -13,12 +13,20 @@ function modal() {
 
     if (!modal) return;
 
+    const modalContentInner = modal.querySelector('.modal__content_inner');
     const modalImage = modal.querySelector('.modal__img');
-
 
     function activeModal(imageUrl) {
         if (modal.classList.contains('_active')) return;
+
         modalImage.src = imageUrl;
+        modal.classList.add('_active');
+    }
+
+    function activeModalManyImage(images) {
+        if (modal.classList.contains('_active')) return;
+
+        modalContentInner.innerHTML = images;
         modal.classList.add('_active');
     }
 
@@ -37,8 +45,13 @@ function modal() {
     modalClose.onclick = () => disactiveModal();
 
     return {
-        activeModal
+        activeModal,
+        activeModalManyImage
     };
+}
+
+function creatImage(urls) {
+    return urls?.map(url => `<img src="${url}" />`)?.join('');
 }
 
 (function () {
@@ -48,12 +61,16 @@ function modal() {
         const img = item?.querySelector('.portfolio-item__img');
         // const button = item?.querySelector('.portfolio-item__plus');
         const portfolioItemTitle = item.querySelector('.portfolio-item__title');
+        const portfolioItemImages = item.querySelector('.portfolio-item__images');
+        const imagesPaths = JSON.parse(portfolioItemImages.textContent)?.map(item => '/storage/' + item.path)
+        const images = creatImage(imagesPaths);
 
-        const { activeModal } = modal();
+        console.log();
+        const { activeModal, activeModalManyImage } = modal();
         item.onclick = function (e) {
             if (e.target === portfolioItemTitle) return;
 
-            activeModal(img.src);
+            activeModalManyImage(images);
         };
     })
 })();
@@ -178,6 +195,8 @@ function modal() {
     const headerMobile = document.querySelector('.header-mobile');
     const headerBurger = document.querySelector('.header-burger');
     const headerMobileClose = document.querySelector('.header-mobile__close');
+
+    if (!headerMobile && !headerBurger) return;
 
     headerBurger.onclick = () => {
         headerMobile.classList.toggle('_active');

@@ -26,7 +26,7 @@ class StorePortfolioRequest extends FormRequest
             'title' => 'required|string|max:255',
             'description' => 'nullable|string|max:65536',
             'category_id' => 'required|numeric|' . Rule::exists('categories', 'id'),
-            'image' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
+            'image.*' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
         ];
     }
 }

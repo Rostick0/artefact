@@ -81,7 +81,11 @@ class PortfolioController extends Controller
 
         $portfolio->update($values);
 
-        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $portfolio);
+        if ($request->hasFile('image')) {
+            foreach ($request->file('image') as $image) {
+                ImageDBUtil::create($image, $portfolio);
+            }
+        }
 
         return back();
     }

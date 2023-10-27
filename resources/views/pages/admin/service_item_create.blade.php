@@ -21,7 +21,7 @@
             </label>
             <label class="label">
                 <span class="label__title">Фото</span>
-                <input class="input" type="file" name="image" />
+                <input class="input" type="file" name="image" accept=".png, .jpeg, .jpg, .webm" />
                 @error('image')
                     <span class="error">{{ $message }}</span>
                 @enderror

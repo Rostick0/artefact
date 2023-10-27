@@ -30,9 +30,9 @@ Route::group(['prefix' => 'admin'], function () {
 
     // 'middleware' => 'auth'
     Route::group([], function () {
-        Route::get('', function () {
-            return view('pages.admin.index');
-        })->name('admin.main');
+        // Route::get('', function () {
+        //     return view('pages.admin.index');
+        // })->name('admin.main');
         Route::group(['prefix' => 'service'], function () {
             Route::get('list', [ServiceController::class, 'index']);
             Route::get('create', [ServiceController::class, 'create']);

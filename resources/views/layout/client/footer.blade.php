@@ -30,7 +30,7 @@
                         @foreach (\App\Models\Portfolio::orderByDesc('id')->limit(6)->get() as $item)
                             <a class="footer__works_item" href="/portfolio/{{ $item->id }}">
                                 <img class="footer__works_img" width="70" height="70" decoding="async"
-                                    loading="lazy" src="{{ Storage::url($item->image->path) }}"
+                                    loading="lazy" src="{{ Storage::url($item->image[0]->path) }}"
                                     alt="{{ $item->title }}" />
                             </a>
                         @endforeach
