@@ -57,7 +57,7 @@ function creatImage(urls) {
 (function () {
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
-    portfolioItems.forEach(item => {
+    portfolioItems?.forEach(item => {
         const img = item?.querySelector('.portfolio-item__img');
         // const button = item?.querySelector('.portfolio-item__plus');
         const portfolioItemTitle = item.querySelector('.portfolio-item__title');

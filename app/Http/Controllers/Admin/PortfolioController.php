@@ -50,8 +50,12 @@ class PortfolioController extends Controller
         $values = $request->only(['title', 'description', 'category_id']);
 
         $portfolio = Portfolio::create($values);
-
-        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $portfolio);
+        
+        if ($request->hasFile('image')) {
+            foreach ($request->file('image') as $image) {
+                ImageDBUtil::create($image, $portfolio);
+            }
+        }
 
         return redirect('/admin/portfolio/edit/' . $portfolio->id);
     }

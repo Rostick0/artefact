@@ -37,8 +37,9 @@
                     @foreach ($portfolios as $portfolio)
                         <div class="swiper-slide">
                             <div class="portfolio__list_item portfolio-item _active">
+                                <div class="portfolio-item__images" hidden>{{ $portfolio->image }}</div>
                                 <img class="portfolio-item__img" decoding="async" loading="lazy"
-                                    src="{{ Storage::url($portfolio->image[0]->path) }}" alt="{{ $portfolio?->title }}">
+                                    src="{{ Storage::url($portfolio->image[0]?->path ?? '') }}" alt="{{ $portfolio?->title }}">
                                 <button class="portfolio-item__plus">+</button>
                                 <a class="portfolio-item__title"
                                     href="/portfolio/{{ $portfolio->id }}">{{ $portfolio->title }}</a>
@@ -91,19 +92,23 @@
             <div class="calculator__container">
                 <div class="calculator__switch">
                     <label class="calculator__switch_item">
-                        <input class="calculator__switch_input" type="radio" name="calculator_switch" checked value="EXTERIOR_VISUALIZATION" hidden>
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" checked
+                            value="EXTERIOR_VISUALIZATION" hidden>
                         <span class="calculator__switch_name">Exterior visualization</span>
                     </label>
                     <label class="calculator__switch_item">
-                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="INTERIOR_VISUALIZATION" hidden>
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch"
+                            value="INTERIOR_VISUALIZATION" hidden>
                         <span class="calculator__switch_name">Interior visualization</span>
                     </label>
                     <label class="calculator__switch_item">
-                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="PRODUCT_RENDERING" hidden>
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch"
+                            value="PRODUCT_RENDERING" hidden>
                         <span class="calculator__switch_name">Product rendering</span>
                     </label>
                     <label class="calculator__switch_item">
-                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="ANIMATION" hidden>
+                        <input class="calculator__switch_input" type="radio" name="calculator_switch" value="ANIMATION"
+                            hidden>
                         <span class="calculator__switch_name">Animation</span>
                     </label>
                 </div>
@@ -165,12 +170,14 @@
                         <div class="calculator-grid-item__question">Specify the parameters</div>
                         <label class="input-field-ui">
                             <span class="input-field-ui__title">Picture or sec/min</span>
-                            <input class="calculator-grid-item__input input-field-ui__input" type="number" value="1">
+                            <input class="calculator-grid-item__input input-field-ui__input" type="number"
+                                value="1">
                         </label>
                     </div>
                 </div>
                 <div class="calculator__total">Total: <strong class="calculator__amount">...</strong></div>
-                <div class="calculator__bottom text-ui">*The cost calculation is approximate, the final cost depends on the initial data of the project.</div>
+                <div class="calculator__bottom text-ui">*The cost calculation is approximate, the final cost depends on the
+                    initial data of the project.</div>
             </div>
         </div>
     </section>
