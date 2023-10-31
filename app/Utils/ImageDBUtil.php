@@ -30,6 +30,14 @@ class ImageDBUtil
         }
     }
 
+    public static function updateOne($image, Model $model) {
+        if (!empty($model->image()->get()[0])) {
+            ImageUtil::delete($model->image()->get()[0]->path);
+            $model->image()->delete();
+        }
+        ImageDBUtil::create($image, $model);
+    }
+
     public static function deleteImage(array $images_delete_ids, Model $model)
     {
         $images = $model->image()->whereIn('id', $images_delete_ids)->get();

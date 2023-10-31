@@ -73,7 +73,7 @@ class ServiceController extends Controller
 
         $service->update($values);
 
-        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service);
+        if ($request->hasFile('image')) ImageDBUtil::updateOne($request->file('image'), $service);
 
         return back();
     }

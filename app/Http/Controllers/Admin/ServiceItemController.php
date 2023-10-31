@@ -60,7 +60,7 @@ class ServiceItemController extends Controller
 
         $service_item->update($values);
 
-        if ($request->hasFile('image')) ImageDBUtil::create($request->file('image'), $service_item);
+        if ($request->hasFile('image')) ImageDBUtil::updateOne($request->file('image'), $service_item);
 
         return back();
     }
