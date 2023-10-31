@@ -29,7 +29,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('login', [AuthController::class, 'login'])->middleware('throttle:3,3');
 
     // 'middleware' => 'auth'
-    Route::group([], function () {
+    Route::group(['middleware' => 'auth'], function () {
         // Route::get('', function () {
         //     return view('pages.admin.index');
         // })->name('admin.main');

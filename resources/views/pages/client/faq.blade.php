@@ -33,10 +33,8 @@
                 <div class="faq__item_text">
                     <p class="faq__item_p">
                         The time it takes to create a 3D visualization depends on the complexity of the project and the
-                        level of detail
-                        required. Simple projects may only take a few days, while more complex projects may take several
-                        weeks or even months.
-                        We ll work with you to develop a timeline that meets your needs.
+                        level of detail required. Simple projects may only take a few days, while more complex projects may
+                        take several weeks or even months. We'll work with you to develop a timeline that meets your needs.
                     </p>
                 </div>
             </div>
@@ -44,11 +42,10 @@
                 <div class="faq__item_title">How do you ensure the accuracy of your 3D visualizations?</div>
                 <div class="faq__item_text">
                     <p class="faq__item_p">
-                        We use advanced 3D modeling software and techniques to create highly accurate 3D models. We work
-                        closely with you to
-                        ensure that the final product meets your specifications and accurately represents the intended
-                        design. We also offer
-                        revisions to make any necessary adjustments to the model.
+                        We use advanced 3D modeling software and techniques to create highly accurate 3D models. We'll work
+                        closely with you to ensure that the final product meets your specifications and accurately
+                        represents the intended design. We also offer revisions to make any necessary adjustments to the
+                        model.
                     </p>
                 </div>
             </div>
@@ -57,10 +54,8 @@
                 <div class="faq__item_text">
                     <p class="faq__item_p">
                         The pricing for 3D visualization services varies depending on the complexity of the project, the
-                        level of detail
-                        required, and the timeline for delivery. We ll provide you with a detailed quote based on your
-                        specific project
-                        requirements.
+                        level of detail required, and the timeline for delivery. We'll provide you with a detailed quote
+                        based on your specific project requirements.
                     </p>
                 </div>
             </div>
@@ -69,10 +64,8 @@
                 <div class="faq__item_text">
                     <p class="faq__item_p">
                         To get started with a 3D visualization project, simply contact us through email. We'll discuss your
-                        project needs and
-                        provide you with a detailed quote and timeline for delivery. Once you re ready to move forward, we
-                        ll begin the modeling
-                        process and keep you updated throughout the project.
+                        project needs and provide you with a detailed quote and timeline for delivery. Once you're ready to
+                        move forward, we'll begin the modeling process and keep you updated throughout the project.
                     </p>
                 </div>
             </div>
@@ -89,9 +82,9 @@
                 <div class="faq__item_title">How can we send you materials for the 3D visualization?</div>
                 <div class="faq__item_text">
                     <p class="faq__item_p">
-                        You can send us your materials through email, file-sharing platforms, or other digital means. We
-                        work with you to ensure
-                        that the materials are compatible with our software and can be used in the 3D modeling process.
+                        You can send us your materials through email, file-sharing platforms, or other digital means. We'll
+                        work with you to ensure that the materials are compatible with our software and can be used in the
+                        3D modeling process.
                     </p>
                 </div>
             </div>
@@ -128,7 +121,6 @@
                     <p class="faq__item_p">Plans:</p>
                     <p class="faq__item_p">- Ceiling plan;</p>
                     <p class="faq__item_p">- Layout of furniture;</p>
-                    <br>
                     <p class="faq__item_p">- Floor plan;</p>
                     <p class="faq__item_p">- Lighting plan.</p>
                     <br>
