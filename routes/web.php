@@ -39,7 +39,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('create', [ServiceController::class, 'store']);
             Route::get('edit/{id}', [ServiceController::class, 'edit']);
             Route::post('edit/{id}', [ServiceController::class, 'update']);
-            Route::delete('delete/{id}', [ServiceController::class, 'destroy']);
+            Route::delete('delete/{id}', [ServiceController::class, 'destroy'])->name('service.delete');
         });
 
         Route::group(['prefix' => 'service-item'], function () {
@@ -47,7 +47,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('create/{service_id}', [ServiceItemController::class, 'store']);
             Route::get('edit/{id}', [ServiceItemController::class, 'edit']);
             Route::post('edit/{id}', [ServiceItemController::class, 'update']);
-            Route::delete('delete/{id}', [ServiceItemController::class, 'destroy']);
+            Route::delete('delete/{id}', [ServiceItemController::class, 'destroy'])->name('service-item.delete');
         });
 
         Route::group(['prefix' => 'service-price'], function () {
@@ -55,7 +55,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('create/{service_item_id}', [ServicePriceController::class, 'store']);
             Route::get('edit/{id}', [ServicePriceController::class, 'edit']);
             Route::post('edit/{id}', [ServicePriceController::class, 'update']);
-            Route::delete('delete/{id}', [ServicePriceController::class, 'destroy']);
+            Route::delete('delete/{id}', [ServicePriceController::class, 'destroy'])->name('service-price.delete');
         });
 
         Route::group(['prefix' => 'portfolio'], function () {
@@ -64,7 +64,7 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('create', [PortfolioController::class, 'store']);
             Route::get('edit/{id}', [PortfolioController::class, 'edit']);
             Route::post('edit/{id}', [PortfolioController::class, 'update']);
-            Route::delete('delete/{id}', [PortfolioController::class, 'destroy']);
+            Route::delete('delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.delete');
         });
     });
 });

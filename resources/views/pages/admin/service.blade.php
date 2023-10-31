@@ -31,6 +31,13 @@
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
+        <form class="admin-form-editor__delete" action="{{ route('service.delete', [
+            'id' => $service->id
+        ]) }}" method="POST">
+            @csrf
+            <input name="_method" value="DELETE" type="hidden">
+            <button class="btn-delete">Удалить</button>
+        </form>
     </div>
     <br>
     <div class="admin-items">

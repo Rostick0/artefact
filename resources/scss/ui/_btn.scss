@@ -17,4 +17,15 @@
     @media (max-width: 576px) {
         padding: 12px 20px;
     }
+
+    &-delete {
+        color: #e11414;
+        font-weight: 600;
+        text-decoration: underline;
+        transition: .3s;
+        
+        &:hover {
+            color: #c8440a;
+        }
+    }
 }
