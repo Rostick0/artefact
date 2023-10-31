@@ -243,7 +243,7 @@ Route::get('/about', function () {
         ],
         [
             'is_active' => true,
-            'name' => 'About',
+            'name' => 'About us',
         ],
     ];
 

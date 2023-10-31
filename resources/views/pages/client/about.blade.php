@@ -1,7 +1,7 @@
 @extends('layout.client.layout')
 
 @section('content')
-    <x-banner-nav title="About" :navigations="$navigations" />
+    <x-banner-nav title="About us" :navigations="$navigations" />
     <div class="container">
         <section class="about">
             <div class="about__description">
@@ -47,7 +47,7 @@
         <section class="visualization">
             <h2 class="title visualization__title">3D visualization</h2>
             <div class="visualization__description">
-                <h3 class="visualization__description_title">When ordering a project from me, you will receive:</h3>
+                <h3 class="visualization__description_title">When ordering a project from us, you will receive:</h3>
                 <ul class="visualization__description_list">
                     <li class="visualization__description_item">Compliance with the given drawings and technical
                         specifications;</li>
