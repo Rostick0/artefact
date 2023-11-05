@@ -75,9 +75,9 @@
             </div>
             <div class="main-info__video">
                 <div class="main-info__video_inner">
-                    <iframe class="main-info__iframe"
-                        src="https://drive.google.com/file/d/1S69A3V67WoSm9cGN0O1g3kaWQGPoIyZR/preview" width="640"
-                        height="640"></iframe>
+                    <video class="main-info__iframe"
+                        src="/assets/video/Video.mp4" width="640" controls
+                        height="640"></video>
                 </div>
             </div>
             <div class="main-info__bottom">
