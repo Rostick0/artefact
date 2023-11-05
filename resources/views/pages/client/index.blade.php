@@ -21,9 +21,7 @@
                         <div class="main-slider-top__middle-text">
                             VISUALIZATION OF
                             <br>
-                            <span class="text-ui">EXTERIOR</span>
-                            <br>
-                            AND <span class="text-ui">INTERIOR</span>
+                            <span class="text-ui">EXTERIOR</span> AND <span class="text-ui">INTERIOR</span>
                         </div>
                         {{-- <a class="btn main-slider-top__btn" href="/contacts">CONTACT US</a> --}}
                     </div>
@@ -156,7 +154,7 @@
                         <div class="calculator-grid-item__question">What do you have?</div>
                         <div class="calculator-grid-item__checkboxs">
                             <label class="radio calculator__radio_value">
-                                <input class="radio__input" type="radio" value="1" name="have" hidden>
+                                <input class="radio__input" type="radio" value="3" name="have" hidden>
                                 <span class="radio__icon"></span>
                                 <span class="checkbox__title">completely finished 3d scene</span>
                             </label>
@@ -166,9 +164,14 @@
                                 <span class="checkbox__title">3d model of building</span>
                             </label>
                             <label class="radio calculator__radio_value">
-                                <input class="radio__input" type="radio" value="3" name="have" hidden>
+                                <input class="radio__input" type="radio" value="1" name="have" hidden>
                                 <span class="radio__icon"></span>
                                 <span class="checkbox__title">CAD - files or draw</span>
+                            </label>
+                            <label class="checkbox calculator__radio_value">
+                                <input class="radio__input" type="radio" value="0" name="have" hidden>
+                                <span class="radio__icon"></span>
+                                <span class="checkbox__title">Nothing</span>
                             </label>
                         </div>
                     </div>

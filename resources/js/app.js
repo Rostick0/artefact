@@ -670,7 +670,7 @@ function animateCounter(elem, {
                 </div>`,
                 checkboxs: `<div class="calculator-grid-item__checkboxs">
                     <label class="checkbox calculator__radio_value">
-                        <input class="radio__input" type="radio" value="1" name="have" hidden>
+                        <input class="radio__input" type="radio" value="3" name="have" hidden>
                         <span class="radio__icon"></span>
                         <span class="checkbox__title">completely finished 3d scene</span>
                     </label>
@@ -680,9 +680,14 @@ function animateCounter(elem, {
                         <span class="checkbox__title">3d model of building</span>
                     </label>
                     <label class="checkbox calculator__radio_value">
-                        <input class="radio__input" type="radio" value="3" name="have" hidden>
+                        <input class="radio__input" type="radio" value="1" name="have" hidden>
                         <span class="radio__icon"></span>
                         <span class="checkbox__title">CAD - files or draw</span>
+                    </label>
+                    <label class="checkbox calculator__radio_value">
+                        <input class="radio__input" type="radio" value="0" name="have" hidden>
+                        <span class="radio__icon"></span>
+                        <span class="checkbox__title">Nothing</span>
                     </label>
                 </div>`
             },
@@ -721,7 +726,7 @@ function animateCounter(elem, {
             </div>`,
                 checkboxs: `<div class="calculator-grid-item__checkboxs">
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="1" name="have" hidden>
+                    <input class="radio__input" type="radio" value="3" name="have" hidden>
                         <span class="radio__icon"></span>
                     <span class="checkbox__title">completely finished 3d scene</span>
                 </label>
@@ -731,9 +736,14 @@ function animateCounter(elem, {
                     <span class="checkbox__title">desing - project</span>
                 </label>
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="3" name="have" hidden>
+                    <input class="radio__input" type="radio" value="1" name="have" hidden>
                     <span class="radio__icon"></span>
                     <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+                <label class="checkbox calculator__radio_value">
+                    <input class="radio__input" type="radio" value="0" name="have" hidden>
+                    <span class="radio__icon"></span>
+                    <span class="checkbox__title">Nothing</span>
                 </label>
             </div>`
             },
@@ -762,7 +772,7 @@ function animateCounter(elem, {
             </div>`,
                 checkboxs: `<div class="calculator-grid-item__checkboxs">
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="1" name="have" hidden>
+                    <input class="radio__input" type="radio" value="3" name="have" hidden>
                     <span class="radio__icon"></span>
                     <span class="checkbox__title">completely finished 3d scene</span>
                 </label>
@@ -772,9 +782,14 @@ function animateCounter(elem, {
                     <span class="checkbox__title">3d models of product</span>
                 </label>
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="3" name="have" hidden>
+                    <input class="radio__input" type="radio" value="1" name="have" hidden>
                     <span class="radio__icon"></span>
                     <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+                <label class="checkbox calculator__radio_value">
+                    <input class="radio__input" type="radio" value="0" name="have" hidden>
+                    <span class="radio__icon"></span>
+                    <span class="checkbox__title">Nothing</span>
                 </label>
             </div>`
             },
@@ -793,7 +808,7 @@ function animateCounter(elem, {
             </div>`,
                 checkboxs: `<div class="calculator-grid-item__checkboxs">
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="1" name="have" hidden>
+                    <input class="radio__input" type="radio" value="3" name="have" hidden>
                     <span class="radio__icon"></span>
                     <span class="checkbox__title">completely finished 3d scene</span>
                 </label>
@@ -803,9 +818,14 @@ function animateCounter(elem, {
                     <span class="checkbox__title">3d models of ...</span>
                 </label>
                 <label class="checkbox calculator__radio_value">
-                    <input class="radio__input" type="radio" value="3" name="have" hidden>
+                    <input class="radio__input" type="radio" value="1" name="have" hidden>
                     <span class="radio__icon"></span>
                     <span class="checkbox__title">CAD - files or draw</span>
+                </label>
+                <label class="checkbox calculator__radio_value">
+                    <input class="radio__input" type="radio" value="0" name="have" hidden>
+                    <span class="radio__icon"></span>
+                    <span class="checkbox__title">Nothing</span>
                 </label>
             </div>`
             }
