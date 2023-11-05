@@ -53,11 +53,9 @@
                             <span class="label__title">Service</span>
                             <select class="input" name="service">
                                 <option value="" selected>- None -</option>
-                                <option value="Interior">Interior</option>
-                                <option value="Exterior">Exterior</option>
-                                <option value="Product rendering">Product rendering</option>
-                                <option value="Modelling">Modelling</option>
-                                <option value="Animation">Animation</option>
+                                @foreach (App\Models\Category::all() as $item)
+                                    <option value="{{ $item->name }}">{{ $item->name }}</option>
+                                @endforeach
                             </select>
                         </label>
                     </div>
