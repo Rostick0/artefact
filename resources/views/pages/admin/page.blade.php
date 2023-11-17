@@ -33,8 +33,8 @@
             </label>
             <label class="label">
                 <span class="label__title">Контент страницы</span>
-                <div class="summernote" name="content" id="content">{{ old('content') ?? $htmlSection($content) }}
-                </div>
+                <textarea class="summernote" name="content" id="myeditorinstance">{{ old('content') ?? $htmlSection($content) }}
+                </textarea>
                 @error('content')
                     <span class="error">{{ $message }}</span>
                 @enderror
@@ -42,4 +42,12 @@
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
     </div>
+    <script src="/assets/libs/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE
+            plugins: 'code table lists',
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table'
+        });
+    </script>
 @endsection
