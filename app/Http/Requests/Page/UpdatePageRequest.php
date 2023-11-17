@@ -22,7 +22,10 @@ class UpdatePageRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'seo_title' => 'max:255',
+            'seo_description'  => 'max:255',
+            'seo_keywords'  => 'max:255',
+            'content' => 'required',
         ];
     }
 }

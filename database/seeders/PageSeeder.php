@@ -15,28 +15,28 @@ class PageSeeder extends Seeder
     {
         $pages = [
             [
-                'path' => 'about.blade.php'
+                'path' => 'about'
             ],
             [
-                'path' => 'contacts.blade.php'
+                'path' => 'contacts'
             ],
             [
-                'path' => 'faq.blade.php'
+                'path' => 'faq'
             ],
             [
-                'path' => 'index.blade.php'
+                'path' => 'index'
             ],
             [
-                'path' => 'portfolio.blade.php'
+                'path' => 'portfolio'
             ],
             [
-                'path' => 'portfolios.blade.php'
+                'path' => 'portfolios'
             ],
             [
-                'path' => 'service.blade.php'
+                'path' => 'service'
             ],
             [
-                'path' => 'services.blade.php'
+                'path' => 'services'
             ]
         ];
 

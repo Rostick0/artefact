@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Page\UpdatePageRequest;
 use App\Models\Page;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class PageController extends Controller
 {
@@ -43,15 +44,24 @@ class PageController extends Controller
     public function edit(int $id)
     {
         $page = Page::findOrFail($id);
-        
-        return view('pages.admin.page', compact('page'));
+        $content = File::get(resource_path('views/pages/client/' . $page->path . '.blade.php'));
+
+        return view('pages.admin.page', compact('page', 'content'));
     }
 
     public function update(UpdatePageRequest $request, int $id)
     {
         $page = Page::findOrFail($id);
 
-        $page->update($request->validated());
+        $page->update(
+            $request->only([
+                'seo_title',
+                'seo_description',
+                'seo_keywords',
+            ])
+        );
+
+        File::put(resource_path('views/pages/client/' . $page->path . '.blade.php'), $request->content);
 
         return back();
     }
