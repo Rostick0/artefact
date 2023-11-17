@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             PortfolioSeeder::class,
-            ServiceSeeder::class
+            ServiceSeeder::class,
+            PageSeeder::class
         ]);
         // \App\Models\User::factory(10)->create();
 

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -65,6 +66,12 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('edit/{id}', [PortfolioController::class, 'edit']);
             Route::post('edit/{id}', [PortfolioController::class, 'update']);
             Route::delete('delete/{id}', [PortfolioController::class, 'destroy'])->name('portfolio.delete');
+        });
+
+        Route::group(['prefix' => 'page'], function () {
+            Route::get('list', [PageController::class, 'index']);
+            Route::get('edit/{id}', [PageController::class, 'edit']);
+            Route::post('edit/{id}', [PageController::class, 'update']);
         });
     });
 });
@@ -247,7 +254,7 @@ Route::get('/about', function () {
         ],
     ];
 
-    
+
     return view('pages.client.about', [
         'visualization_slides' => $visualization_slides,
         'navigations' => $navigations,

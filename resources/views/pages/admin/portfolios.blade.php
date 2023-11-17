@@ -1,5 +1,7 @@
 @extends('layout.admin.layout')
 
+@section('seo_title', 'Все портфолио')
+
 @section('content')
     <form class="admin-filter" action="{{ url()->current() }}">
         <div class="admin-filter__inputs">
