@@ -61,7 +61,15 @@ class PageController extends Controller
             ])
         );
 
-        File::put(resource_path('views/pages/client/' . $page->path . '.blade.php'), $request->content);
+        File::put(
+            resource_path('views/pages/client/' . $page->path . '.blade.php'),
+            '@extends("layout.client.layout")
+            @section("seo_title", "Contacts")
+            
+            @section("content")
+            ' . htmlspecialchars_decode($request->content) . '
+            @endsection'
+        );
 
         return back();
     }

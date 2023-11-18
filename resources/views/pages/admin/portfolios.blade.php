@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Все портфолио')
 
-@section('content')
+@section("content")
     <form class="admin-filter" action="{{ url()->current() }}">
         <div class="admin-filter__inputs">
             <label class="label admin-filter__label">

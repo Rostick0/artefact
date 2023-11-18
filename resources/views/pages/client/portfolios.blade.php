@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Portfolio')
 
-@section('content')
+@section("content")
     <x-banner-nav title="Portfolio" :navigations="$navigations" />
     <div class="portfolio">
         <div class="container">

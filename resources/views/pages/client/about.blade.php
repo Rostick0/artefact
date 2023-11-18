@@ -1,6 +1,6 @@
 @extends('layout.client.layout')
 
-@section('content')
+@section("content")
     <x-banner-nav title="About us" :navigations="$navigations" />
     <div class="container">
         <section class="about">

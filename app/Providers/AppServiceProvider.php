@@ -21,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::share('htmlSection', function ($text) {
-            $startString = "@section('content')";
+            $startString = '@section("content")';
             $endString = '@endsection';
             $startPosition = strpos($text, $startString);
             if ($startPosition !== false) {

@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Contacts')
 
-@section('content')
+@section("content")
     <div class="contacts">
         <div class="container">
             <h1 class="title contacts__title">ARTEFACT</h1>

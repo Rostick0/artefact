@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Artefact')
 
-@section('content')
+@section("content")
     <div class="main-banner">
         <div class="main-banner__slider main-slider-top">
             <div class="swiper-wrapper">

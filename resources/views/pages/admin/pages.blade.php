@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Все страницы')
 
-@section('content')
+@section("content")
     <div class="admin-items">
         <div class="admin-items__list">
             @foreach ($pages as $page)
