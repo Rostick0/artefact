@@ -19,7 +19,7 @@
                 <a class="admin-item" href="/admin/service/edit/{{ $service->id }}">
                     <div class="admin-item__title">{{ $service->title }}</div>
                     <div class="admin-item__image">
-                        <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
+                        <img class="admin-item__img" src="{{ Storage::url($service?->image?->path) }}" alt="">
                     </div>
                 </a>
             @endforeach
