@@ -37,7 +37,7 @@
                             <div class="portfolio__list_item portfolio-item _active">
                                 <div class="portfolio-item__images" hidden>{{ $portfolio->image }}</div>
                                 <img class="portfolio-item__img" decoding="async" loading="lazy"
-                                    src="{{ Storage::url($portfolio->image[0]?->path ?? '') }}"
+                                    src="{{ Storage::url($portfolio?->image[0]?->path ?? '') }}"
                                     alt="{{ $portfolio?->title }}">
                                 <button class="portfolio-item__plus">+</button>
                                 <a class="portfolio-item__title"

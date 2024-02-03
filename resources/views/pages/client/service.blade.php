@@ -14,7 +14,7 @@
                     <div class="service__item service-item">
                         <div class="service-item__image">
                             <div class="service-item__image_inner">
-                                <img class="service-item__img" decoding="async" loading="lazy" src="{{ Storage::url($item->image->path) }}"
+                                <img class="service-item__img" decoding="async" loading="lazy" src="{{ Storage::url($item?->image?->path) }}"
                                     alt="{{ $item?->title }}">
                             </div>
                         </div>
