@@ -14,6 +14,9 @@ class PortfolioController extends Controller
     {
         $portfolios = Portfolio::orderByDesc('id')->get();
         $categories = Category::all();
+        // Portfolio::chunk(4, function () {
+
+        // });
 
         $navigations = [
             [

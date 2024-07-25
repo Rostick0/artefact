@@ -26,15 +26,23 @@
                 </div>
                 <div class="footer__content_item">
                     <div class="footer__content_top">New works</div>
-                    <div class="footer__works">
-                        @foreach (\App\Models\Portfolio::orderByDesc('id')->limit(6)->get() as $item)
-                            <a class="footer__works_item" href="/portfolio/{{ $item->id }}">
-                                <img class="footer__works_img" width="70" height="70" decoding="async"
-                                    loading="lazy" src="{{ Storage::url($item?->image[0]?->path ?? '') }}"
-                                    alt="{{ $item->title }}" />
-                            </a>
-                        @endforeach
+                    <div class="footer-works-swiper swiper">
+                        <div class="swiper-wrapper">
+                            @foreach (\App\Models\Portfolio::orderByDesc('id')->limit(18)->get()->chunk(6) as $list)
+                                <div class="swiper-slide footer__works">
+                                    @foreach ($list as $item)
+                                        <a class="footer__works_item" href="/portfolio/{{ $item->id }}">
+                                            <img class="footer__works_img" width="70" height="70"
+                                                decoding="async" loading="lazy"
+                                                src="{{ Storage::url($item?->image[0]?->path ?? '') }}"
+                                                alt="{{ $item->title }}" />
+                                        </a>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>

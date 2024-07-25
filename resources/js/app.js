@@ -118,9 +118,7 @@ function creatImage(urls) {
 })();
 
 (function () {
-    const portfolioSlider = document.querySelector(
-        ".portfolio-one__swiper"
-    );
+    const portfolioSlider = document.querySelector(".portfolio-one__swiper");
 
     if (!portfolioSlider) return;
 
@@ -152,6 +150,23 @@ function creatImage(urls) {
             //         slidesPerView: 4,
             //     },
             // },
+        });
+    } catch {}
+})();
+
+(function () {
+    const worksSlider = document.querySelector(".footer-works-swiper");
+
+    if (!worksSlider) return;
+
+    try {
+        new Swiper(worksSlider, {
+            autoplay: {
+                delay: 1250,
+            },
+            speed: 1250,
+            slidesPerView: 1,
+            spaceBetween: 20,
         });
     } catch {}
 })();
