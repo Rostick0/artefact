@@ -22,7 +22,7 @@ class UpdatePortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:191',
             'description' => 'nullable|string|max:65536',
             'image.*' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
         ];

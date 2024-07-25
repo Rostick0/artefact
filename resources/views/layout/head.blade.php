@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
     <meta charset="utf-8">
@@ -16,6 +16,7 @@
     <title>@yield('seo_title', 'Artefact')</title>
     <meta name="description" content="@yield('seo_description', 'Description')">
     <meta name="keywords" content="@yield('seo_keywords')">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico" />
 </head>
 
 <body>

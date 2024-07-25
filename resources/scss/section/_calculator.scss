@@ -1,5 +1,11 @@
 .calculator {
-    padding: 100px 0;
+    padding: 40px 0 100px;
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
 
     &__switch {
         display: flex;
@@ -14,10 +20,10 @@
             display: inline-block;
             font-size: 20px;
             padding: 5px;
-            transition: .3s;
+            transition: 0.3s;
         }
 
-        &_input:checked+&_name {
+        &_input:checked + &_name {
             background-color: #ecc311;
             color: #fff;
         }
@@ -65,7 +71,25 @@
         font-size: 24px;
     }
 
+    &__bottom {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 700;
+        margin-top: 20px;
+
+        .main-info__need {
+            margin-bottom: 0;
+        }
+    }
+
     @media (max-width: 992px) {
+        padding: 60px 0;
+
+        &__title {
+            font-size: 20px;
+        }
+
         &__switch {
             &_name {
                 font-size: 18px;
@@ -100,6 +124,7 @@
             grid-template-columns: repeat(2, 1fr);
         }
     }
+
     @media (max-width: 600px) {
         &__switch {
             flex-wrap: wrap;

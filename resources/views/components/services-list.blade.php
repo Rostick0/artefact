@@ -2,7 +2,7 @@
 
 <div class="services-list">
     @foreach ($services as $item)
-        <a class="services-list__item services-list-item" href="/service/{{ $item->id }}">
+        <a class="services-list__item services-list-item" href="/service/{{ rawUrlEncode(mb_strtolower($item->title)) }}">
             <div class="services-list-item__title">{{ $item->title }}</div>
             <div class="services-list-item__image">
                 <img class="services-list-item__img" decoding="async" loading="lazy"

@@ -26,7 +26,7 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </label>
-            @if ($service->image?->path)
+            @if ($service?->image?->path)
                 <img class="admin-form-editor__img" src="{{ Storage::url($service->image->path) }}" alt="">
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
@@ -50,7 +50,7 @@
                 <a class="admin-item" href="/admin/service-item/edit/{{ $service->id }}">
                     <div class="admin-item__title">{{ $service->title }}</div>
                     <div class="admin-item__image">
-                        <img class="admin-item__img" src="{{ Storage::url($service->image->path) }}" alt="">
+                        <img class="admin-item__img" src="{{ Storage::url($service?->image?->path) }}" alt="">
                     </div>
                 </a>
             @endforeach

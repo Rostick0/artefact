@@ -1,6 +1,6 @@
 @extends('layout.admin.layout')
 
-@section("content")
+@section('content')
     <div class="admin-form-editor">
         <h1 class="admin-form-editor__title">Работа #{{ $portfolio->id }} в портфолио</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
@@ -8,8 +8,7 @@
             <div class="admin-form-editor__flex">
                 <label class="label">
                     <span class="label__title">Название</span>
-                    <input class="input" type="text" name="title" value="{{ old('title') ?? $portfolio->title }}"
-                        required />
+                    <textarea class="input" type="text" name="title" rows="1" required>{{ old('title') ?? $portfolio->title }}</textarea>
                     @error('title')
                         <span class="error">{{ $message }}</span>
                     @enderror
@@ -60,9 +59,11 @@
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
-        <form class="admin-form-editor__delete" action="{{ route('portfolio.delete', [
-            'id' => $portfolio->id
-        ]) }}" method="POST">
+        <form class="admin-form-editor__delete"
+            action="{{ route('portfolio.delete', [
+                'id' => $portfolio->id,
+            ]) }}"
+            method="POST">
             @csrf
             <input name="_method" value="DELETE" type="hidden">
             <button class="btn-delete">Удалить</button>

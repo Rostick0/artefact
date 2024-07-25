@@ -1,5 +1,5 @@
 .modal {
-    background-color: rgba(11, 11, 11, .8);
+    background-color: rgba(11, 11, 11, 0.8);
     display: none;
     align-items: center;
     justify-content: center;
@@ -15,15 +15,15 @@
     }
 
     &__close {
-        color: #FFF;
+        color: #fff;
         font-size: 40px;
-        line-height: .5;
+        line-height: 0.5;
         position: absolute;
         top: 0;
         right: 0;
-        transition: .3s;
+        transition: 0.3s;
         transform: translateY(calc(100% - 8px));
-        opacity: .7;
+        opacity: 0.7;
 
         &:hover {
             cursor: pointer;
@@ -40,17 +40,17 @@
 
     &__content {
         overflow: auto;
-        height: 100%;
+        max-height: 100%;
 
         &_inner {
             background-color: #fff;
             display: flex;
-            flex-direction: column;
-            row-gap: 30px;
+            column-gap: 30px;
         }
     }
 
     &__img {
+        flex-shrink: 0;
         width: 100%;
         max-height: 85vh;
     }

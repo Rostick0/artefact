@@ -28,7 +28,7 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </label>
-            @if ($service_item->image?->path)
+            @if ($service_item?->image?->path)
                 <img class="admin-form-editor__img" src="{{ Storage::url($service_item->image->path) }}" alt="">
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>

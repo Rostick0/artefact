@@ -30,9 +30,9 @@ class ServiceController extends Controller
         ]);
     }
 
-    public function show(int $id): View
+    public function show(string $title): View
     {
-        $service = Service::findOrFail($id);
+        $service = Service::where('title', $title)->firstOrFail();
 
         $navigations = [
             [

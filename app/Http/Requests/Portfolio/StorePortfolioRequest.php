@@ -23,7 +23,7 @@ class StorePortfolioRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:191',
             'description' => 'nullable|string|max:65536',
             'category_id' => 'required|numeric|' . Rule::exists('categories', 'id'),
             'image.*' => 'nullable|mimes:png,jpg,jpeg,gif,svg',

@@ -47,7 +47,7 @@
                 happy
                 to provide you with a quote for your project.
             </div>
-            {{-- <img class="service__image" decoding="async" loading="lazy" src="{{ Storage::url($service->image->path) }}"
+            {{-- <img class="service__image" decoding="async" loading="lazy" src="{{ Storage::url($service?->image?->path) }}"
                 alt="{{ $service?->title }}" /> --}}
         </div>
     </div>

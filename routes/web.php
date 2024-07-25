@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\PortfolioController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\ServiceItemController;
 use App\Http\Controllers\Admin\ServicePriceController;
+use App\Http\Controllers\Admin\LangController;
+use App\Http\Controllers\Client\ArticleController as ClientArticleController;
 use App\Http\Controllers\Client\FeedbackController;
 use App\Http\Controllers\Client\IndexController as ClientIndexController;
 use App\Http\Controllers\Client\PortfolioController as ClientPortfolioController;
@@ -24,12 +27,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::group(['prefix' => 'admin'], function () {
-    Route::get('login', function () {
-        return view('pages.admin.login');
-    })->name('login');
+    Route::view('login', 'pages.admin.login')->name('login');
     Route::post('login', [AuthController::class, 'login'])->middleware('throttle:3,3');
 
-    // 'middleware' => 'auth'
     Route::group(['middleware' => 'auth'], function () {
         // Route::get('', function () {
         //     return view('pages.admin.index');
@@ -72,6 +72,24 @@ Route::group(['prefix' => 'admin'], function () {
             Route::get('list', [PageController::class, 'index']);
             Route::get('edit/{id}', [PageController::class, 'edit']);
             Route::post('edit/{id}', [PageController::class, 'update']);
+        });
+
+        Route::group(['prefix' => 'lang'], function () {
+            Route::get('list', [LangController::class, 'index']);
+            Route::get('create', [LangController::class, 'create']);
+            Route::post('create', [LangController::class, 'store']);
+            Route::get('edit/{id}', [LangController::class, 'edit']);
+            Route::post('edit/{id}', [LangController::class, 'update']);
+            Route::delete('delete/{id}', [LangController::class, 'destroy'])->name('lang.delete');
+        });
+
+        Route::group(['prefix' => 'article'], function () {
+            Route::get('list', [ArticleController::class, 'index']);
+            Route::get('create', [ArticleController::class, 'create']);
+            Route::post('create', [ArticleController::class, 'store']);
+            Route::get('edit/{id}', [ArticleController::class, 'edit']);
+            Route::post('edit/{id}', [ArticleController::class, 'update']);
+            Route::delete('delete/{lang_id}', [ArticleController::class, 'destroy'])->name('article.delete');
         });
     });
 });
@@ -265,10 +283,10 @@ Route::get('/portfolio', [ClientPortfolioController::class, 'index']);
 Route::get('/portfolio/{id}', [ClientPortfolioController::class, 'show']);
 
 Route::get('/services', [ClientServiceController::class, 'index']);
-Route::get('/service/{id}', [ClientServiceController::class, 'show']);
+Route::get('/service/{title}', [ClientServiceController::class, 'show']);
 
-Route::get('/faq', function () {
-    $navigations = [
+Route::view('/faq', 'pages.client.faq', [
+    'navigations' => [
         [
             'link' => '/',
             'name' => 'Home',
@@ -277,16 +295,12 @@ Route::get('/faq', function () {
             'is_active' => true,
             'name' => 'FAQ',
         ],
-    ];
+    ]
+]);
 
-    return view('pages.client.faq', [
-        'navigations' => $navigations
-    ]);
-});
+Route::view('/contacts', 'pages.client.contacts');
 
-Route::get('/contacts', function () {
-    return view('pages.client.contacts');
-});
-
-Route::get('/feedback', [FeedbackController::class, 'create']);
+// Route::get('/feedback', [FeedbackController::class, 'create']);
 Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send')->middleware('throttle:3,10');
+
+Route::resource('/articles', ClientArticleController::class)->only(['index', 'show'])->middleware('localization');

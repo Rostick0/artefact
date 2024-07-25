@@ -2,6 +2,11 @@
 @import './layout/';
 
 .admin-main {
+    &__back {
+        display: inline-flex;
+        margin-bottom: 8px;
+    }
+
     &__content {
         flex-grow: 1;
         padding: 40px;

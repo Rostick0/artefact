@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests\Service;
 
+use App\Models\Service;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreServiceRequest extends FormRequest
 {
@@ -22,7 +24,7 @@ class StoreServiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|string|max:255',
+            'title' => 'required|string|max:191|' . Rule::exists(Service::class),
             'description' => 'nullable|string|max:65536',
             'image' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
         ];

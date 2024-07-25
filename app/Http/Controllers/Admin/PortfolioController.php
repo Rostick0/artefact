@@ -18,12 +18,12 @@ class PortfolioController extends Controller
      */
     public function index(Request $request): View
     {
-        $portfolios = Portfolio::with([]);
+        $portfolios = Portfolio::query();
 
         if ($request->title) $portfolios->where('title', 'LIKE', '%' . $request->title . '%');
         if ($request->category_id) $portfolios->where('category_id', '=', $request->category_id);
 
-        $portfolios = $portfolios->paginate(18);
+        $portfolios = $portfolios->orderByDesc('id')->paginate(18);
         $categories = Category::all();
 
         return view('pages.admin.portfolios', [
@@ -50,7 +50,7 @@ class PortfolioController extends Controller
         $values = $request->only(['title', 'description', 'category_id']);
 
         $portfolio = Portfolio::create($values);
-        
+
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {
                 ImageDBUtil::create($image, $portfolio);

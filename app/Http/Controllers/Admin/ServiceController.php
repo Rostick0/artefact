@@ -17,11 +17,11 @@ class ServiceController extends Controller
      */
     public function index(Request $request): View
     {
-        $services = Service::with([]);
+        $services = Service::query();
 
         if ($request->title) $services->where('title', 'LIKE', '%' . $request->title . '%');
 
-        $services = $services->paginate(18);
+        $services = $services->orderByDesc('id')->paginate(18);
 
         return view('pages.admin.services', [
             'services' => $services

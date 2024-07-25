@@ -1,6 +1,6 @@
 @extends('layout.admin.layout')
 
-@section("content")
+@section('content')
     <div class="admin-form-editor">
         <h1 class="admin-form-editor__title">Создание портфолио</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
@@ -8,7 +8,7 @@
             <div class="admin-form-editor__flex">
                 <label class="label">
                     <span class="label__title">Название</span>
-                    <input class="input" type="text" name="title" value="{{ old('title') }}" required />
+                    <textarea class="input" type="text" name="title" rows="1" required>{{ old('title') }}</textarea>
                     @error('title')
                         <span class="error">{{ $message }}</span>
                     @enderror

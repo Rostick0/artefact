@@ -12,7 +12,7 @@ class PortfolioController extends Controller
 {
     public function index(): View
     {
-        $portfolios = Portfolio::all();
+        $portfolios = Portfolio::orderByDesc('id')->get();
         $categories = Category::all();
 
         $navigations = [

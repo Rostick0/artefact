@@ -5,9 +5,9 @@
                 <div class="footer__content_item">
                     <div class="footer__content_top">Contacts</div>
                     <div class="footer__contacts">
-                        <a class="footer__contacts_item" href="mailto:sofialopatina@artefact.guru">
+                        <a class="footer__contacts_item" href="mailto:info@artefact.guru">
                             <i class="far fa-envelope"></i>
-                            <span>sofialopatina@artefact.guru</span>
+                            <span>info@artefact.guru</span>
                         </a>
                         <div class="footer__contacts_item">
                             <i class="far fa-map"></i>

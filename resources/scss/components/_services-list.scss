@@ -6,7 +6,15 @@
     &-item {
         display: flex;
         flex-direction: column;
-        row-gap: 8px;
+        // row-gap: 8px;
+
+        &__title {
+            background-color: #000;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            padding: 4px;
+        }
 
         &__image {
             display: flex;

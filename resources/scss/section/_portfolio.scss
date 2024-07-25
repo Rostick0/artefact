@@ -14,13 +14,13 @@
             font-size: 18px;
             font-weight: 500;
             position: relative;
-            transition: .3s;
+            transition: 0.3s;
 
             &::after {
                 background-color: #ecc311;
                 content: "";
                 display: inline-block;
-                transition: .3s;
+                transition: 0.3s;
                 position: absolute;
                 left: 0;
                 bottom: 0;
@@ -72,7 +72,7 @@
         &:hover {
             &.portfolio-item {
                 &::after {
-                    opacity: .9;
+                    opacity: 0.9;
                 }
             }
 
@@ -107,11 +107,17 @@
             position: absolute;
             top: 50px;
             transform: translateY(-250%);
-            transition: .3s;
+            transition: 0.3s;
             right: 50px;
             width: 72px;
             height: 72px;
             z-index: 1;
+
+        }
+
+        &__many_images {
+            transform: translate(75%, 75%);
+            position: absolute;
         }
 
         &__title {
@@ -123,7 +129,8 @@
             left: 50px;
             bottom: 50px;
             transform: translateY(250%);
-            transition: .3s;
+            transition: 0.3s;
+            white-space: pre-wrap;
             z-index: 1;
         }
     }

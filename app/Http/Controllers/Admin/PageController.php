@@ -22,7 +22,6 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -64,7 +63,7 @@ class PageController extends Controller
         File::put(
             resource_path('views/pages/client/' . $page->path . '.blade.php'),
             '@extends("layout.client.layout")
-            @section("seo_title", "Contacts")
+            @section("seo_title", ' . $request->seo_title . ')
             
             @section("content")
             ' . htmlspecialchars_decode($request->content) . '

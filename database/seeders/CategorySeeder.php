@@ -21,6 +21,7 @@ class CategorySeeder extends Seeder
             ['name' => 'Panorams'],
             ['name' => 'Exterior'],
             ['name' => 'Panorama'],
+            ['name' => 'AI'],
         ];
 
         Category::insert($categories);
