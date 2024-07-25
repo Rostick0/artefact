@@ -13,15 +13,7 @@ class ArticleController extends Controller
     {
         $articles = Article::query();
 
-        $articles = $articles->whereHas(
-            'article_langs.lang',
-            function ($query) use ($request) {
-                $query->where(
-                    'value',
-                    $request->getPreferredLanguage()
-                );
-            }
-        )->orderByDesc('id')->paginate(9);
+        $articles = $articles->orderByDesc('id')->paginate(9);
 
 
         $navigations = [
@@ -40,15 +32,7 @@ class ArticleController extends Controller
 
     public function show(Request $request, int $id): View
     {
-        $article = Article::whereHas(
-            'article_langs.lang',
-            function ($query) use ($request) {
-                $query->where(
-                    'value',
-                    $request->getPreferredLanguage()
-                );
-            }
-        )->where('id', $id)->firstOrFail();
+        $article = Article::findOrFail($id);
 
         return view('pages.client.article', compact('article'));
     }

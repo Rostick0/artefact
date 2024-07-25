@@ -8,12 +8,13 @@
             <div class="articles__list">
                 @foreach ($articles as $article)
                     @php
-                        $article_current_lang = $article
-                            ->article_langs()
-                            ->whereHas('lang', function ($query) {
-                                $query->where('value', app()->getLocale());
-                            })
-                            ->first();
+                        $article_current_lang =
+                            $article
+                                ->article_langs()
+                                ->whereHas('lang', function ($query) {
+                                    $query->where('value', app()->getLocale());
+                                })
+                                ->first() ?? $article->article_langs()->first();
 
                         $article_link = '/articles/' . $article->id;
                         $article_description = \Illuminate\Support\Str::limit(

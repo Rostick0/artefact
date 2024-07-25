@@ -54,7 +54,7 @@ class ArticleController extends Controller
 
         $article->article_langs()->create($request->validated());
 
-        return redirect('/admin/article/edit/' . $article->id);
+        return redirect('/admin/article/edit/' . $article->id . '?=lang_id=' . $request->lang_id);
     }
 
     /**
@@ -63,7 +63,7 @@ class ArticleController extends Controller
     public function edit(Request $request, int $id)
     {
         $article = Article::findOrFail($id);
-        $article_lang = $article->article_langs()->find($request->lang_id);
+        $article_lang = $article->article_langs()->where('lang_id', $request->lang_id)->firstOrFail();
         $langs = Lang::all();
 
         return view('pages.admin.article', [

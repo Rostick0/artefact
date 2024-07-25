@@ -1,11 +1,12 @@
 @extends('layout.client.layout')
 @php
-    $article_current_lang = $article
-        ->article_langs()
-        ->whereHas('lang', function ($query) {
-            $query->where('value', app()->getLocale());
-        })
-        ->first();
+    $article_current_lang =
+        $article
+            ->article_langs()
+            ->whereHas('lang', function ($query) {
+                $query->where('value', app()->getLocale());
+            })
+            ->first() ?? $article->article_langs()->first();
 @endphp
 @section('seo_title', 'Articles Artefact')
 @section('seo_description', 'Articles Artefact')

@@ -3,7 +3,7 @@
 @section('seo_title', 'Все статьи')
 
 @section('content')
-    <form class="admin-filter" action="{{ url()->current() }}">
+    {{-- <form class="admin-filter" action="{{ url()->current() }}">
         <div class="admin-filter__inputs">
             <label class="label admin-filter__label">
                 <span class="label__title">Название</span>
@@ -11,7 +11,7 @@
             </label>
         </div>
         <button class="btn admin-filter__btn">Поиск</button>
-    </form>
+    </form> --}}
     <a class="btn" href="/admin/article/create">+ Создать</a>
     <div class="admin-items">
         <div class="admin-items__list">

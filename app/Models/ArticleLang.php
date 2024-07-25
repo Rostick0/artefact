@@ -11,6 +11,7 @@ class ArticleLang extends Model
 
     protected $fillable = [
         'title',
+        'description',
         'content',
         'article_id',
         'lang_id',
