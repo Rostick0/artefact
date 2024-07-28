@@ -1,6 +1,6 @@
 @extends('layout.admin.layout')
 
-@section("content")
+@section('content')
     <div class="admin-form-editor">
         <h1 class="admin-form-editor__title">Редактирование услуги #{{ $service->id }}</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
@@ -21,7 +21,8 @@
             </label>
             <label class="label">
                 <span class="label__title">Фото</span>
-                <input class="input" type="file" name="image" value="{{ old('image') }}" accept=".png, .jpeg, .jpg, .webm" />
+                <input class="input" type="file" name="image" value="{{ old('image') }}"
+                    accept=".png, .jpeg, .jpg, .webm" />
                 @error('image')
                     <span class="error">{{ $message }}</span>
                 @enderror
@@ -31,9 +32,10 @@
             @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
-        <form class="admin-form-editor__delete" action="{{ route('service.delete', [
-            'id' => $service->id
-        ]) }}" method="POST">
+        <form class="admin-form-editor__delete"
+            action="{{ route('service.delete', [
+                'id' => $service->id,
+            ]) }}" method="POST">
             @csrf
             <input name="_method" value="DELETE" type="hidden">
             <button class="btn-delete">Удалить</button>

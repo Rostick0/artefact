@@ -52,6 +52,8 @@ class PageController extends Controller
     {
         $page = Page::findOrFail($id);
 
+        dd($request->content);
+
         $page->update(
             $request->only([
                 'seo_title',
@@ -64,8 +66,10 @@ class PageController extends Controller
             resource_path('views/pages/client/' . $page->path . '.blade.php'),
             '@extends("layout.client.layout")
             @section("seo_title", ' . $request->seo_title . ')
+            @section("seo_description", ' . $request->seo_description . ')
+            @section("seo_keywords", ' . $request->seo_keywords . ')
             
-            @section("content")
+            @section(' . "'content'" . ')
             ' . htmlspecialchars_decode($request->content) . '
             @endsection'
         );

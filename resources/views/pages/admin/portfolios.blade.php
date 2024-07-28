@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Все портфолио')
 
-@section("content")
+@section('content')
     <form class="admin-filter" action="{{ url()->current() }}">
         <div class="admin-filter__inputs">
             <label class="label admin-filter__label">
@@ -29,7 +29,8 @@
                 <a class="admin-item" href="/admin/portfolio/edit/{{ $portfolio->id }}">
                     <div class="admin-item__title">{{ $portfolio->title }}</div>
                     <div class="admin-item__image">
-                        <img class="admin-item__img" src="{{ Storage::url($portfolio->image[0]?->path ?? '') }}" alt="{{ $portfolio->title }}">
+                        <img class="admin-item__img" src="{{ Storage::url($portfolio->image[0]?->path ?? '') }}"
+                            alt="{{ $portfolio->title }}">
                     </div>
                 </a>
             @endforeach

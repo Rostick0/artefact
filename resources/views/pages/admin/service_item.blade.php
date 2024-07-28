@@ -1,6 +1,6 @@
 @extends('layout.admin.layout')
 
-@section("content")
+@section('content')
     <div class="admin-form-editor">
         <h1 class="admin-form-editor__title">Редактирование типа услуги #{{ $service_item->id }}</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
@@ -36,7 +36,8 @@
         <form class="admin-form-editor__delete"
             action="{{ route('service-item.delete', [
                 'id' => $service_item->id,
-            ]) }}" method="POST">
+            ]) }}"
+            method="POST">
             @csrf
             <input name="_method" value="DELETE" type="hidden">
             <button class="btn-delete">Удалить</button>

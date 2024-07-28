@@ -2,7 +2,7 @@
 
 @section('seo_title', $service->title)
 
-@section("content")
+@section('content')
     <x-banner-nav :title="$service->title" :navigations="$navigations" />
     <div class="service">
         <div class="container">
@@ -14,8 +14,8 @@
                     <div class="service__item service-item">
                         <div class="service-item__image">
                             <div class="service-item__image_inner">
-                                <img class="service-item__img" decoding="async" loading="lazy" src="{{ Storage::url($item?->image?->path) }}"
-                                    alt="{{ $item?->title }}">
+                                <img class="service-item__img" decoding="async" loading="lazy"
+                                    src="{{ Storage::url($item?->image?->path) }}" alt="{{ $item?->title }}">
                             </div>
                         </div>
                         <div class="service-item__text">

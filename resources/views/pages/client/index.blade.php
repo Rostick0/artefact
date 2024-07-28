@@ -1,4 +1,6 @@
-@extends('layout.client.layout_short') @section('seo_title', 'Artefact')
+@extends('layout.client.layout_short')
+@section('seo_title', 'Artefact')
+
 @section('content')
     <div class="main-banner">
         <div class="main-banner__slider main-slider-top">
@@ -20,8 +22,9 @@
                     style="background-image: url('../../../assets/img/visualization-interior-slide.jpg');">
                     <div class="main-slider-top__slide_inner">
                         <div class="main-slider-top__middle-text">
-                            VISUALIZATION OF <br /><span class="text-ui">EXTERIOR</span> AND
-                            <span class="text-ui">INTERIOR</span>
+                            {{-- VISUALIZATION OF <br /><span class="text-ui">EXTERIOR</span> AND
+                            <span class="text-ui">INTERIOR</span> --}}
+                            VISUALIZATION CREATES EMOTION, <br /> EMOTION SELLS...
                         </div>
                         {{--
           <a class="btn main-slider-top__btn" href="/contacts"
@@ -69,7 +72,16 @@
     <section class="main-info">
         <div class="container">
             <div class="main-info__text">
+                <h2>Welcome to the World of 3D Visualization!</h2>
                 <p>
+                    Here, ideas transform into visual masterpieces using cutting-edge technologies. From realistic
+                    architectural renders to immersive virtual tours—every detail is crafted with precision and creativity.
+                </p>
+                <p>
+                    Explore the boundless possibilities of 3D visualization and give your projects a new, impressive
+                    dimension.
+                </p>
+                {{-- <p>
                     Welcome to the realm of 3D visualization! We are an art, technology, and
                     creativity-driven team offering you a captivating perspective on your
                     projects. While our main office is located in the beautiful city of
@@ -89,7 +101,7 @@
                     your ideas into reality together. Get in touch with us now, and let's
                     embark on a journey of creating stunning 3D visualizations for your
                     success!
-                </p>
+                </p> --}}
             </div>
             <div class="main-info__video">
                 <div class="main-info__video_inner">

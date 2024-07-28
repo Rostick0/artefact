@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Models\ArticleLang;
 use App\Observers\ArticleLangObserver;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
@@ -24,15 +25,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         View::share('htmlSection', function ($text) {
-            $startString = '@section("content")';
+            $startString = "@section('content')";
             $endString = '@endsection';
             $startPosition = strpos($text, $startString);
             if ($startPosition !== false) {
                 $startPosition += strlen($startString);
                 $endPosition = strpos($text, $endString, $startPosition);
                 if ($endPosition !== false) {
-                    $result = substr($text, $startPosition, $endPosition - $startPosition);
-                    echo $result;
+                    return htmlspecialchars_decode(substr($text, $startPosition, $endPosition - $startPosition));
                 }
             }
         });

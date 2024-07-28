@@ -2,7 +2,7 @@
 
 @section('seo_title', 'Request form')
 
-@section("content")
+@section('content')
     <x-banner-nav title="Request form" :navigations="$navigations" />
     <div class="feedback">
         <div class="container">

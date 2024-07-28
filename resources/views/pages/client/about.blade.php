@@ -26,12 +26,13 @@
                 <div class="about__image _figure">
                     <div class="about__figure"><span style="font-size: 14pt;">Work from <span
                                 style="font-size: 18pt;">2019&nbsp;</span></span></div>
-                    <img class="about__img" src="../../../assets/img/abot_first.jpg" alt="" loading="lazy">
+                    <img class="about__img" src="../../../assets/img/abot_first.jpg" alt="" decoding="async"
+                        loading="lazy" width="100%">
                 </div>
                 <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_7.jpg" alt=""
-                        loading="lazy"></div>
-                <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_8.jpg" alt=""
-                        loading="lazy"></div>
+                        decoding="async" loading="lazy" width="100%"></div>
+                <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_8.jpg"
+                        alt=""decoding="async" loading="lazy" width="100%"></div>
             </div>
         </section>
         <section class="visualization">

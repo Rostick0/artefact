@@ -1,6 +1,6 @@
 @extends('layout.admin.layout')
 
-@section("content")
+@section('content')
     <div class="admin-form-editor">
         <h1 class="admin-form-editor__title">Создание услуги</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
