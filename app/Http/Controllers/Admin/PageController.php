@@ -52,8 +52,6 @@ class PageController extends Controller
     {
         $page = Page::findOrFail($id);
 
-        dd($request->content);
-
         $page->update(
             $request->only([
                 'seo_title',

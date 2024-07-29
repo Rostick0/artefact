@@ -301,6 +301,8 @@ Route::view('/faq', 'pages.client.faq', [
 Route::view('/contacts', 'pages.client.contacts');
 
 // Route::get('/feedback', [FeedbackController::class, 'create']);
-Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send')->middleware('throttle:3,10');
+Route::post('/feedback', [FeedbackController::class, 'send'])->name('feedback.send');
+
+// ->middleware('throttle:3,10')
 
 Route::resource('/articles', ClientArticleController::class)->only(['index', 'show'])->middleware('localization');

@@ -27,7 +27,7 @@ class SendFeedbackRequest extends FormRequest
             'question' => 'nullable|in:Order project,Get answer',
             'service' => 'nullable|in:Interior,Exterior,Product rendering,Modelling,Animation',
             'message' => 'required',
-            'file' => ''
+            'file' => 'nullable|file'
         ];
     }
 }
