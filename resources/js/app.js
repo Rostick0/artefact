@@ -23,10 +23,10 @@ function modal() {
         modal.classList.add("_active");
     }
 
-    function activeModalManyImage(images) {
+    function activeModalManyContent(content) {
         if (modal.classList.contains("_active")) return;
 
-        modalContentInner.innerHTML = images;
+        modalContentInner.innerHTML = content;
         modal.classList.add("_active");
     }
 
@@ -46,8 +46,14 @@ function modal() {
 
     return {
         activeModal,
-        activeModalManyImage,
+        activeModalManyContent,
     };
+}
+
+function createVideo(urls) {
+    return urls
+        ?.map((url) => `<video class="modal__img" src="${url}" controls></video>`)
+        ?.join("");
 }
 
 function creatImage(urls) {
@@ -69,16 +75,19 @@ function creatImage(urls) {
         const portfolioItemImages = item.querySelector(
             ".portfolio-item__images"
         );
-        const imagesPaths = JSON.parse(portfolioItemImages.textContent)?.map(
+        const paths = JSON.parse(portfolioItemImages.textContent)?.map(
             (item) => "/storage/" + item.path
         );
-        const images = creatImage(imagesPaths);
 
-        const { activeModal, activeModalManyImage } = modal();
+        const content = item.getAttribute("data-is-video")
+            ? createVideo(paths)
+            : creatImage(paths);
+
+        const { activeModal, activeModalManyContent } = modal();
         item.onclick = function (e) {
             if (e.target === portfolioItemTitle) return;
 
-            activeModalManyImage(images);
+            activeModalManyContent(content);
         };
     });
 })();

@@ -15,10 +15,17 @@
                 </div>
                 <div class="portfolio__list">
                     @foreach ($portfolios as $item)
-                        <div class="portfolio__list_item portfolio-item _active" data-id="{{ $item->category_id }}">
-                            <div class="portfolio-item__images" hidden>{{ $item?->image }}</div>
-                            <img class="portfolio-item__img" decoding="async" loading="lazy"
-                                src="{{ Storage::url($item?->image[0]?->path ?? '') }}" alt="{{ $item?->title }}">
+                        <div class="portfolio__list_item portfolio-item _active" data-id="{{ $item->category_id }}"
+                            data-is-video="{{ $item->file->count() >= 1 }}">
+                            <div class="portfolio-item__images" hidden>
+                                {{ $item->file->count() ? $item->file : $item?->image }}</div>
+                            @if (isset($item?->file[0]?->path))
+                                <video class="portfolio-item__img" src="{{ Storage::url($item?->file[0]?->path ?? '') }}"
+                                    autoplay muted></video>
+                            @else
+                                <img class="portfolio-item__img" decoding="async" loading="lazy"
+                                    src="{{ Storage::url($item?->image[0]?->path ?? '') }}" alt="{{ $item?->title }}">
+                            @endif
                             <button class="portfolio-item__plus">
                                 <span>+</span>
                                 @if (count($item?->image) > 1)

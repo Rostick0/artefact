@@ -57,6 +57,31 @@
                     @endforeach
                 </div>
             @endif
+            <label class="label">
+                <span class="label__title">Видео</span>
+                <input class="input" type="file" name="video[]" value="{{ old('video') }}" accept=".mp4, .mov"
+                    multiple />
+                @error('video')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+            </label>
+            @if ($portfolio->file->count())
+                <div class="admin-form-editor__images">
+                    @foreach ($portfolio->file as $index => $file)
+                        @if ($file->path)
+                            <div class="admin-form-editor__image">
+                                <label class="admin-form-editor__image_close">
+                                    <span>×</span>
+                                    <input type="checkbox" name="file_delete[{{ $index }}]"
+                                        value="{{ $file->id }}" hidden>
+                                </label>
+                                <video class="admin-form-editor__img" src="{{ Storage::url($file->path) }}" autoplay
+                                    muted></video>
+                            </div>
+                        @endif
+                    @endforeach
+                </div>
+            @endif
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
         <form class="admin-form-editor__delete"

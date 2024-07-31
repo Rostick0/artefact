@@ -41,6 +41,14 @@
                     <span class="error">{{ $message }}</span>
                 @enderror
             </label>
+            <label class="label">
+                <span class="label__title">Видео</span>
+                <input class="input" type="file" name="video[]" value="{{ old('video') }}" accept=".mp4, .mov"
+                    multiple />
+                @error('video')
+                    <span class="error">{{ $message }}</span>
+                @enderror
+            </label>
             <button class="btn admin-form-editor__btn">Создать</button>
         </form>
     </div>

@@ -4,16 +4,11 @@ namespace App\Utils;
 
 use Illuminate\Support\Facades\Storage;
 
-class ImageUtil
+class FileUtil
 {
-
-    private static function getUploadPath()
+    public static function upload($image, $type)
     {
-        return 'upload/image/';
-    }
-    public static function upload($image)
-    {
-        $upload_path = ImageUtil::getUploadPath();
+        $upload_path = 'upload/' . $type . '/';
 
         $extension = $image->getClientOriginalExtension();
         $random_name = $upload_path . random_int(1000, 9999) . time() . '.' . $extension;

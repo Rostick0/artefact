@@ -7,6 +7,7 @@ use App\Models\Portfolio;
 use App\Http\Requests\Portfolio\StorePortfolioRequest;
 use App\Http\Requests\Portfolio\UpdatePortfolioRequest;
 use App\Models\Category;
+use App\Utils\FileDBUtil;
 use App\Utils\ImageDBUtil;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
@@ -47,6 +48,8 @@ class PortfolioController extends Controller
 
     public function store(StorePortfolioRequest $request)
     {
+        // dd($request->file('video')[0]->getClientMimeType());
+
         $values = $request->only(['title', 'description', 'category_id']);
 
         $portfolio = Portfolio::create($values);
@@ -54,6 +57,12 @@ class PortfolioController extends Controller
         if ($request->hasFile('image')) {
             foreach ($request->file('image') as $image) {
                 ImageDBUtil::create($image, $portfolio);
+            }
+        }
+
+        if ($request->hasFile('video')) {
+            foreach ($request->file('video') as $video) {
+                FileDBUtil::create($video, $portfolio);
             }
         }
 
@@ -92,7 +101,17 @@ class PortfolioController extends Controller
         }
 
         if ($request->image_delete) {
-            ImageDBUtil::deleteImage([...$request->image_delete], $portfolio);
+            ImageDBUtil::delete([...$request->image_delete], $portfolio);
+        }
+
+        if ($request->hasFile('video')) {
+            foreach ($request->file('video') as $file) {
+                FileDBUtil::create($file, $portfolio);
+            }
+        }
+
+        if ($request->file_delete) {
+            FileDBUtil::delete([...$request->file_delete], $portfolio);
         }
 
         return back();

@@ -34,15 +34,14 @@ class FeedbackController extends Controller
         $filepath = null;
 
         if ($request->hasFile('file')) {
-            $filepath = 'upload/mail/' . random_int(1000, 9999) . time() . '.' . $request->file('file')->extension();
+            $filepath_local = 'upload/mail/' . random_int(1000, 9999) . time() . '.' . $request->file('file')->extension();
 
-            $request->file('file')->storeAs('public/' . $filepath);
+            $request->file('file')->storeAs('public/' . $filepath_local);
+
+            $filepath = Storage::path('public/' . $filepath_local);
         }
 
-        Mail::to('rostik057@gmail.com')->send(new RequestMail($request->validated(), Storage::path('public/' . $filepath)));
-
-        // return back();
-        // dd($request->all());
+        Mail::to('rostik057@gmail.com')->send(new RequestMail($request->validated(), $filepath));
 
         return back()->with([
             'message' => 'Thank you for your application!'

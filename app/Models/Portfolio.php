@@ -27,6 +27,11 @@ class Portfolio extends Model
         return $this->morphMany(Image::class, 'imageable');
     }
 
+    public function file(): MorphMany
+    {
+        return $this->morphMany(File::class, 'fileable');
+    }
+
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class, 'category_id', 'id');
