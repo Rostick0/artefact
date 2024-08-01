@@ -27,7 +27,7 @@ class UpdateArticleRequest extends FormRequest
             'title' => 'required|max:191',
             'description' => 'nullable|max:191',
             'content' => 'nullable|string|max:65536',
-            'lang_id' => 'required|' . Rule::exists(Lang::class, 'id'),
+            // 'lang_id' => 'required|' . Rule::exists(Lang::class, 'id'),
             'image' => 'nullable|mimes:png,jpg,jpeg,gif,svg',
         ];
     }

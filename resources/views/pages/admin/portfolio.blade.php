@@ -75,7 +75,7 @@
                                     <input type="checkbox" name="file_delete[{{ $index }}]"
                                         value="{{ $file->id }}" hidden>
                                 </label>
-                                <video class="admin-form-editor__img" src="{{ Storage::url($file->path) }}" autoplay
+                                <video class="admin-form-editor__img" src="{{ Storage::url($file->path) }}" autoplay loop
                                     muted></video>
                             </div>
                         @endif

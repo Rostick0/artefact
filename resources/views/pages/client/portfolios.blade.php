@@ -21,7 +21,7 @@
                                 {{ $item->file->count() ? $item->file : $item?->image }}</div>
                             @if (isset($item?->file[0]?->path))
                                 <video class="portfolio-item__img" src="{{ Storage::url($item?->file[0]?->path ?? '') }}"
-                                    autoplay muted></video>
+                                    autoplay muted loop></video>
                             @else
                                 <img class="portfolio-item__img" decoding="async" loading="lazy"
                                     src="{{ Storage::url($item?->image[0]?->path ?? '') }}" alt="{{ $item?->title }}">

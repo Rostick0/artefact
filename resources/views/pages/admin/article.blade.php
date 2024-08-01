@@ -39,7 +39,7 @@
                 <img class="admin-form-editor__img" src="{{ Storage::url($article->image->path) }}" alt="">
             @endif
             <label class="label">
-                <select class="input" name="lang_id">
+                <select class="input" name="lang_id" readonly>
                     @foreach ($langs as $lang)
                         <option @if (old('lang_id') ? old('lang_id') == $lang->id : ($article_lang?->lang_id ?? Request::get('lang_id')) == $lang->id) selected @endif value="{{ $lang->id }}">
                             {{ $lang->name }}</option>

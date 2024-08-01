@@ -6,17 +6,32 @@
     <x-banner-nav :title="$portfolio->title" :navigations="$navigations" />
     <section class="portfolio-one">
         <div class="container">
-            <div class="portfolio-one__swiper swiper">
-                <div class="swiper-wrapper">
-                    @foreach ($portfolio?->image as $image)
-                        <div class="swiper-slide">
-                            <img class="portfolio-one__img" decoding="async" loading="lazy"
-                                src="{{ Storage::url($image?->path ?? '') }}" alt="{{ $portfolio->title }}" />
-                        </div>
-                    @endforeach
+            @if ($portfolio?->image->count())
+                <div class="portfolio-one__swiper swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($portfolio?->image as $image)
+                            <div class="swiper-slide">
+                                <img class="portfolio-one__img" decoding="async" loading="lazy"
+                                    src="{{ Storage::url($image?->path ?? '') }}" alt="{{ $portfolio->title }}" />
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination main-slider-top__pagination portfolio-one__swiper_pagination"></div>
                 </div>
-                <div class="swiper-pagination main-slider-top__pagination portfolio-one__swiper_pagination"></div>
-            </div>
+            @endif
+            @if ($portfolio?->file->count())
+                <div class="portfolio-one__swiper swiper">
+                    <div class="swiper-wrapper">
+                        @foreach ($portfolio?->file as $file)
+                            <div class="swiper-slide">
+                                <video class="portfolio-one__img" src="{{ Storage::url($file?->path ?? '') }}"
+                                    controls></video>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination main-slider-top__pagination portfolio-one__swiper_pagination"></div>
+                </div>
+            @endif
 
             <div class="portfolio-one__info">
                 <div class="portfolio-one__category">{{ $portfolio->category->name }}</div>
