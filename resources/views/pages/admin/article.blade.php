@@ -39,12 +39,8 @@
                 <img class="admin-form-editor__img" src="{{ Storage::url($article->image->path) }}" alt="">
             @endif
             <label class="label">
-                <select class="input" name="lang_id" readonly>
-                    @foreach ($langs as $lang)
-                        <option @if (old('lang_id') ? old('lang_id') == $lang->id : ($article_lang?->lang_id ?? Request::get('lang_id')) == $lang->id) selected @endif value="{{ $lang->id }}">
-                            {{ $lang->name }}</option>
-                    @endforeach
-                </select>
+                <span class="label__title">Текущий язык</span>
+                <input class="input" value="{{ $article_lang->lang->name }}" readonly />
             </label>
             <button class="btn admin-form-editor__btn">Изменить</button>
         </form>
