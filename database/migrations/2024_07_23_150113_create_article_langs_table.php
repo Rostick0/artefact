@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('article_langs', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('title')->nullable();
             $table->string('description')->nullable();
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->foreignId('article_id')->references('id')->on('articles')->onDelete('cascade');
             $table->foreignId('lang_id')->references('id')->on('langs')->onDelete('cascade');
             $table->timestamps();

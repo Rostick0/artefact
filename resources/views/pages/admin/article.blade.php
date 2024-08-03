@@ -5,6 +5,7 @@
         <h1 class="admin-form-editor__title">Изменение Статьи {{ $article_lang?->title }}</h1>
         <form class="admin-form-editor__form" action="{{ url()->current() }}" enctype="multipart/form-data" method="POST">
             @csrf
+            <input class="input" name="lang_id" value="{{ $article_lang->lang->id }}" readonly hidden />
             <label class="label">
                 <span class="label__title">Название</span>
                 <input class="input" type="text" name="title" value="{{ old('title') ?? $article_lang?->title }}"

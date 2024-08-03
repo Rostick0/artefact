@@ -63,7 +63,10 @@ class ArticleController extends Controller
     public function edit(Request $request, int $id)
     {
         $article = Article::findOrFail($id);
-        $article_lang = $article->article_langs()->where('lang_id', $request->lang_id)->firstOrFail();
+        $article_lang = $article->article_langs()->firstOrCreate([
+            'lang_id' => $request->lang_id,
+            'article_id' => $id
+        ]);
         $langs = Lang::all();
 
         return view('pages.admin.article', [
@@ -79,15 +82,9 @@ class ArticleController extends Controller
     public function update(UpdateArticleRequest $request, int $id)
     {
         $article = Article::findOrFail($id);
-        $article_lang = $article->article_langs()->find($request->lang_id);
+        $article_lang = $article->article_langs()->firstWhere('lang_id', $request->lang_id);
 
-        $values = $request->validated();
-
-        if ($article_lang) {
-            $article_lang->update($values);
-        } else {
-            $article->article_langs()->create($values);
-        }
+        $article_lang->update($request->validated());
 
         if ($request->hasFile('image')) ImageDBUtil::updateOne($request->file('image'), $article);
 
