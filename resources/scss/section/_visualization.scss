@@ -1,6 +1,6 @@
 .visualization {
-    border: 1px solid rgba(0, 0, 0, .06);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     padding: 40px 30px;
     margin-bottom: 80px;
 
@@ -26,7 +26,7 @@
     &-slide {
         padding: 12px;
 
-        &.swiper-slide-next {
+        &:hover {
             .visualization-slide__inner {
                 background-color: #ecc311;
                 color: white;
@@ -41,9 +41,9 @@
 
         &__inner {
             border-radius: 6px;
-            box-shadow: 6px 5px 15px 0 rgba(0, 0, 0, .06);
+            box-shadow: 6px 5px 15px 0 rgba(0, 0, 0, 0.06);
             padding: 30px 30px 60px;
-            transition: .3s;
+            transition: 0.3s;
         }
 
         &__title {
@@ -54,7 +54,7 @@
 
         svg {
             g {
-                transition: .3s;
+                transition: 0.3s;
             }
         }
     }
@@ -64,7 +64,7 @@
         margin-top: 30px;
 
         .swiper-pagination-bullet {
-            background-color: #ADB2B5;
+            background-color: #adb2b5;
 
             &-active {
                 background-color: #ecc311;

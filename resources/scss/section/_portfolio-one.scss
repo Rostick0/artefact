@@ -5,6 +5,13 @@
         width: 100%;
         max-width: 700px;
 
+        .swiper-button {
+            &-prev,
+            &-next {
+                color: #ecc311;
+            }
+        }
+
         &_pagination {
             .swiper-pagination-bullet {
                 background-color: #ecc311;

@@ -24,7 +24,7 @@
                         <div class="main-slider-top__middle-text">
                             {{-- VISUALIZATION OF <br /><span class="text-ui">EXTERIOR</span> AND
                             <span class="text-ui">INTERIOR</span> --}}
-                            VISUALIZATION CREATES EMOTION, <br /> EMOTION SELLS...
+                            <span class="text-ui">VISUALIZATION CREATES EMOTION,</span> <br /> EMOTION SELLS...
                         </div>
                         {{--
           <a class="btn main-slider-top__btn" href="/contacts"

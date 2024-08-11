@@ -3,10 +3,16 @@
 <main class="admin-main">
     @include('layout.admin.aside')
     <div class="admin-main__content">
-        @if (substr(url()->current(), -strlen('list')) !== 'list' && url()->previous() !== url()->current())
-            <a class="admin-main__back" href="{{ url()->previous() }}">
-                <strong>⮪ Назад</strong>
-            </a>
+        @if (substr(url()->current(), -strlen('list')) !== 'list')
+            @if (url()->previous() !== url()->current())
+                <a onclick="javascript:history.back(); return false;" href="#">
+                    <strong>⮪ Назад</strong>
+                </a>
+            @else
+                <a onclick="javascript:history.go(-2); return false;" href='#'>
+                    <strong>⮪ Назад</strong>
+                </a>
+            @endif
         @endif
         @yield('content')
     </div>

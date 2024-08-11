@@ -6,11 +6,11 @@
                     <div class="footer__content_top">Contacts</div>
                     <div class="footer__contacts">
                         <a class="footer__contacts_item" href="mailto:info@artefact.guru">
-                            <i class="far fa-envelope"></i>
+                            <i class="far fa-envelope-open"></i>
                             <span>info@artefact.guru</span>
                         </a>
                         <div class="footer__contacts_item">
-                            <i class="far fa-map"></i>
+                            <i class="icon fas fa-map-marker-alt"></i>
                             <span>Prague, Korunni 2569/108</span>
                         </div>
                     </div>

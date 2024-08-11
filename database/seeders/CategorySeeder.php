@@ -18,7 +18,6 @@ class CategorySeeder extends Seeder
             ['name' => 'Interior'],
             ['name' => 'Items'],
             ['name' => 'Modelling'],
-            ['name' => 'Panorams'],
             ['name' => 'Exterior'],
             ['name' => 'Panorama'],
             ['name' => 'AI'],

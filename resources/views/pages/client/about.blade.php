@@ -2,6 +2,7 @@
 @section('seo_title', 'About Artefact')
 
 @section('content')
+    <x-banner-nav title="About us" :navigations="$navigations" />
     <div class="container">
         <section class="about">
             <div class="about__description">

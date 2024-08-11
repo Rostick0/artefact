@@ -24,7 +24,7 @@ class SendFeedbackRequest extends FormRequest
         return [
             'name' => 'required',
             'email' => 'required|email',
-            'question' => 'nullable|in:Order project,Get answer',
+            'question' => 'nullable',
             'service' => 'nullable|in:Interior,Exterior,Product rendering,Modelling,Animation',
             'message' => 'required',
             'file' => 'nullable|file'

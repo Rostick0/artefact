@@ -43,9 +43,13 @@
         max-height: 100%;
 
         &_inner {
-            background-color: #fff;
-            display: flex;
-            column-gap: 30px;
+        }
+
+        .swiper-button {
+            &-prev,
+            &-next {
+                color: #fff;
+            }
         }
     }
 

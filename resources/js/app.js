@@ -13,7 +13,9 @@ function modal() {
 
     if (!modal) return;
 
-    const modalContentInner = modal.querySelector(".modal__content_inner");
+    const modalContentInner = modal.querySelector(
+        ".modal__content_inner .swiper-wrapper"
+    );
     const modalImage = modal.querySelector(".modal__img");
 
     function activeModal(imageUrl) {
@@ -52,7 +54,10 @@ function modal() {
 
 function createVideo(urls) {
     return urls
-        ?.map((url) => `<video class="modal__img" src="${url}" controls></video>`)
+        ?.map(
+            (url) =>
+                `<div class="swiper-slide"><video class="modal__img" src="${url}" controls></video></div>`
+        )
         ?.join("");
 }
 
@@ -60,7 +65,7 @@ function creatImage(urls) {
     return urls
         ?.map(
             (url) =>
-                `<img class="modal__img" src="${url}" alt="" loading="async" />`
+                `<div class="swiper-slide"><img class="modal__img" src="${url}" alt="" loading="async" /></div>`
         )
         ?.join("");
 }
@@ -127,39 +132,68 @@ function creatImage(urls) {
 })();
 
 (function () {
-    const portfolioSlider = document.querySelector(".portfolio-one__swiper");
+    const modelSwipper = document.querySelector(".modelSwipper");
 
-    if (!portfolioSlider) return;
+    if (!modelSwipper) return;
 
     try {
-        new Swiper(portfolioSlider, {
+        new Swiper(modelSwipper, {
             // autoplay: {
             //     delay: 1250,
             // },
-            pagination: {
-                el: ".swiper-pagination",
-                type: "bullets",
-                clickable: true,
-            },
             speed: 1250,
             slidesPerView: 1,
+            navigation: {
+                prevEl: ".modelSwipper .swiper-button-prev",
+                nextEl: ".modelSwipper .swiper-button-next",
+            },
+            // clickable: true
             // pagination: {
             //     el: ".swiper-pagination",
             //     type: "bullets",
             //     clickable: true,
             // },
-            // breakpoints: {
-            //     768: {
-            //         slidesPerView: 2,
-            //     },
-            //     992: {
-            //         slidesPerView: 3,
-            //     },
-            //     1200: {
-            //         slidesPerView: 4,
-            //     },
-            // },
         });
+    } catch {}
+    //
+})();
+
+(function () {
+    const portfolioSliderImage = document.querySelector(
+        ".portfolio-one__swiper._image"
+    );
+    const portfolioSliderFile = document.querySelector(
+        ".portfolio-one__swiper._file"
+    );
+
+    try {
+        if (portfolioSliderImage) {
+            new Swiper(portfolioSliderImage, {
+                pagination: {
+                    el: "._image .swiper-pagination",
+                    type: "bullets",
+                    clickable: true,
+                },
+                speed: 1250,
+                slidesPerView: 1,
+                navigation: {
+                    prevEl: "._image .swiper-button-prev",
+                    nextEl: "._image .swiper-button-next",
+                },
+            });
+
+            if (portfolioSliderFile) {
+                new Swiper(portfolioSliderFile, {
+                    pagination: {
+                        el: "._file .swiper-pagination",
+                        type: "bullets",
+                        clickable: true,
+                    },
+                    speed: 1250,
+                    slidesPerView: 1,
+                });
+            }
+        }
     } catch {}
 })();
 

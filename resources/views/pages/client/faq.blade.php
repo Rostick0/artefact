@@ -102,9 +102,14 @@
                     <p class="faq__item_p">If the information is incomplete, the cost and the execution time can be
                         increased.</p>
                     <p class="faq__item_p">**Drawings should be submitted in AutoCAD or PDF format</p>
-                    <p class="faq__item_p">&nbsp;</p>
-                    <p class="faq__item_p"><strong>What information do you need to create a 3D visualization of
-                            Interior?</strong></p>
+                </div>
+            </details>
+
+            <details class="faq__item">
+                <summary class="faq__item_title"><strong>What information do you need to create a 3D visualization of
+                        Interior?</strong>
+                </summary>
+                <div class="faq__item_text">
                     <p class="faq__item_p">Desired camera locations and views, number of cameras.</p>
                     <br>
                     <p class="faq__item_p"><span style="text-decoration: underline;">Time:</span> evening, day, night.</p>
@@ -135,15 +140,24 @@
                     <br>
                     <p class="faq__item_p">**Drawings should be submitted in AutoCAD format.</p>
                     <br>
-                    <p class="faq__item_p"><strong>What information do you need to create a 3D visualization of
-                            Products?</strong></p>
+                </div>
+            </details>
+            <details class="faq__item">
+                <summary class="faq__item_title"><strong>What information do you need to create a 3D visualization of
+                        Products?</strong>
+                </summary>
+                <div class="faq__item_text">
                     <p class="faq__item_p">- Drawings</p>
                     <p class="faq__item_p">- Referenses</p>
                     <p class="faq__item_p">- Information where the images will be used</p>
                     <p class="faq__item_p">- Required resolution of the final renderings;</p>
-                    <br>
-                    <p class="faq__item_p"><strong>What is the process from the inception phase to project
-                            implementation?</strong></p>
+                </div>
+            </details>
+            <details class="faq__item">
+                <summary class="faq__item_title"><strong>What is the process from the inception phase to project
+                        implementation?</strong>
+                </summary>
+                <div class="faq__item_text">
                     <p class="faq__item_p">The project is divided into several stages. At the end of each stage, we provide
                         the client with a report on the work already completed.</p>
                     <br>

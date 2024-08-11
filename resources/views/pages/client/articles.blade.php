@@ -16,7 +16,7 @@
                                 })
                                 ->first() ?? $article->article_langs()->first();
 
-                        $article_link = '/articles/' . $article->id;
+                        $article_link = '/news/' . $article->id;
                         $article_description = \Illuminate\Support\Str::limit(
                             $article_current_lang->description,
                             250,

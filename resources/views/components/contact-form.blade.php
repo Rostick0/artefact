@@ -1,11 +1,11 @@
-<div class="">
+<div class="form-contact">
     @if (session()->get('message'))
         <div>
             <strong>{{ session()->get('message') }}</strong>
         </div>
         <br>
     @endif
-    <form class="feedback__form form-contact" enctype="multipart/form-data" action="{{ route('feedback.send') }}"
+    <form class="feedback__form form-contact__inner" enctype="multipart/form-data" action="{{ route('feedback.send') }}"
         method="POST">
         @csrf
         <div class="form-contact__flex">
@@ -27,11 +27,7 @@
         <div class="form-contact__flex">
             <label class="label">
                 <span class="label__title">Question</span>
-                <select class="input" name="question">
-                    <option value="" selected>- None -</option>
-                    <option value="Order project">Order project</option>
-                    <option value="Get answer">Get answer</option>
-                </select>
+                <input class="input" name="question" type="text" maxlength="255">
             </label>
             <label class="label">
                 <span class="label__title">Service</span>

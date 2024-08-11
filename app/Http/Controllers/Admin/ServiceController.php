@@ -75,6 +75,7 @@ class ServiceController extends Controller
 
         if ($request->hasFile('image')) ImageDBUtil::updateOne($request->file('image'), $service);
 
+        // return redirect()->intended('/admin/service/edit/' . $id);
         return back();
     }
 

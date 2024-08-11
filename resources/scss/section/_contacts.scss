@@ -23,6 +23,11 @@
             display: flex;
             align-items: center;
             column-gap: 35px;
+
+            &:last-child {
+                color: #868686;
+                margin-top: auto;
+            }
         }
 
         &_icon {

@@ -7,7 +7,7 @@
     <section class="portfolio-one">
         <div class="container">
             @if ($portfolio?->image->count())
-                <div class="portfolio-one__swiper swiper">
+                <div class="portfolio-one__swiper _image swiper">
                     <div class="swiper-wrapper">
                         @foreach ($portfolio?->image as $image)
                             <div class="swiper-slide">
@@ -16,11 +16,13 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                     <div class="swiper-pagination main-slider-top__pagination portfolio-one__swiper_pagination"></div>
                 </div>
             @endif
             @if ($portfolio?->file->count())
-                <div class="portfolio-one__swiper swiper">
+                <div class="portfolio-one__swiper _file swiper">
                     <div class="swiper-wrapper">
                         @foreach ($portfolio?->file as $file)
                             <div class="swiper-slide">
@@ -29,6 +31,8 @@
                             </div>
                         @endforeach
                     </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                     <div class="swiper-pagination main-slider-top__pagination portfolio-one__swiper_pagination"></div>
                 </div>
             @endif

@@ -13,7 +13,6 @@
 
 @section('content')
 
-    {{-- @dd($article_current_lang) --}}
     <div class="article-one">
         <div class="container">
             <div class="article-one__info">
@@ -22,17 +21,18 @@
                         loading="async" alt="{{ $article_current_lang->title }}" />
                 </div>
                 <div class="article__info">
-                    <h1 class="article__title" href="/articles/2">
-                        321
+                    <h1 class="article__title">
+                        {{ $article_current_lang->title }}
                     </h1>
                     <ul class="article__info_list">
                         <li class="article__info_item">
                             <div class="article__info_name">Date:</div>
-                            <time class="article__date" datetime="2024-07-24 17:14:36">2024-07-24 17:14:36</time>
+                            <time class="article__date"
+                                datetime="{{ $article->created_at }}">{{ $article->created_at }}</time>
                         </li>
                         <li class="article__info_item">
                             <div class="article__info_name">Author:</div>
-                            <div class="">admin</div>
+                            <div class="">{{ $article->user->name }}</div>
                         </li>
                     </ul>
                     <div class="article__description">{{ $article_current_lang->description }}</div>
