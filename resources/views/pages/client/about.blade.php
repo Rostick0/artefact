@@ -1,5 +1,7 @@
 @extends('layout.client.layout')
-@section('seo_title', 'About Artefact')
+@section('seo_title')
+@section('seo_description')
+@section('seo_keywords')
 
 @section('content')
     <x-banner-nav title="About us" :navigations="$navigations" />
@@ -22,18 +24,19 @@
                         with us now, and let's embark on a journey of creating stunning 3D visualizations for your
                         success!</span></p>
             </div>
-            <a class="btn about__btn" href="/contacts"><span style="font-size: 12pt;">Order the 3D project</span> </a>
+            <a class="btn about__btn" href="../../../contacts"><span style="font-size: 10pt;">Order the 3D project</span>
+            </a>
             <div class="about__images">
                 <div class="about__image _figure">
                     <div class="about__figure"><span style="font-size: 14pt;">Work from <span
                                 style="font-size: 18pt;">2019&nbsp;</span></span></div>
-                    <img class="about__img" src="../../../assets/img/abot_first.jpg" alt="" decoding="async"
-                        loading="lazy" width="100%">
+                    <img class="about__img" src="../../../assets/img/abot_first.jpg" alt="" width="100%"
+                        loading="lazy">
                 </div>
                 <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_7.jpg" alt=""
-                        decoding="async" loading="lazy" width="100%"></div>
-                <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_8.jpg"
-                        alt=""decoding="async" loading="lazy" width="100%"></div>
+                        width="100%" loading="lazy"></div>
+                <div class="about__image"><img class="about__img" src="../../../assets/img/Screenshot_8.jpg" alt=""
+                        width="100%" loading="lazy"></div>
             </div>
         </section>
         <section class="visualization">
@@ -48,6 +51,7 @@
                     <li style="line-height: 2;"><span style="font-size: 12pt;">&bull; The exact embodiment of your ideas and
                             concepts; Guaranteed quality of visualization and graphics.</span></li>
                 </ul>
+                <p>&nbsp;</p>
             </div>
             <div class="visualization__slider swiper">
                 <div class="swiper-wrapper">
@@ -62,7 +66,6 @@
                     @endforeach
                 </div>
             </div>
-            <div class="visualization__slider_pagination swiper-pagination">&nbsp;</div>
         </section>
     </div>
     <section class="need-visualization">
@@ -70,8 +73,9 @@
             <div class="need-visualization__container">
                 <h2 class="title need-visualization__title">Do you need 3D visualization?</h2>
                 <div class="need-visualization__motivation">Make order right now!</div>
-                <a class="btn need-visualization__btn" href="/contacts">Contact us</a>
+                <a class="btn need-visualization__btn" href="../../../contacts">Contact us</a>
             </div>
+            <div class="need-visualization__container">&nbsp;</div>
         </div>
     </section>
     <div class="container">

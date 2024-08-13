@@ -39,9 +39,9 @@
         <tr>
             <td>Email: {{ $request_data['email'] }}</td>
         </tr>
-        @isset($request_data['question'])
+        @isset($request_data['subject'])
             <tr>
-                <td>Question: {{ $request_data['question'] }}</td>
+                <td>Subject: {{ $request_data['subject'] }}</td>
             </tr>
         @endisset
         @isset($request_data['service'])

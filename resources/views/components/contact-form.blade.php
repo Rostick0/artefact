@@ -26,8 +26,8 @@
         </div>
         <div class="form-contact__flex">
             <label class="label">
-                <span class="label__title">Question</span>
-                <input class="input" name="question" type="text" maxlength="255">
+                <span class="label__title">Subject</span>
+                <input class="input" name="subject" type="text" maxlength="255">
             </label>
             <label class="label">
                 <span class="label__title">Service</span>

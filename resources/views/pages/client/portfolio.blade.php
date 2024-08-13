@@ -26,8 +26,8 @@
                     <div class="swiper-wrapper">
                         @foreach ($portfolio?->file as $file)
                             <div class="swiper-slide">
-                                <video class="portfolio-one__img" src="{{ Storage::url($file?->path ?? '') }}"
-                                    controls></video>
+                                <video class="portfolio-one__img" src="{{ Storage::url($file?->path ?? '') }}" autoplay
+                                    muted controls></video>
                             </div>
                         @endforeach
                     </div>

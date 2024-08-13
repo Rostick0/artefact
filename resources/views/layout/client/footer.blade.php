@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="footer__content_item">
-                    <div class="footer__content_top">New works</div>
+                    <div class="footer__content_top">Latest works</div>
                     <div class="footer-works-swiper swiper">
                         <div class="swiper-wrapper">
                             @foreach (\App\Models\Portfolio::orderByDesc('id')->limit(18)->get()->chunk(6) as $list)

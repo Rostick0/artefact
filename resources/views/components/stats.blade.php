@@ -8,8 +8,8 @@
                 </div>
             </div>
             <div class="stat-item__text">
-                <div class="stat-item__count">300</div>
-                <div class="stat-item__title">Orders</div>
+                <div class="stat-item__count" data-max="350">350</div>
+                <div class="stat-item__title">Projects</div>
             </div>
         </li>
         <li class="stat__item stat-item">
@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="stat-item__text">
-                <div class="stat-item__count">400</div>
+                <div class="stat-item__count" data-max="50">50</div>
                 <div class="stat-item__title">Clients</div>
             </div>
         </li>
@@ -30,8 +30,8 @@
                 </div>
             </div>
             <div class="stat-item__text">
-                <div class="stat-item__count">501</div>
-                <div class="stat-item__title">Projects</div>
+                <div class="stat-item__count">6</div>
+                <div class="stat-item__title">Countries</div>
             </div>
         </li>
         <li class="stat__item stat-item">
@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="stat-item__text">
-                <div class="stat-item__count">5</div>
+                <div class="stat-item__count" data-max="3">3</div>
                 <div class="stat-item__title">Experience</div>
             </div>
         </li>

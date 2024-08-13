@@ -2,6 +2,7 @@
 @section('seo_title', 'Contacts')
 
 @section('content')
+    <x-banner-nav title="FAQ" :navigations="$navigations" />
     <section class="faq">
         <div class="container">
             <h2 class="title-section faq__title">FAQ</h2>

@@ -3,7 +3,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-position: left top;
-    padding-bottom: 20px;
 
     &__text {
         display: flex;
@@ -39,20 +38,9 @@
     &__bottom {
         display: flex;
         align-items: flex-start;
-        justify-content: space-between;
+        justify-content: center;
         flex-wrap: wrap;
         grid-gap: 20px;
-
-        &_left {
-            font-size: 18px;
-            flex-grow: 1;
-            font-weight: 600;
-        }
-
-        &_right {
-            display: flex;
-            column-gap: 20px;
-        }
     }
 
     &__need {
@@ -61,8 +49,6 @@
     }
 
     @media (max-width: 992px) {
-        padding: 50px 0;
-
         &__text {
             row-gap: 10px;
             margin-bottom: 32px;

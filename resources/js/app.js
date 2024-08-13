@@ -56,7 +56,7 @@ function createVideo(urls) {
     return urls
         ?.map(
             (url) =>
-                `<div class="swiper-slide"><video class="modal__img" src="${url}" controls></video></div>`
+                `<div class="swiper-slide"><video class="modal__img" src="${url}" controls autoplay muted></video></div>`
         )
         ?.join("");
 }
@@ -343,7 +343,7 @@ function animateCounter(
             startValue + (endValue - startValue) * progress
         );
 
-        if (maxVal && maxVal < value) {
+        if (maxVal && maxVal <= value) {
             elem.textContent = maxVal + "+";
             return;
         } else {
@@ -365,10 +365,11 @@ function animateCounter(
 
         statItems.forEach((item) => {
             const val = +item.textContent.trim();
+            const maxVal = item.getAttribute('data-max') ?? 500;
 
             animateCounter(item, {
                 endValue: val,
-                maxVal: 500,
+                maxVal,
             });
         });
     }

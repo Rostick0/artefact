@@ -17,7 +17,7 @@
                     style="background-image: url('../../../assets/img/visualization-interior-slide.jpg');">
                     <div class="main-slider-top__slide_inner">
                         <div class="main-slider-top__middle-text">
-                            <span class="text-ui">EMOTION</span> SELLS...
+                            EMOTION <span class="text-ui">SELLS...</span>
                         </div>
                         {{--
           <a class="btn main-slider-top__btn" href="/contacts"
@@ -66,14 +66,11 @@
         <div class="container">
             <div class="main-info__text">
                 <h2>Welcome to the World of 3D Visualization!</h2>
-                <p>
-                    Here, ideas transform into visual masterpieces using cutting-edge technologies. From realistic
+                <p>Here, ideas transform into visual masterpieces using cutting-edge technologies. From realistic
                     architectural renders to immersive virtual tours—every detail is crafted with precision and creativity.
                 </p>
-                <p>
-                    Explore the boundless possibilities of 3D visualization and give your projects a new, impressive
-                    dimension.
-                </p>
+                <p>Explore the boundless possibilities of 3D visualization and give your projects a new, impressive
+                    dimension.</p>
                 {{-- <p>
                     Welcome to the realm of 3D visualization! We are an art, technology, and
                     creativity-driven team offering you a captivating perspective on your
@@ -103,11 +100,7 @@
                 </div>
             </div>
             <div class="main-info__bottom">
-                <div class="main-info__bottom_left">
-                </div>
-                <div class="main-info__bottom_right">
-                    <a class="btn" href="/portfolio">Portfolio</a>
-                </div>
+                <a class="btn" href="/portfolio">Portfolio</a>
             </div>
         </div>
     </section>
@@ -116,7 +109,7 @@
     </div>
     <section class="calculator">
         <div class="container">
-            <div class="calculator__title">Calculator</div>
+            <div class="title calculator__title">Calculator</div>
             <div class="calculator__container">
                 <div class="calculator__switch">
                     <label class="calculator__switch_item">
