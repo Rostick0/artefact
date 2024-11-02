@@ -41,7 +41,8 @@ class FeedbackController extends Controller
             $filepath = Storage::path('public/' . $filepath_local);
         }
 
-        Mail::to('rostik057@gmail.com')->send(new RequestMail($request->validated(), $filepath));
+        // Mail::to('rostik057@gmail.com')->send(new RequestMail($request->validated(), $filepath));
+        Mail::to('info@artefact.guru')->send(new RequestMail($request->validated(), $filepath));
 
         return back()->with([
             'message' => 'Thank you for your application!'
